@@ -29,7 +29,7 @@ export class PassagioBillService {
         item: this.x.item,
         price: this.x.price,
         quantita: this.q,
-        // sconto : this.x.sconto
+        sconto : this.x.sconto
       };
       return this.y;
   }

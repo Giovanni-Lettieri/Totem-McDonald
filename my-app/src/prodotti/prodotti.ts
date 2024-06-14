@@ -3,5 +3,5 @@ export interface Prodotti {
     price: number
     image: string
     category: string
-    // sconto : number
+    sconto : number
 }
