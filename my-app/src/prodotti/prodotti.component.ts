@@ -32,7 +32,6 @@ export class ProdottiComponent implements OnInit{
   categoriaAttuale = input.required<string>();
   prodottiAttuali!: Prodotti[];
   viewContainerRef: ViewContainerRef | undefined;
-
   constructor(
     private bottomSheet: MatBottomSheet, 
     private prodottiService: ProdottiService, 
@@ -74,16 +73,20 @@ export class ProdottiComponent implements OnInit{
     this.overlay.switch()
   }
 
-  coloreSfondo(i: number) {
-    return this.pulsanteCliccato == i ? '#FFCA40' : 'white';
+  coloreSfondo(i: number, sconto:number) {
+    return this.pulsanteCliccato == i ? '#FFCA40' : (sconto != 0 ? '#C8161D' : 'white');
   }
 
-  coloreTesto(i: number) {
-    return this.pulsanteCliccato == i ? '#FFFFFF' : 'black';
+  coloreTesto(i: number, sconto:number) {
+    return this.pulsanteCliccato == i ? '#FFFFFF' : (sconto != 0 ? 'white' : 'black');
   }
 
   colorePrezzo(i: number) {
     return this.pulsanteCliccato == i ? 'white' : '#FFCA40';
+  }
+
+  barraturaPrezzo(sconto: number){
+    return sconto != 0 ? 'line-through' : 'none'
   }
 
   pulsanteOff() {

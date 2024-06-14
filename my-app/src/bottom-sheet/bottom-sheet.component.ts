@@ -29,6 +29,7 @@ export class BottomSheetComponent {
   subscription !: Subscription;
   Cur: string = this.lingSer.getTesto().Curency;
   fatto : string = this.lingSer.getTesto().Fatto;
+  comMeal : string = this.lingSer.getTesto().CM;
   constructor(
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: Prodotti,
     private bottomSheetRef: MatBottomSheetRef<BottomSheetComponent>,

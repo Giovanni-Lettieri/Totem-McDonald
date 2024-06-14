@@ -11,4 +11,5 @@ export interface Testi {
     Fatto:string
     Pop : string
     Curency: string
+    CM: string
 }
