@@ -1,524 +1,611 @@
 [
     {
-        "item": "BigMac Menu",
+        "item": "Big Mac-Menü",
         "price": 7.99,
         "image": "assets/Prodotti/Menu/BigMac Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "Cheeseburger Menu",
+        "item": "Cheeseburger Menü",
         "price": 6.70,
         "image": "assets/Prodotti/Menu/Double Cheeseburger Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "Double Chicken Menu",
+        "item": "Doppeltes Hähnchenmenü",
         "price": 8.00,
         "image": "assets/Prodotti/Menu/Double Chicken BBQ  Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "Fileto Fish  Menu",
+        "item": "Filet-Fisch-Menü",
         "price": 5.90,
         "image": "assets/Prodotti/Menu/Fileto Fish  Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "Crispy Mc Bacon Menu",
+        "item": "Knuspriges Mc-Bacon-Menü",
         "price": 9.50,
         "image": "assets/Prodotti/Menu/Gran Crispy Mc Bacon Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "Mc Chicken Menu",
+        "item": "Mc Chicken-Menü",
         "price": 7.70,
         "image": "assets/Prodotti/Menu/Mc Chicken Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "Mc Wrap Pollo Menu",
+        "item": "Mc Wrap Chicken-Menü",
         "price": 8.90,
         "image": "assets/Prodotti/Menu/Mc Wrap Caesar Pollo  Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "Mc Wrap Crispy Menu",
+        "item": "Mc Wrap Crispy-Menü",
         "price": 8.90,
         "image": "assets/Prodotti/Menu/Mc Wrap Crispy Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "MyS Avocado Menu",
+        "item": "MyS Avocado-Menü",
         "price": 15.99,
         "image": "assets/Prodotti/Menu/MyS Avocado Chicken Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "MyS BBQ Menu",
+        "item": "MyS BBQ Menü",
         "price": 14.99,
         "image": "assets/Prodotti/Menu/MyS BBQ Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "MyS Parmigiano Menu",
+        "item": "MyS Parmesan-Menü",
         "price": 15.99,
         "image": "assets/Prodotti/Menu/MyS Parmigiano Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
-        "item": "Nuggets Menu",
+        "item": "Nuggets-Menü",
         "price": 8.90,
         "image": "assets/Prodotti/Menu/Nuggets Menu.png",
-        "category": "Menü"
+        "category": "Menü",
+        "sconto": 0
     },
     {
         "item": "Brownie",
         "price": 3.50,
         "image": "assets/Prodotti/Dolci/Brownie.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
-        "item": "Cheesecake",
+        "item": "Käsekuchen",
         "price": 3.99,
         "image": "assets/Prodotti/Dolci/Cheesecake.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
-        "item": "Croissant Crema",
+        "item": "Sahne-Croissant",
         "price": 2.5,
         "image": "assets/Prodotti/Dolci/Croissant Crema.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
-        "item": "Croissant Nutella",
+        "item": "Nutella-Croissant",
         "price": 2.5,
         "image": "assets/Prodotti/Dolci/Croissant Nutella.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
-        "item": "Croissant Vuoto",
+        "item": "Leeres Croissant",
         "price": 2.5,
         "image": "assets/Prodotti/Dolci/Croissant Vuoto.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
-        "item": "Donut Cioccolato",
+        "item": "Schokoladendonut",
         "price": 2.00,
         "image": "assets/Prodotti/Dolci/Donut Cioccolato.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
-        "item": "Donut Marshmallow",
+        "item": "Marshmallow-Donuts",
         "price": 2.00,
         "image": "assets/Prodotti/Dolci/Donut Marshmallow.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
         "item": "Macaron",
         "price": 1.20,
         "image": "assets/Prodotti/Dolci/Macaron.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
         "item": "Muffin",
         "price": 3.00,
         "image": "assets/Prodotti/Dolci/Muffin.png",
-        "category": "Süßigkeiten"
+        "category": "Süßigkeiten",
+        "sconto": 0
     },
     {
-        "item": "Americano",
+        "item": "amerikanisch",
         "price": 0.90,
         "image": "assets/Prodotti/McCaffè/Americano.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
-        "item": "Caffe Orzo",
+        "item": "Gerstenkaffee",
         "price": 0.90,
         "image": "assets/Prodotti/McCaffè/Caffe Orzo.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
-        "item": "Caffe Shakerato",
+        "item": "Geschüttelter Kaffee",
         "price": 1.30,
         "image": "assets/Prodotti/McCaffè/Caffe Shakerato.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
         "item": "Cappuccino",
         "price": 1.30,
         "image": "assets/Prodotti/McCaffè/Cappuccino.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
-        "item": "Cioccolata Calda",
+        "item": "Heiße Schokolade",
         "price": 1.10,
         "image": "assets/Prodotti/McCaffè/Cioccolata Calda.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
-        "item": "Crema Caffe",
+        "item": "Kaffeesahne",
         "price": 1.10,
         "image": "assets/Prodotti/McCaffè/Crema Caffe.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
-        "item": "Espresso",
+        "item": "Ausgedrückt",
         "price": 0.90,
         "image": "assets/Prodotti/McCaffè/Espresso.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
-        "item": "Marocchino",
+        "item": "marokkanisch",
         "price": 1.40,
         "image": "assets/Prodotti/McCaffè/Marocchino.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
-        "item": "Te Caldo",
+        "item": "Heißer Tee",
         "price": 0.90,
         "image": "assets/Prodotti/McCaffè/Te Caldo.png",
-        "category": "McCafé"
+        "category": "McCafé",
+        "sconto": 0
     },
     {
-        "item": "Agrodolce",
+        "item": "Bittersüß",
         "price": 0.30,
         "image": "assets/Prodotti/Salse/Agrodolce.png",
-        "category": "Soßen"
+        "category": "Soßen",
+        "sconto": 0
     },
     {
         "item": "Barbecue",
         "price": 0.30,
         "image": "assets/Prodotti/Salse/Barbecue.png",
-        "category": "Soßen"
+        "category": "Soßen",
+        "sconto": 0
     },
     {
         "item": "Ketchup",
         "price": 0.30,
         "image": "assets/Prodotti/Salse/Ketchup.png",
-        "category": "Soßen"
+        "category": "Soßen",
+        "sconto": 0
     },
     {
         "item": "Mayonnaise",
         "price": 0.30,
         "image": "assets/Prodotti/Salse/Maionese.png",
-        "category": "Soßen"
+        "category": "Soßen",
+        "sconto": 0
     },
     {
         "item": "McBacon",
         "price": 0.30,
         "image": "assets/Prodotti/Salse/McBacon.png",
-        "category": "Soßen"
+        "category": "Soßen",
+        "sconto": 0
     },
     {
-        "item": "Senape",
+        "item": "Senf",
         "price": 0.30,
         "image": "assets/Prodotti/Salse/Senape.png",
-        "category": "Soßen"
+        "category": "Soßen",
+        "sconto": 0
     },
     {
-        "item": "Cono",
+        "item": "Kegel",
         "price": 1.00,
         "image": "assets/Prodotti/Gelati/Cono.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
         "item": "McFlurry Oreo",
         "price": 4.20,
         "image": "assets/Prodotti/Gelati/McFlurry Oreo.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
-        "item": "McFlurry Pistacchio",
+        "item": "Pistazien-McFlurry",
         "price": 4.20,
         "image": "assets/Prodotti/Gelati/McFlurry Pistacchio.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
         "item": "McFlurry Smarties",
         "price": 4.20,
         "image": "assets/Prodotti/Gelati/McFlurry Smarties.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
-        "item": "MilkaShaek Banana",
+        "item": "MilkaShaek Banane",
         "price": 3.60,
         "image": "assets/Prodotti/Gelati/MilkaShaek Banana.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
-        "item": "MilkaShaek Cioccolato",
+        "item": "MilkaShaek-Schokolade",
         "price": 3.60,
         "image": "assets/Prodotti/Gelati/MilkaShaek Cioccolato.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
-        "item": "MilkaShaek Fragola",
+        "item": "MilkaShaek Erdbeere",
         "price": 3.60,
         "image": "assets/Prodotti/Gelati/MilkaShaek Fragola.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
-        "item": "Sundae Baci",
+        "item": "Eisbecherküsse",
         "price": 3.40,
         "image": "assets/Prodotti/Gelati/Sundae Baci.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
-        "item": "Sundae Caffe",
+        "item": "Eisbecher-Kaffee",
         "price": 3.40,
         "image": "assets/Prodotti/Gelati/Sundae Caffe.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
-        "item": "Sundae Caramello",
+        "item": "Karamell-Eisbecher",
         "price": 3.40,
         "image": "assets/Prodotti/Gelati/Sundae Caramello.png",
-        "category": "Eis"
+        "category": "Eis",
+        "sconto": 0
     },
     {
-        "item": "Acqua",
+        "item": "Wasserfall",
         "price": 0.30,
         "image": "assets/Prodotti/Bevande/Acqua.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
         "item": "Coca Cola 0",
         "price": 1.20,
         "image": "assets/Prodotti/Bevande/Coca Cola 0.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
         "item": "Coca Cola",
         "price": 1.20,
         "image": "assets/Prodotti/Bevande/Coca Cola.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
         "item": "Fanta",
         "price": 1.20,
         "image": "assets/Prodotti/Bevande/Fanta.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
-        "item": "Lipton Limone",
+        "item": "Lipton-Zitrone",
         "price": 0.90,
         "image": "assets/Prodotti/Bevande/Lipton Limone.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
-        "item": "Lipton Pesca",
+        "item": "Lipton Angeln",
         "price": 0.90,
         "image": "assets/Prodotti/Bevande/Lipton Pesca.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
         "item": "Sprite",
         "price": 1.20,
         "image": "assets/Prodotti/Bevande/Sprite.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
-        "item": "Succo Mela",
+        "item": "Apfelsaft",
         "price": 0.90,
         "image": "assets/Prodotti/Bevande/Succo Mela.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
         "item": "Tropicana",
         "price": 1.40,
         "image": "assets/Prodotti/Bevande/Tropicana.png",
-        "category": "Getränke"
+        "category": "Getränke",
+        "sconto": 0
     },
     {
         "item": "Ananas",
         "price": 0.50,
         "image": "assets/Prodotti/Frutta/Ananas.png",
-        "category": "Obst"
+        "category": "Obst",
+        "sconto": 0
     },
     {
         "item": "Karotten",
         "price": 0.50,
         "image": "assets/Prodotti/Frutta/Carotine.png",
-        "category": "Obst"
+        "category": "Obst",
+        "sconto": 0
     },
     {
         "item": "Apfel",
         "price": 0.50,
         "image": "assets/Prodotti/Frutta/Mela.png",
-        "category": "Obst"
+        "category": "Obst",
+        "sconto": 0
     },
     {
-        "item": "Chicken Wings",
+        "item": "Hühnerflügel",
         "price": 1.99,
         "image": "assets/Prodotti/Sfiziosita/Chicken Wings.png",
-        "category": "Köstlichkeiten"
+        "category": "Köstlichkeiten",
+        "sconto": 0
     },
     {
         "item": "Nuggets",
         "price": 2.99,
         "image": "assets/Prodotti/Sfiziosita/Nuggets.png",
-        "category": "Köstlichkeiten"
+        "category": "Köstlichkeiten",
+        "sconto": 0
     },
     {
         "item": "Panzerotti",
         "price": 2.99,
         "image": "assets/Prodotti/Sfiziosita/Panzerotti.png",
-        "category": "Köstlichkeiten"
+        "category": "Köstlichkeiten",
+        "sconto": 0
     },
     {
-        "item": "Parmigiano",
+        "item": "Parmesan",
         "price": 4.00,
         "image": "assets/Prodotti/Sfiziosita/Parmigiano.png",
-        "category": "Köstlichkeiten"
+        "category": "Köstlichkeiten",
+        "sconto": 0
     },
     {
-        "item": "Spicy Nuggets",
+        "item": "Scharfe Nuggets",
         "price": 3.90,
         "image": "assets/Prodotti/Sfiziosita/Spicy Nuggets.png",
-        "category": "Köstlichkeiten"
+        "category": "Köstlichkeiten",
+        "sconto": 0
     },
     {
-        "item": "Tasty Basket",
+        "item": "Leckerer Korb",
         "price": 7.30,
         "image": "assets/Prodotti/Sfiziosita/Tasty Basket.png",
-        "category": "Köstlichkeiten"
+        "category": "Köstlichkeiten",
+        "sconto": 0
     },
     {
-        "item": "Patatine Medie",
+        "item": "Mittlere Pommes",
         "price": 2.99,
         "image": "assets/Prodotti/Patatine/Patatine Medie.png",
-        "category": "Pommes Frites"
+        "category": "Pommes Frites",
+        "sconto": 0
     },
     {
-        "item": "Patatine Picolle",
+        "item": "Kleine Chips",
         "price": 1.99,
         "image": "assets/Prodotti/Patatine/Patatine Picolle.png",
-        "category": "Pommes Frites"
+        "category": "Pommes Frites",
+        "sconto": 0
     },
     {
-        "item": "Ricche Bacon",
+        "item": "Reichhaltiger Speck",
         "price": 3.99,
         "image": "assets/Prodotti/Patatine/Ricche Bacon.png",
-        "category": "Pommes Frites"
+        "category": "Pommes Frites",
+        "sconto": 0
     },
     {
-        "item": "Ricche Cheddar",
+        "item": "Reichhaltiger Cheddar",
         "price": 3.99,
         "image": "assets/Prodotti/Patatine/Ricche Cheddar.png",
-        "category": "Pommes Frites"
+        "category": "Pommes Frites",
+        "sconto": 0
     },
     {
-        "item": "Insalata Mista",
+        "item": "gemischter Salat",
         "price": 3.50,
         "image": "assets/Prodotti/Insalate/Insalata Mista.png",
-        "category": "Salate"
+        "category": "Salate",
+        "sconto": 0
     },
     {
-        "item": "Insalata Pollo",
+        "item": "Hühnchensalat",
         "price": 3.50,
         "image": "assets/Prodotti/Insalate/Insalata Pollo.png",
-        "category": "Salate"
+        "category": "Salate",
+        "sconto": 0
     },
     {
-        "item": "Insalata Verde",
+        "item": "Grüner Salat",
         "price": 3.50,
         "image": "assets/Prodotti/Insalate/Insalata Verde.png",
-        "category": "Salate"
+        "category": "Salate",
+        "sconto": 0
     },
     {
         "item": "HM Chicken Burger",
         "price": 7.20,
         "image": "assets/Prodotti/Happy Meal/HM Chicken Burger.png",
-        "category": "Happy Meal"
+        "category": "Happy Meal",
+        "sconto": 0
     },
     {
         "item": "HM Hamburger",
         "price": 7.20,
         "image": "assets/Prodotti/Happy Meal/HM Hamburger.png",
-        "category": "Happy Meal"
+        "category": "Happy Meal",
+        "sconto": 0
     },
     {
         "item": "HM Nuggets",
         "price": 7.20,
         "image": "assets/Prodotti/Happy Meal/HM Nuggets.png",
-        "category": "Happy Meal"
+        "category": "Happy Meal",
+        "sconto": 0
     },
     {
         "item": "HM Toast",
         "price": 7.20,
         "image": "assets/Prodotti/Happy Meal/HM Toast.png",
-        "category": "Happy Meal"
+        "category": "Happy Meal",
+        "sconto": 0
     },
     {
         "item": "Big Mac",
         "price": 5.40,
         "image": "assets/Prodotti/Panini/Big Mac.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
         "item": "Cheese Burger",
         "price": 3.70,
         "image": "assets/Prodotti/Panini/Cheese Burger.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
-        "item": "Crispy Mc Wrap",
+        "item": "Knuspriger McWrap",
         "price": 6.30,
         "image": "assets/Prodotti/Panini/Crispy Mc Wrap Isolated.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
-        "item": "Double Chicken BBQ",
+        "item": "Doppelter Hähnchengrill",
         "price": 7.20,
         "image": "assets/Prodotti/Panini/Double Chicken BBQ.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
-        "item": "Fileto Fish",
+        "item": "Filetfisch",
         "price": 3.40,
         "image": "assets/Prodotti/Panini/Fileto Fish.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
-        "item": "Gluten Free Burger",
+        "item": "Glutenfreier Burger",
         "price": 5.40,
         "image": "assets/Prodotti/Panini/Gluten Free Burger.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
-        "item": "Gran Crispy Mc Bacon",
+        "item": "Toller knuspriger Mc Bacon",
         "price": 6.70,
         "image": "assets/Prodotti/Panini/Gran Crispy Mc Bacon.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
         "item": "Hamburger",
         "price": 3.20,
         "image": "assets/Prodotti/Panini/Hamburger.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
-        "item": "Mc Chicken",
+        "item": "Mc Huhn",
         "price": 5.60,
         "image": "assets/Prodotti/Panini/Mc Chicken.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
         "item": "MyS BBQ",
         "price": 11.50,
         "image": "assets/Prodotti/Panini/MyS BBQ.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
-        "item": "MyS Pecorino",
+        "item": "MyS Pecorino-Käse",
         "price": 11.50,
         "image": "assets/Prodotti/Panini/MyS Pecorino Salsayuzu.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     },
     {
         "item": "Toast",
         "price": 1.00,
         "image": "assets/Prodotti/Panini/Toast.png",
-        "category": "Sandwiches"
+        "category": "Sandwiches",
+        "sconto": 0
     }
 ] 

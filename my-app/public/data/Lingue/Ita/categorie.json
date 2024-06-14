@@ -37,7 +37,7 @@
     {    
         "name": "Bevande",
         "image": "assets/Category/Bevande.png",
-        "sconto": 34
+        "sconto": 0
     },
     {    
         "name": "Gelati",

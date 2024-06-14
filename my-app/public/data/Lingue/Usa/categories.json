@@ -37,7 +37,7 @@
     {    
         "name": "Drinks",
         "image": "assets/Category/Bevande.png",
-        "sconto": 34
+        "sconto": 0
     },
     {    
         "name": "Ice Cream",
