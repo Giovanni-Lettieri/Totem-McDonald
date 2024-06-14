@@ -82,19 +82,18 @@ button{
 #P-but{
     border: none;
     background-color:#FFCA40;
-    height: 3vh;
-    width: 3vh;
+    height: 3vh;  
     margin-left: 50px;
     padding-left: 40px;
     padding-right: 70px;
     font-size: 50px;
+    border-radius: 25px;
 }
 #M-but{
+    border-radius: 25px;
     border: 1px solid gray;
     background-color:#EFECE5;
-    height: 3vh;
-    height: 3vh;
-    width: 3vh;
+    height: 3vh; 
     margin-left: -70px;
     padding-left: 40px;
     padding-right: 70px;
@@ -121,9 +120,9 @@ button{
     width: 200px;
     height: 200px;
     top: 37vh;
+    border-radius: 70px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 60px;
     position: relative;
     border: none;
     z-index: 500;
@@ -133,6 +132,7 @@ button{
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight:650;
+    margin-top: 15px;
 }
 #meno{
     position: relative;
