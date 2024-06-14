@@ -1,3 +1,7 @@
+body{
+    -webkit-user-select: none;
+    user-select: none;  
+}
 #logo{
     position: fixed;
     left: 36%;
