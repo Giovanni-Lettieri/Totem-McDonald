@@ -3,24 +3,18 @@
       *ngFor="let c of prodottiAttuali; let i = index" 
       [style.background-color]="coloreSfondo(i, c.sconto)" 
       (click)="pulsanteOn(i)">
+      <span *ngIf="c.sconto != 0">-{{c.sconto}}%</span><br>
       <img [src]="c.image">
       <br>
       <div id="divNome">
         <p [style.color]="coloreTesto(i, c.sconto)" id="nome">{{c.item}}</p>
       </div>
-
+      
       @if(Cur == 'EUR'){
-        @if(c.sconto > 0){
-          <p [style.color]="colorePrezzo(i)" id="prezzo" [style.text-decoration]="barraturaPrezzo(c.sconto)">{{c.price | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
-        }
-        <p id="prezzo"> {{c.price | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>    
-      }
-      @else {
-        @if(c.sconto > 0){
-          <p [style.color]="colorePrezzo(i)" id="prezzo" [style.text-decoration]="barraturaPrezzo(c.sconto)">{{c.price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }} </p>
-        }
-        <p id="prezzo">{{c.price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
-      }      
+        <p [style.color]="colorePrezzo(i)" class="prezzo" >{{c.price | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
+      }@else{
+        <p [style.color]="colorePrezzo(i)" class="prezzo">{{c.price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }} </p>
+      }    
         <br>
     </button>
 </div>

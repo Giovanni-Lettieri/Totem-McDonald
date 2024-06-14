@@ -15,11 +15,11 @@ section {
 
 #container-l{
     position: absolute;
-    margin-top: 10%; 
+    margin-top: 100px; 
     margin-left: 10%;
 }
 #HW-container{
-    margin-top: 38%;
+    margin-top: 320px;
     margin-left: 10%;
 }
 #HW-container > p{
@@ -27,22 +27,22 @@ section {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #hey-t{
-    font-size: calc((100vw/100)*7);
+    font-size: 70px;
     font-weight: 850;
 }
 #Wup-t{
-    font-size: calc((100vw/100)*5);
+    font-size: 50px;
     font-weight: 550;
     line-height: normal;
 }
 #popularTxt{
-    font-size: calc((100vw/100)*7);
+    font-size: 70px;
     font-weight: 850;
     display: inline;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: normal;
     position: absolute;
-    top:74%;
+    top:1420px;
     left: 9%;
 }
 #fade {

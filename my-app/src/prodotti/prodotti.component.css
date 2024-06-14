@@ -4,7 +4,8 @@ button{
     margin-right: 20px;
     height: 250px;
     width: 200px;
-    background-color: white;
+    background-color: blue;
+    
 }
 .contenitore {
     background-color: white;
@@ -17,6 +18,7 @@ button{
     grid-template-columns: repeat(3, 210px); 
     grid-template-rows: repeat(5, 260px);
     border: none;
+    
 }
 
 #contenitore::-webkit-scrollbar {
@@ -42,7 +44,7 @@ img{
     height:50px;
     margin-top: 0px;
 }
-#prezzo{
+.prezzo{
     position: relative;
     margin: 0px;
     color:#f7be2f; 
@@ -52,6 +54,23 @@ img{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
+}
+span{
+    position: absolute;
+    margin-left: -40%;
+    margin-top: 13%;
+    z-index: 20;
+    color: rgb(255, 255, 255);
+    background-color:#c8161c;
+    border-radius: 8px;
+    padding-left: 1.3vw ;
+    padding-right: 1.3vw ;
+    padding-top: 0.10vh;
+    padding-bottom: 0.10vh;
+    text-align: center;
+    display: inline;
+    font-size:calc((100vw/100)*1.5);
+    white-space: nowrap;
 }
 div{
     margin-bottom: 0.7vh;
