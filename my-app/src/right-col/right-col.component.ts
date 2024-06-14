@@ -1,4 +1,4 @@
-import { Component , OnInit, ViewChild} from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { BillComponent } from '../Bill/bill.component';
 import { Subscription } from 'rxjs';
 import { ContoService } from '../Service/conto.service';
@@ -10,8 +10,9 @@ import { CurrencyPipe } from '@angular/common';
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
-import { Prodotti } from '../prodotti/prodotti';
 import { BillProd } from '../Bill/bill-prod';
+import { RouterLink } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -21,7 +22,7 @@ registerLocaleData(localeEn)
     standalone: true,
     templateUrl: './right-col.component.html',
     styleUrl: './right-col.component.css',
-    imports: [BillComponent, LanguageComponent,CurrencyPipe],
+    imports: [BillComponent, LanguageComponent,CurrencyPipe,RouterOutlet , RouterLink],
 
 })
 
