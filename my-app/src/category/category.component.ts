@@ -1,0 +1,62 @@
+import { Component, EventEmitter, Output, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Category } from './category';
+import { ChangeLanguagesService } from '../Service/change-languages.service';
+import { Subscription } from 'rxjs';
+
+@Component({
+  selector: 'category',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
+})
+export class CategoryComponent {
+  
+  constructor(private lingSer : ChangeLanguagesService){}
+  
+  pulsanteCliccato: number= -1;
+
+  @Output() mandaNomeCat = new EventEmitter<string>();
+
+  categoryList: Category[] = this.lingSer.getCategory();
+  subscription !: Subscription;
+   
+  ngOnInit(): void {  
+    this.subscription = this.lingSer.cambioLingua.subscribe(() => {
+      this.categoryList = this.lingSer.getCategory();
+      if(this.pulsanteCliccato != -1){
+        this.mandaNomeCat.emit(this.categoryList[this.pulsanteCliccato].name);
+      }else{
+        this.PulsanteOff()
+      }
+    });
+}
+
+  @HostListener('document:click', ['$event'])
+  ClickFuori(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('button')) {
+      this.PulsanteOff();
+    }
+
+  }
+
+  coloreSfondo(sconto: number, i: number) {
+    return this.pulsanteCliccato == i ? '#FFCA40' : (sconto != 0 ? '#C8161D' : '#EFECE5');
+  }
+
+  coloreTesto(sconto: number, i: number) {
+    return this.pulsanteCliccato == i ? '#FFFFFF' : (sconto <= 0 ? '#000000' : '#FFFFFF');
+  }
+
+  mandaDato(n: string, i: number) {
+    this.pulsanteCliccato = i;
+    this.mandaNomeCat.emit(n);
+  }
+
+  PulsanteOff() {
+    this.pulsanteCliccato = -1;
+    this.mandaNomeCat.emit(this.lingSer.getTesto().Pop);
+  }
+}

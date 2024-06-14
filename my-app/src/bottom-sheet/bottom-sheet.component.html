@@ -1,0 +1,37 @@
+<div id="BS">
+    <img id="immaginePrincipale"[src]="data.image"/>
+    <h2>{{data.item}}</h2>
+    
+    @if(Cur == 'EUR'){
+        <p id="prezzo">{{data.price | currency:'EUR':'symbol':'1.2-2' : 'it-IT'}}</p>    
+    }
+    @else {
+        <p id="prezzo">{{data.price | currency:'EUR':'symbol':'1.2-2' : 'en-EN'}}</p>
+    }
+    
+    
+    <button id="close" mat-button (click)="close()"><p id="X">X</p></button>
+    <div id="counter-cont">
+        <button id="M-but" (click)="minus()"><p id="meno">-</p></button>
+        <span id="C-cont">    
+            <p id="T-cont">{{quantita}}</p>
+        </span>
+        <button id="P-but" (click)="plus()"><p>+</p></button>
+    </div>
+    <button id="button-fatto" (click)="setProd(data , quantita)"><p id="fatto">{{fatto}}</p></button>
+    
+    
+    <!-- publicita da aggiornare  -->
+    
+    <div id="ad">
+        <span id="CM">Combo Meal</span>
+        <div id="offerta">
+            <img id="CMimage" [src]="data.image"/>
+            <p id="CMitem">{{data.item}}</p>
+
+            <p id="CMprezzo">${{data.price}}</p>
+            
+            <span id="CMsconto">20% off</span>
+        </div>    
+    </div>
+</div>

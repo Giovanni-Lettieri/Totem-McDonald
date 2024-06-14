@@ -1,0 +1,86 @@
+#MR-text{
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 850;
+    display: inline;
+}
+#sottoMyOrder{
+    color: rgb(143, 137, 137);
+    font-size:25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:500;
+    margin-top: 10%;
+    margin-left: 0%;
+}
+#upText-container{
+    position: absolute;
+    top: 17.5%;
+    margin-left: 5vw;
+}
+#language{
+    position: relative;
+    right: -18vw;
+    top: 5vh;
+}
+#ordini{
+    background-color: #EFECE5;
+    height: 47%;
+    width: 320px;
+    position: fixed;
+    top:27%;
+    right:15px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border-bottom: 1px solid #c0bdb5;
+}   
+#importo{
+    font-size:60px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:550;
+}
+#totale{
+    color: rgb(143, 137, 137);
+    font-size:35px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:500;
+    margin-bottom: 1%;
+}
+#prezzo-div{
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    bottom: 260px;
+    right:80px;
+    line-height: normal;
+}
+#fatto{
+    font-size:35px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:650;
+    margin-top: 15px;
+}
+nav{
+    width: 350px;
+    right: 0%;
+    padding-bottom:100vh;
+    display: block;
+    position: fixed;
+    background-color: #EFECE5;
+    z-index: 300;
+    top:0px;
+}
+button{
+    background-color: #FFCA40;
+    width: 200px;
+    height: 200px;
+    border-radius: 60px;
+    position: fixed;
+    bottom: 50px;
+    right: 75px;
+    border: none;
+}

@@ -1,0 +1,23 @@
+<div class="contenitore">
+    <button mat-button 
+      *ngFor="let c of prodottiAttuali; let i = index" 
+      [style.background-color]="coloreSfondo(i)" 
+      (click)="pulsanteOn(i)">
+      <img [src]="c.image">
+      <br>
+      <div id="divNome">
+        <p [style.color]="coloreTesto(i)" id="nome">{{c.item}}</p>
+      </div>
+
+      @if(Cur == 'EUR'){
+        <p [style.color]="colorePrezzo(i)" id="prezzo">{{c.price | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>    
+      }
+      @else {
+        <p [style.color]="colorePrezzo(i)" id="prezzo">{{c.price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
+      }
+      
+      
+        <br>
+    </button>
+</div>
+  

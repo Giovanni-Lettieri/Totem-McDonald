@@ -1,0 +1,18 @@
+[
+    {
+        "id" : 0, 
+        "image" : "/assets/Bandiere/ITA.png"
+    },
+    {   
+        "id" : 1,
+        "image" : "/assets/Bandiere/USA.png"
+    },
+    {
+        "id" : 2,
+        "image" : "/assets/Bandiere/DEU.png"
+    },
+    {
+        "id" : 3,
+        "image" : "/assets/Bandiere/FRA.png"
+    }
+]

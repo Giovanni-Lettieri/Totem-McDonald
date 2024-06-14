@@ -1,0 +1,65 @@
+section {
+    width: 76%;
+    height: 100%;
+    overflow-y: auto;
+    display: block;
+    position: absolute;
+    background-color: white;
+    left: -5px;
+    top: 0;
+    overflow-x: hidden;
+}
+#m-logo{
+    position:fixed;
+}
+
+#container-l{
+    position: absolute;
+    margin-top: 10%; 
+    margin-left: 10%;
+}
+#HW-container{
+    margin-top: 38%;
+    margin-left: 10%;
+}
+#HW-container > p{
+    display: inline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#hey-t{
+    font-size: calc((100vw/100)*7);
+    font-weight: 850;
+}
+#Wup-t{
+    font-size: calc((100vw/100)*5);
+    font-weight: 550;
+    line-height: normal;
+}
+#popularTxt{
+    font-size: calc((100vw/100)*7);
+    font-weight: 850;
+    display: inline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: normal;
+    position: absolute;
+    top:74%;
+    left: 9%;
+}
+#fade {
+    position: absolute;
+    overflow: hidden;
+    height: 900px;
+    background-color: rgba(255, 255, 255, 0.829); 
+    display: flex;
+    
+    filter: blur(20px);
+    width: 30%;
+    top: 25%;
+    right: -50px;
+    z-index: 10;
+  
+    
+}
+::-webkit-scrollbar {
+    display: none;
+}

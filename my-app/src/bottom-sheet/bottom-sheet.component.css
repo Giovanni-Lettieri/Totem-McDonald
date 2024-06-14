@@ -1,0 +1,216 @@
+h2 { 
+    text-align: center;
+    position: relative;
+    top: 28vh;
+    font-size: 80px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+}
+#immaginePrincipale{ 
+    position:absolute;
+    top: 100px;
+    width: 60vw; 
+    height: 20vh; 
+    left: 10.3vh;
+}
+#CMimage{
+    position:absolute;
+    top: 2.5vh;
+    width: 30vw; 
+    height: 10vh; 
+    left: 0.5vw;
+}
+#prezzo{ 
+    text-align: center;
+    position: relative;
+    top: 29vh;
+    font-size: 60px;
+    color: #FFCA40;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+#X{
+    font-size: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#close{
+    background-color: #EFECE5;
+    color: #94918b; 
+    border: none;
+    position: fixed;
+    left: 42vw;
+    top:0vh;
+    margin-top: 0px;
+    padding-bottom: 30px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 75px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+#BS{
+    left: 0;
+    height: 80vh;
+    max-height: 80vh;
+    width: 98vw;
+    background-color: #ffffff00; 
+    overflow: hidden;
+    z-index: 10;
+    margin-bottom: 0px;
+    position:relative;
+}
+button{
+    border-radius: 10px;
+    width:40px ;
+    height:30px;
+    font-size: large;
+}
+#C-cont{
+    height: 3vh;
+    width: 3vh;
+}
+#T-cont {
+    font-weight: bolder;
+    font-size: 40px;
+    display: flex;
+    position: relative;
+    top: 0.8vh;
+    left: 3vw;
+}
+#P-but{
+    border: none;
+    background-color:#FFCA40;
+    height: 3vh;
+    width: 3vh;
+    margin-left: 50px;
+    padding-left: 40px;
+    padding-right: 70px;
+    font-size: 50px;
+}
+#M-but{
+    border: 1px solid gray;
+    background-color:#EFECE5;
+    height: 3vh;
+    height: 3vh;
+    width: 3vh;
+    margin-left: -70px;
+    padding-left: 40px;
+    padding-right: 70px;
+    font-size: 50px;
+}
+#counter-cont {
+    position: absolute;
+    top: 40vh;
+    left: 32vw;
+    padding-left: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 40px); 
+    grid-auto-flow: row;
+    column-gap: 0px;
+    overflow: hidden;
+    height: 70vh;
+    width: 98vw;
+    background-color: #ffffff00; 
+    z-index: 10;
+    margin-bottom: 0px;
+}
+#button-fatto {
+    background-color: #FFCA40;
+    width: 200px;
+    height: 200px;
+    top: 37vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 60px;
+    position: relative;
+    border: none;
+    z-index: 500;
+}
+#fatto{
+    font-size:35px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:650;
+}
+#meno{
+    position: relative;
+    left:9px;
+    bottom: 5px;
+}
+#ad {
+    background-color: #EFECE5;
+    position: relative;
+    top: 43vh;
+    height: 300px;
+    width: 90vw;
+    z-index: 100;
+    margin: 0 auto;
+    border-radius: 90px;
+}
+#offerta {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: 100%;
+    width: 55vw;
+    z-index: 200;
+    border-radius: 90px;
+    border: 1px solid #94918b;
+}
+#CM {
+    font-size: 50px;
+    position: relative;
+    top:80px;
+    left:60px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 1000;
+    width: 200px;
+    word-wrap: break-word;
+    display: inline-block;
+    line-height: 1.2;
+}
+#CMsconto{
+    color: white;
+    background-color:#C8161D;
+    border-radius: 1vw ;
+    padding-right: 2vw ;
+    padding-left: 2vw ;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    text-align: center;
+    display: inline;
+    font-size:calc((100vw/100)*1.5);
+    white-space: nowrap;
+    z-index: 250;
+    position: absolute;
+    left:420px;
+    top: 145px;
+}
+#CMprezzo{
+    color:#FFCA40; 
+    font-size:35px;
+    display: inline;
+    white-space: nowrap;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 550;
+    position: absolute;
+    left:320px;
+    top: 150px;
+}
+#CMitem{
+    color:#000000; 
+    font-size:25px;
+    display: inline;
+    font-weight: bolder;
+    white-space: nowrap;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 550;
+    position: relative;
+    left:320px;
+    top: 90px;
+}
+

@@ -1,0 +1,31 @@
+<nav>
+    <language id="language"></language>
+    <div id="upText-container">   
+        <p id="MR-text">{{my}}<br>{{order}}</p>
+
+        <p id="sottoMyOrder">
+            @if(this.indice != null){
+                {{this.pulsanti[this.indice].testo}}
+            }@else{
+                {{this.pulsanti[0].testo}}
+            }
+        </p>
+    </div>
+    
+    <bill id="ordini" (MandaBill)="riceviBill($event)"></bill>
+    <div id="prezzo-div">
+        <p id="totale">{{total}}</p>
+        @if(Cur == 'EUR'){    
+            <p id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
+        }
+        @else{
+            <p id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
+        }
+    </div>
+
+    <a>
+        <button> 
+            <p id="fatto">{{done}}</p>
+        </button>
+    </a>
+</nav>

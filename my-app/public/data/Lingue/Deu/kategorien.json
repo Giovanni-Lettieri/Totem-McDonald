@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Menü",
+        "image": "assets/Category/Menu.png",
+        "sconto": 20
+    },
+    {
+        "name": "Sandwiches",
+        "image": "assets/Category/Panini.png",
+        "sconto": 0
+    },
+    {
+        "name": "Happy Meal",
+        "image": "assets/Category/Happy Meal.png",
+        "sconto": 0
+    },
+    {
+        "name": "Salate",
+        "image": "assets/Category/Insalate.png",
+        "sconto": 0
+    },
+    {
+        "name": "Pommes Frites",
+        "image": "assets/Category/Patatine.png",
+        "sconto": 0    
+    },
+    {
+        "name": "Köstlichkeiten",
+        "image": "assets/Category/Nuggets e sfiziosita.png",
+        "sconto": 0
+    },
+    {    
+        "name": "Obst",
+        "image": "assets/Category/Snack freschi.png",
+        "sconto": 0
+    },
+    {    
+        "name": "Getränke",
+        "image": "assets/Category/Bevande.png",
+        "sconto": 34
+    },
+    {    
+        "name": "Eis",
+        "image": "assets/Category/Gelati e deser.png",
+        "sconto": 0
+    },
+    {    
+        "name": "Soßen",
+        "image": "assets/Category/Salse.png",
+        "sconto": 0
+    },
+    {    
+        "name": "McCafé",
+        "image": "assets/Category/McCaffè.png",
+        "sconto": 0
+    },
+    {
+        "name": "Süßigkeiten",
+        "image": "assets/Category/Dolci.png",
+        "sconto": 0
+    }
+]

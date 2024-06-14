@@ -1,0 +1,16 @@
+<button id="main-button" (click)="cambiaStato()">
+    <img id="main-img"  [src]="selecLingua.image">
+</button>
+@if (contMenuLingue) {
+    <section (click)="cambiaStato()" id="overlay">
+        <div id="menu">
+            <div id="cont">
+                <span *ngFor="let l of LingueList">
+                    <button (click)="selezionaLingua(l)" id="button-2">
+                        <img [src]="l.image">
+                    </button>
+                </span>
+            </div>    
+        </div>
+    </section>
+}

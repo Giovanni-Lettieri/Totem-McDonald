@@ -1,0 +1,524 @@
+[
+    {
+        "item": "BigMac Menu",
+        "price": 7.99,
+        "image": "assets/Prodotti/Menu/BigMac Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Cheeseburger Menu",
+        "price": 6.70,
+        "image": "assets/Prodotti/Menu/Double Cheeseburger Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Double Chicken Menu",
+        "price": 8.00,
+        "image": "assets/Prodotti/Menu/Double Chicken BBQ  Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Fileto Fish  Menu",
+        "price": 5.90,
+        "image": "assets/Prodotti/Menu/Fileto Fish  Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Crispy Mc Bacon Menu",
+        "price": 9.50,
+        "image": "assets/Prodotti/Menu/Gran Crispy Mc Bacon Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Mc Chicken Menu",
+        "price": 7.70,
+        "image": "assets/Prodotti/Menu/Mc Chicken Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Mc Wrap Pollo Menu",
+        "price": 8.90,
+        "image": "assets/Prodotti/Menu/Mc Wrap Caesar Pollo  Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Mc Wrap Crispy Menu",
+        "price": 8.90,
+        "image": "assets/Prodotti/Menu/Mc Wrap Crispy Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "MyS Avocado Menu",
+        "price": 15.99,
+        "image": "assets/Prodotti/Menu/MyS Avocado Chicken Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "MyS BBQ Menu",
+        "price": 14.99,
+        "image": "assets/Prodotti/Menu/MyS BBQ Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "MyS Parmigiano Menu",
+        "price": 15.99,
+        "image": "assets/Prodotti/Menu/MyS Parmigiano Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Nuggets Menu",
+        "price": 8.90,
+        "image": "assets/Prodotti/Menu/Nuggets Menu.png",
+        "category": "Menü"
+    },
+    {
+        "item": "Brownie",
+        "price": 3.50,
+        "image": "assets/Prodotti/Dolci/Brownie.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Cheesecake",
+        "price": 3.99,
+        "image": "assets/Prodotti/Dolci/Cheesecake.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Croissant Crema",
+        "price": 2.5,
+        "image": "assets/Prodotti/Dolci/Croissant Crema.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Croissant Nutella",
+        "price": 2.5,
+        "image": "assets/Prodotti/Dolci/Croissant Nutella.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Croissant Vuoto",
+        "price": 2.5,
+        "image": "assets/Prodotti/Dolci/Croissant Vuoto.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Donut Cioccolato",
+        "price": 2.00,
+        "image": "assets/Prodotti/Dolci/Donut Cioccolato.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Donut Marshmallow",
+        "price": 2.00,
+        "image": "assets/Prodotti/Dolci/Donut Marshmallow.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Macaron",
+        "price": 1.20,
+        "image": "assets/Prodotti/Dolci/Macaron.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Muffin",
+        "price": 3.00,
+        "image": "assets/Prodotti/Dolci/Muffin.png",
+        "category": "Süßigkeiten"
+    },
+    {
+        "item": "Americano",
+        "price": 0.90,
+        "image": "assets/Prodotti/McCaffè/Americano.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Caffe Orzo",
+        "price": 0.90,
+        "image": "assets/Prodotti/McCaffè/Caffe Orzo.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Caffe Shakerato",
+        "price": 1.30,
+        "image": "assets/Prodotti/McCaffè/Caffe Shakerato.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Cappuccino",
+        "price": 1.30,
+        "image": "assets/Prodotti/McCaffè/Cappuccino.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Cioccolata Calda",
+        "price": 1.10,
+        "image": "assets/Prodotti/McCaffè/Cioccolata Calda.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Crema Caffe",
+        "price": 1.10,
+        "image": "assets/Prodotti/McCaffè/Crema Caffe.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Espresso",
+        "price": 0.90,
+        "image": "assets/Prodotti/McCaffè/Espresso.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Marocchino",
+        "price": 1.40,
+        "image": "assets/Prodotti/McCaffè/Marocchino.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Te Caldo",
+        "price": 0.90,
+        "image": "assets/Prodotti/McCaffè/Te Caldo.png",
+        "category": "McCafé"
+    },
+    {
+        "item": "Agrodolce",
+        "price": 0.30,
+        "image": "assets/Prodotti/Salse/Agrodolce.png",
+        "category": "Soßen"
+    },
+    {
+        "item": "Barbecue",
+        "price": 0.30,
+        "image": "assets/Prodotti/Salse/Barbecue.png",
+        "category": "Soßen"
+    },
+    {
+        "item": "Ketchup",
+        "price": 0.30,
+        "image": "assets/Prodotti/Salse/Ketchup.png",
+        "category": "Soßen"
+    },
+    {
+        "item": "Mayonnaise",
+        "price": 0.30,
+        "image": "assets/Prodotti/Salse/Maionese.png",
+        "category": "Soßen"
+    },
+    {
+        "item": "McBacon",
+        "price": 0.30,
+        "image": "assets/Prodotti/Salse/McBacon.png",
+        "category": "Soßen"
+    },
+    {
+        "item": "Senape",
+        "price": 0.30,
+        "image": "assets/Prodotti/Salse/Senape.png",
+        "category": "Soßen"
+    },
+    {
+        "item": "Cono",
+        "price": 1.00,
+        "image": "assets/Prodotti/Gelati/Cono.png",
+        "category": "Eis"
+    },
+    {
+        "item": "McFlurry Oreo",
+        "price": 4.20,
+        "image": "assets/Prodotti/Gelati/McFlurry Oreo.png",
+        "category": "Eis"
+    },
+    {
+        "item": "McFlurry Pistacchio",
+        "price": 4.20,
+        "image": "assets/Prodotti/Gelati/McFlurry Pistacchio.png",
+        "category": "Eis"
+    },
+    {
+        "item": "McFlurry Smarties",
+        "price": 4.20,
+        "image": "assets/Prodotti/Gelati/McFlurry Smarties.png",
+        "category": "Eis"
+    },
+    {
+        "item": "MilkaShaek Banana",
+        "price": 3.60,
+        "image": "assets/Prodotti/Gelati/MilkaShaek Banana.png",
+        "category": "Eis"
+    },
+    {
+        "item": "MilkaShaek Cioccolato",
+        "price": 3.60,
+        "image": "assets/Prodotti/Gelati/MilkaShaek Cioccolato.png",
+        "category": "Eis"
+    },
+    {
+        "item": "MilkaShaek Fragola",
+        "price": 3.60,
+        "image": "assets/Prodotti/Gelati/MilkaShaek Fragola.png",
+        "category": "Eis"
+    },
+    {
+        "item": "Sundae Baci",
+        "price": 3.40,
+        "image": "assets/Prodotti/Gelati/Sundae Baci.png",
+        "category": "Eis"
+    },
+    {
+        "item": "Sundae Caffe",
+        "price": 3.40,
+        "image": "assets/Prodotti/Gelati/Sundae Caffe.png",
+        "category": "Eis"
+    },
+    {
+        "item": "Sundae Caramello",
+        "price": 3.40,
+        "image": "assets/Prodotti/Gelati/Sundae Caramello.png",
+        "category": "Eis"
+    },
+    {
+        "item": "Acqua",
+        "price": 0.30,
+        "image": "assets/Prodotti/Bevande/Acqua.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Coca Cola 0",
+        "price": 1.20,
+        "image": "assets/Prodotti/Bevande/Coca Cola 0.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Coca Cola",
+        "price": 1.20,
+        "image": "assets/Prodotti/Bevande/Coca Cola.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Fanta",
+        "price": 1.20,
+        "image": "assets/Prodotti/Bevande/Fanta.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Lipton Limone",
+        "price": 0.90,
+        "image": "assets/Prodotti/Bevande/Lipton Limone.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Lipton Pesca",
+        "price": 0.90,
+        "image": "assets/Prodotti/Bevande/Lipton Pesca.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Sprite",
+        "price": 1.20,
+        "image": "assets/Prodotti/Bevande/Sprite.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Succo Mela",
+        "price": 0.90,
+        "image": "assets/Prodotti/Bevande/Succo Mela.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Tropicana",
+        "price": 1.40,
+        "image": "assets/Prodotti/Bevande/Tropicana.png",
+        "category": "Getränke"
+    },
+    {
+        "item": "Ananas",
+        "price": 0.50,
+        "image": "assets/Prodotti/Frutta/Ananas.png",
+        "category": "Obst"
+    },
+    {
+        "item": "Karotten",
+        "price": 0.50,
+        "image": "assets/Prodotti/Frutta/Carotine.png",
+        "category": "Obst"
+    },
+    {
+        "item": "Apfel",
+        "price": 0.50,
+        "image": "assets/Prodotti/Frutta/Mela.png",
+        "category": "Obst"
+    },
+    {
+        "item": "Chicken Wings",
+        "price": 1.99,
+        "image": "assets/Prodotti/Sfiziosita/Chicken Wings.png",
+        "category": "Köstlichkeiten"
+    },
+    {
+        "item": "Nuggets",
+        "price": 2.99,
+        "image": "assets/Prodotti/Sfiziosita/Nuggets.png",
+        "category": "Köstlichkeiten"
+    },
+    {
+        "item": "Panzerotti",
+        "price": 2.99,
+        "image": "assets/Prodotti/Sfiziosita/Panzerotti.png",
+        "category": "Köstlichkeiten"
+    },
+    {
+        "item": "Parmigiano",
+        "price": 4.00,
+        "image": "assets/Prodotti/Sfiziosita/Parmigiano.png",
+        "category": "Köstlichkeiten"
+    },
+    {
+        "item": "Spicy Nuggets",
+        "price": 3.90,
+        "image": "assets/Prodotti/Sfiziosita/Spicy Nuggets.png",
+        "category": "Köstlichkeiten"
+    },
+    {
+        "item": "Tasty Basket",
+        "price": 7.30,
+        "image": "assets/Prodotti/Sfiziosita/Tasty Basket.png",
+        "category": "Köstlichkeiten"
+    },
+    {
+        "item": "Patatine Medie",
+        "price": 2.99,
+        "image": "assets/Prodotti/Patatine/Patatine Medie.png",
+        "category": "Pommes Frites"
+    },
+    {
+        "item": "Patatine Picolle",
+        "price": 1.99,
+        "image": "assets/Prodotti/Patatine/Patatine Picolle.png",
+        "category": "Pommes Frites"
+    },
+    {
+        "item": "Ricche Bacon",
+        "price": 3.99,
+        "image": "assets/Prodotti/Patatine/Ricche Bacon.png",
+        "category": "Pommes Frites"
+    },
+    {
+        "item": "Ricche Cheddar",
+        "price": 3.99,
+        "image": "assets/Prodotti/Patatine/Ricche Cheddar.png",
+        "category": "Pommes Frites"
+    },
+    {
+        "item": "Insalata Mista",
+        "price": 3.50,
+        "image": "assets/Prodotti/Insalate/Insalata Mista.png",
+        "category": "Salate"
+    },
+    {
+        "item": "Insalata Pollo",
+        "price": 3.50,
+        "image": "assets/Prodotti/Insalate/Insalata Pollo.png",
+        "category": "Salate"
+    },
+    {
+        "item": "Insalata Verde",
+        "price": 3.50,
+        "image": "assets/Prodotti/Insalate/Insalata Verde.png",
+        "category": "Salate"
+    },
+    {
+        "item": "HM Chicken Burger",
+        "price": 7.20,
+        "image": "assets/Prodotti/Happy Meal/HM Chicken Burger.png",
+        "category": "Happy Meal"
+    },
+    {
+        "item": "HM Hamburger",
+        "price": 7.20,
+        "image": "assets/Prodotti/Happy Meal/HM Hamburger.png",
+        "category": "Happy Meal"
+    },
+    {
+        "item": "HM Nuggets",
+        "price": 7.20,
+        "image": "assets/Prodotti/Happy Meal/HM Nuggets.png",
+        "category": "Happy Meal"
+    },
+    {
+        "item": "HM Toast",
+        "price": 7.20,
+        "image": "assets/Prodotti/Happy Meal/HM Toast.png",
+        "category": "Happy Meal"
+    },
+    {
+        "item": "Big Mac",
+        "price": 5.40,
+        "image": "assets/Prodotti/Panini/Big Mac.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Cheese Burger",
+        "price": 3.70,
+        "image": "assets/Prodotti/Panini/Cheese Burger.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Crispy Mc Wrap",
+        "price": 6.30,
+        "image": "assets/Prodotti/Panini/Crispy Mc Wrap Isolated.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Double Chicken BBQ",
+        "price": 7.20,
+        "image": "assets/Prodotti/Panini/Double Chicken BBQ.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Fileto Fish",
+        "price": 3.40,
+        "image": "assets/Prodotti/Panini/Fileto Fish.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Gluten Free Burger",
+        "price": 5.40,
+        "image": "assets/Prodotti/Panini/Gluten Free Burger.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Gran Crispy Mc Bacon",
+        "price": 6.70,
+        "image": "assets/Prodotti/Panini/Gran Crispy Mc Bacon.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Hamburger",
+        "price": 3.20,
+        "image": "assets/Prodotti/Panini/Hamburger.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Mc Chicken",
+        "price": 5.60,
+        "image": "assets/Prodotti/Panini/Mc Chicken.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "MyS BBQ",
+        "price": 11.50,
+        "image": "assets/Prodotti/Panini/MyS BBQ.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "MyS Pecorino",
+        "price": 11.50,
+        "image": "assets/Prodotti/Panini/MyS Pecorino Salsayuzu.png",
+        "category": "Sandwiches"
+    },
+    {
+        "item": "Toast",
+        "price": 1.00,
+        "image": "assets/Prodotti/Panini/Toast.png",
+        "category": "Sandwiches"
+    }
+] 
