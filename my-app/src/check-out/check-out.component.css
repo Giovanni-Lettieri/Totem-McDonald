@@ -1,0 +1,13 @@
+div{
+    background-color: chartreuse;
+    z-index: 100000;
+    height: 100%;
+    width: 100%;
+}
+/* check-out.component.css */
+:host {
+    position: relative;
+    z-index: 900; /* Lower z-index compared to RightColComponent */
+    /* Additional styles as needed */
+}
+  

@@ -13,6 +13,7 @@ import localeEn from '@angular/common/locales/en';
 import { BillProd } from '../Bill/bill-prod';
 import { RouterLink } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
+import { CheckOutComponent } from "../check-out/check-out.component";
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -22,8 +23,7 @@ registerLocaleData(localeEn)
     standalone: true,
     templateUrl: './right-col.component.html',
     styleUrl: './right-col.component.css',
-    imports: [BillComponent, LanguageComponent,CurrencyPipe,RouterOutlet , RouterLink],
-
+    imports: [BillComponent, LanguageComponent, CurrencyPipe, RouterOutlet, RouterLink, CheckOutComponent]
 })
 
 export class RightColComponent implements OnInit{
