@@ -73,14 +73,6 @@ export class ProdottiComponent implements OnInit{
     this.overlay.switch()
   }
 
-  coloreSfondo(i: number, sconto:number) {
-    return this.pulsanteCliccato == i ? '#FFCA40' : (sconto != 0 ? 'white' : 'white');
-  }
-
-  coloreTesto(i: number, sconto:number) {
-    return this.pulsanteCliccato == i ? '#FFFFFF' : (sconto != 0 ? 'black' : 'black');
-  }
-
   colorePrezzo(i: number) {
     return this.pulsanteCliccato == i ? 'white' : '#FFCA40';
   }
