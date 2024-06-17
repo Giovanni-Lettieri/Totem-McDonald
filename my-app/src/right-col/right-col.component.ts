@@ -48,7 +48,9 @@ export class RightColComponent implements OnInit{
     private pulsante: StartButtonComponent,
     private lingSer : ChangeLanguagesService, 
     private infoBill : InfoBillService
-  ) {}
+  ) {
+    this.billDerivato = this.infoBill.getAcquisti()
+  }
   
   riceviBill(b : BillProd[]){
     this.billDerivato = b
@@ -69,6 +71,7 @@ export class RightColComponent implements OnInit{
 
     //aggiornamento lingua
     this.subscription2 = this.lingSer.cambioLingua.subscribe(() => {
+      this.billDerivato = this.infoBill.getAcquisti()
       this.my =  this.lingSer.getTesto().Mio
       this.order = this.lingSer.getTesto().Ord
       this.total = this.lingSer.getTesto().TOT
@@ -79,8 +82,7 @@ export class RightColComponent implements OnInit{
 
   }  
   passagioCheckOut(){
-    this.infoBill.setAcquisti(this.billDerivato)
-    console.log("ciao")
+    this.infoBill.aggiorna()
   }
 }
 

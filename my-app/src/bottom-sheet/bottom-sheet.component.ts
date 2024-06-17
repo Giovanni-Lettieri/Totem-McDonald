@@ -82,7 +82,7 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
       this.quantita--;
     }
   }
-
+  
   ngOnInit(): void {
     setInterval(() => {
       this.adAtt = (this.adAtt + 1) % this.prodList.length;

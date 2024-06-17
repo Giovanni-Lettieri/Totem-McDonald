@@ -16,22 +16,22 @@
         <img src="assets/M.png">
     </div>
     <!-- title -->
-    <div>
-        <p>{{my}}<br>{{order}}</p>
+    <div id="testiMOTE">
+        <p id="MO">{{my}}<br>{{order}}</p>
         <span>
             @if(flagInOut){
-                <p>{{TakeOut}}</p>
+                <p id="TE">{{TakeOut}}</p>
             }@else {
-                <p>{{EatIn}}</p>
+                <p id="TE">{{EatIn}}</p>
             }
         </span>
     </div>
     <!-- carello -->
-     <section>
+     <div id="CObox">
         @for (prod of scontrino; track prod.price){
             <prod-check-out [prodotto]="prod"></prod-check-out>
         }
-     </section>   
+    </div>   
 </body>
 
 <footer>

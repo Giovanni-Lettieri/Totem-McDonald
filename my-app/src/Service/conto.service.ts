@@ -4,12 +4,11 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ContoService {
-
-  
-
   aggCont: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {
+
+  }
 
   agiornaContatore(){
     this.aggCont.emit(); 

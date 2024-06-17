@@ -7,12 +7,16 @@ import { BillProd } from '../Bill/bill-prod';
 export class InfoBillService {
 
   infoBill: EventEmitter<void> = new EventEmitter<void>();
-  acquisti !:BillProd[]
+  acquisti :BillProd[] = []
 
-  constructor() { }
+  constructor() {}
   
   setAcquisti(b : BillProd[]){
     this.acquisti = b
+    this.infoBill.emit()
+  }
+
+  aggiorna(){
     this.infoBill.emit()
   }
 
@@ -20,7 +24,4 @@ export class InfoBillService {
     return this.acquisti
   }
   
-
-
-
 }

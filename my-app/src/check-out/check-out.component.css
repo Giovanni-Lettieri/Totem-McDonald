@@ -52,3 +52,31 @@ img{
     position: relative;
     width: 100%;
 }
+#MO{
+    font-size: 100px;
+    color: white;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 0px;
+}
+#TE{
+    color: rgb(190, 185, 185);
+    font-size:40px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:400;
+    margin-top: 0px;
+}
+#testiMOTE{
+    position: relative;
+    top:600px;
+    left:100px;
+    line-height:100px;
+}
+#CObox{
+    position: relative;
+    top:800px;
+    border-bottom: solid 1px black;
+    padding-bottom: 50px;
+    width: 80vw;
+    margin: 0 auto;
+}

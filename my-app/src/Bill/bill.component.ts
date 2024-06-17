@@ -39,9 +39,13 @@ export class BillComponent implements OnInit {
     private servCont: ContoService,
     private lingSer : ChangeLanguagesService,
     private infoBill : InfoBillService
-  ){}
+  ){
+    this.BillList = this.infoBill.getAcquisti(); 
+
+  }
   
-  ngOnInit(): void {  
+  ngOnInit(): void { 
+    this.servCont.agiornaContatore()
     this.prodottiSub = this.service.ProdChange.subscribe(() => {
       const billProd = this.service.getBillProd();
       this.BillList.forEach(b => {
@@ -53,11 +57,12 @@ export class BillComponent implements OnInit {
       if(this.controllo){
         this.BillList.unshift(billProd);
       }
-      this.controllo = true 
-      this.MandaBill.emit(this.BillList)
+      this.controllo = true ; 
+      this.MandaBill.emit(this.BillList);
       this.servCont.agiornaContatore();
       
     });
+
     this.linguaSub = this.lingSer.cambioLingua.subscribe(() => {
       this.Cur = this.lingSer.getTesto().Curency
       this.pSuport = this.lingSer.getProduct(); 
@@ -73,6 +78,13 @@ export class BillComponent implements OnInit {
     this.checkOutSub = this.infoBill.infoBill.subscribe(() => {
       this.BillList = this.infoBill.getAcquisti(); 
     });
+    
+  }
+
+  ngOnDestroy(): void {
+    this.prodottiSub.unsubscribe();
+    this.linguaSub.unsubscribe();
+    this.checkOutSub.unsubscribe();
   }
   
   @Output() MandaBill = new EventEmitter<BillProd[]>();

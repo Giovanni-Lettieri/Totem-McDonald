@@ -18,8 +18,12 @@ export class PassagioBillService {
 
   setProd(p: Prodotti , q:number) {
     this.x = p;
-    this.q = q; 
-    this.ProdChange.emit();  // Notifica i cambiamenti
+    this.q = q;
+    this.emit()
+  }
+
+  emit(){
+    this.ProdChange.emit();
   }
 
   getBillProd(): BillProd {

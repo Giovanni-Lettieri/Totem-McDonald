@@ -51,7 +51,7 @@ export class CheckOutComponent {
   }
   
   passagioMainPage(){
-    this.infoBill.setAcquisti(this.scontrino)
+    //this.infoBill.setAcquisti(this.scontrino)
   }
 
   
