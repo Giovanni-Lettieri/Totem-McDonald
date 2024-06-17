@@ -49,10 +49,10 @@ section {
     position: absolute;
     overflow: hidden;
     height: 900px;
-    background-color: rgba(255, 255, 255, 0.829); 
+    background-color: rgb(255, 255, 255); 
     display: flex;
     
-    filter: blur(20px);
+    filter: blur(30px);
     width: 30%;
     top: 25%;
     right: -50px;
