@@ -9,5 +9,4 @@ export const routes: Routes = [
     { path: 'StartScreen', component: StartButtonComponent },
     { path: 'CheckOut', component: CheckOutComponent },
     { path: 'RightCol', component: RightColComponent }
-
-];
+]

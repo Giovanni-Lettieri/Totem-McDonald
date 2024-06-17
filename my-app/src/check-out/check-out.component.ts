@@ -31,7 +31,9 @@ export class CheckOutComponent {
   constructor(
     private lingSer : ChangeLanguagesService,
     private infoBill : InfoBillService
-  ){}
+  ){
+    this.scontrino = infoBill.getAcquisti()
+  }
 
   subscription !: Subscription;
   subscription2 !: Subscription;
@@ -45,7 +47,6 @@ export class CheckOutComponent {
     });
     this.subscription2 = this.infoBill.infoBill.subscribe(() => { 
       this.scontrino = this.infoBill.getAcquisti()
-      console.log(this.scontrino[0].item)
     });
   }
   

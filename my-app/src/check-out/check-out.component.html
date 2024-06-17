@@ -1,9 +1,9 @@
 <header>
     <!-- bottone back -->
-    <a routerLink="MainScreen">
+    <a [routerLink]="'/MainScreen'">
         <button id="back" (click)="passagioMainPage()">
             <p id="back-frecia"> < </p>
-            <p  id="back-text" >Back</p>
+            <p id="back-text">Back</p>
         </button>
     </a>
     <!-- bottone lingua -->
@@ -27,12 +27,11 @@
         </span>
     </div>
     <!-- carello -->
-    <select>
+     <section>
         @for (prod of scontrino; track prod.price){
-            <p>ciao</p>
-            <!-- <prod-check-out [prodotto]="prod"></prod-check-out> -->
+            <prod-check-out [prodotto]="prod"></prod-check-out>
         }
-    </select>
+     </section>   
 </body>
 
 <footer>
