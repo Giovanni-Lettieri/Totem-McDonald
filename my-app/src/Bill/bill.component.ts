@@ -10,6 +10,7 @@ import { CurrencyPipe } from '@angular/common';
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
+import { InfoBillService } from '../Service/info-bill.service';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -27,19 +28,21 @@ export class BillComponent implements OnInit {
 
   BillList: BillProd[] = [];
   pSuport : Prodotti[] = this.lingSer.getProduct(); 
-  subscription !: Subscription;
-  subscription2 !: Subscription;
+  prodottiSub !: Subscription;
+  linguaSub !: Subscription;
+  checkOutSub !: Subscription; 
   controllo : boolean = true;
   Cur : string = this.lingSer.getTesto().Curency
   
   constructor(
     private service: PassagioBillService,
     private servCont: ContoService,
-    private lingSer : ChangeLanguagesService
+    private lingSer : ChangeLanguagesService,
+    private infoBill : InfoBillService
   ){}
-
+  
   ngOnInit(): void {  
-    this.subscription = this.service.ProdChange.subscribe(() => {
+    this.prodottiSub = this.service.ProdChange.subscribe(() => {
       const billProd = this.service.getBillProd();
       this.BillList.forEach(b => {
         if(b.image == billProd.image){
@@ -55,7 +58,7 @@ export class BillComponent implements OnInit {
       this.servCont.agiornaContatore();
       
     });
-    this.subscription2 = this.lingSer.cambioLingua.subscribe(() => {
+    this.linguaSub = this.lingSer.cambioLingua.subscribe(() => {
       this.Cur = this.lingSer.getTesto().Curency
       this.pSuport = this.lingSer.getProduct(); 
       this.BillList.forEach(b => {
@@ -66,6 +69,9 @@ export class BillComponent implements OnInit {
           }
         }
       });
+    });
+    this.checkOutSub = this.infoBill.infoBill.subscribe(() => {
+      this.BillList = this.infoBill.getAcquisti(); 
     });
   }
   

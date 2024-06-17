@@ -1,13 +1,57 @@
-div{
-    background-color: chartreuse;
-    z-index: 100000;
-    height: 100%;
+body{ background-color: #2b7b3b;} footer{ background-color: blueviolet;} header{background-color: brown;}
+
+
+/* regole generiche */
+:host { position: relative; }
+p{ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+/* body , header , footer{
+    background-color: #2b7b3b;
+} */
+
+
+/* pulsante lingua */
+#language{
+    position: relative;
+    right: -81.5vw;
+    top: 5vh;
+}
+
+/* pulsante back */
+#back{
+    background-color: #2b7b3b;
+    border: none;
+    position:absolute;
+    left: 50px;
+    top: 50px;
+}
+#back > p{
+    position: relative;
+    display: inline;
+    color: white;
+}
+#back-text{
+    font-weight: 700;
+    font-size:50px;
+}
+#back-frecia{
+    top: 12px;
+    font-weight: 300;
+    font-size:90px;
+}
+
+/* logo */
+#cont-logo{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 25%;
+}
+img{
+    position: relative;
     width: 100%;
 }
-/* check-out.component.css */
-:host {
-    position: relative;
-    z-index: 900; /* Lower z-index compared to RightColComponent */
-    /* Additional styles as needed */
-}
+
+
+
   

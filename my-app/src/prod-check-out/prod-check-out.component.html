@@ -1,0 +1,23 @@
+<section>
+    <p>cicaasddasd</p>
+    <div>
+        <img [src] = "prodotto().image" >
+    </div>
+    <div>
+        <p> {{ prodotto().item }} </p>
+        <p> {{ prodotto().price }} </p>
+    </div>
+    <div>
+        <button>  +  </button>
+        <p> {{  prodotto().quantita   }} </p>
+        <button>  -  </button>
+    </div>
+    @if(rimozione){
+        <span>
+            <button>
+                <p>{{remove}}</p>
+            </button>
+        </span>
+    }
+</section>
+

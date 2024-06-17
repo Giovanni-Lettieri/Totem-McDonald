@@ -1,3 +1,49 @@
+<header>
+    <!-- bottone back -->
+    <a routerLink="MainScreen">
+        <button id="back" (click)="passagioMainPage()">
+            <p id="back-frecia"> < </p>
+            <p  id="back-text" >Back</p>
+        </button>
+    </a>
+    <!-- bottone lingua -->
+    <language id="language"></language>
+</header>
+
 <body>
-    <div></div>
+    <!-- logo -->
+    <div id="cont-logo">    
+        <img src="assets/M.png">
+    </div>
+    <!-- title -->
+    <div>
+        <p>{{my}}<br>{{order}}</p>
+        <span>
+            @if(flagInOut){
+                <p>{{TakeOut}}</p>
+            }@else {
+                <p>{{EatIn}}</p>
+            }
+        </span>
+    </div>
+    <!-- carello -->
+    <select>
+        @for (prod of scontrino; track prod.price){
+            <p>ciao</p>
+            <!-- <prod-check-out [prodotto]="prod"></prod-check-out> -->
+        }
+    </select>
 </body>
+
+<footer>
+    <!-- conto totale -->
+    <div>
+        <p></p>
+        <p></p>
+    </div>
+    <!-- pulsante checkout -->
+     <button>
+
+     </button>
+</footer>
+<router-outlet></router-outlet>
