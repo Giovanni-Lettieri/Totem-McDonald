@@ -30,5 +30,5 @@ export class AppComponent {
             this.Titolo =  this.lingSer.getTesto().Titolo
             this.Titolo2 = this.lingSer.getTesto().Titolo2
         });
-    }
+    }   
 }

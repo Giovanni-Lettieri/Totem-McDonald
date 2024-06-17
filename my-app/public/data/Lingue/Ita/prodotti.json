@@ -18,7 +18,7 @@
         "price": 8.00,
         "image": "assets/Prodotti/Menu/Double Chicken BBQ  Menu.png",
         "category": "Menu",
-        "sconto": 50
+        "sconto": 0
     },
     {
         "item": "Fileto Fish  Menu",

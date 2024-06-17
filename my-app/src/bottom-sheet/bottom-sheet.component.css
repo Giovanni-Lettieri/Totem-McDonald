@@ -57,7 +57,7 @@ h2 {
     width: 98vw;
     background-color: #ffffff00; 
     overflow: hidden;
-    z-index: 10;
+    z-index: 100000000;
     margin-bottom: 0px;
     position:relative;
 }
@@ -185,8 +185,9 @@ button{
     white-space: nowrap;
     z-index: 250;
     position: absolute;
-    left:420px;
-    top: 145px;
+    left:450px;
+    top: 142px;
+    z-index: 400;
 }
 #CMprezzo{
     color:#FFCA40; 
@@ -199,6 +200,7 @@ button{
     position: absolute;
     left:320px;
     top: 150px;
+    z-index: 400;
 }
 #CMitem{
     color:#000000; 
@@ -209,8 +211,35 @@ button{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 550;
-    position: relative;
+    position: absolute;
     left:320px;
     top: 90px;
+    z-index: 400;
 }
-
+.offer-item.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+}
+.offer-item.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+.offer-container {
+    position: absolute;
+    height: 100%;
+    width: 55vw;
+}
+  
+.offer-item {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: 100%;
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 90px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}

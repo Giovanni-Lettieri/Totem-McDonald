@@ -4,7 +4,6 @@ button{
     margin-right: 20px;
     height: 250px;
     width: 200px;
-    background-color: blue;
     
 }
 .contenitore {
@@ -18,7 +17,6 @@ button{
     grid-template-columns: repeat(3, 210px); 
     grid-template-rows: repeat(5, 260px);
     border: none;
-    
 }
 
 #contenitore::-webkit-scrollbar {
