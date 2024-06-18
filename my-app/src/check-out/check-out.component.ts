@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { ProdCheckOutComponent } from "../prod-check-out/prod-check-out.component";
 import { InfoBillService } from '../Service/info-bill.service';
 import { BillProd } from '../Bill/bill-prod';
+import { CurrencyPipe } from '@angular/common';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { BillProd } from '../Bill/bill-prod';
     standalone: true,
     templateUrl: './check-out.component.html',
     styleUrl: './check-out.component.css',
-    imports: [RouterLink, RouterOutlet, MainPageComponent, LanguageComponent, ProdCheckOutComponent]
+    imports: [RouterLink, RouterOutlet, MainPageComponent, LanguageComponent, ProdCheckOutComponent, CurrencyPipe]
 })
 
 export class CheckOutComponent {
@@ -25,6 +26,9 @@ export class CheckOutComponent {
   flagInOut : boolean = false   //FARE UN SARVICE TAKE IN TAKE OUT E CAMBIARE QUELLO DI MAIN PAGE
   TakeOut : string =  this.lingSer.getTesto().TakeOut;
   EatIn : string =  this.lingSer.getTesto().EatIn;
+  conto: number = 0;
+  Cur : string = this.lingSer.getTesto().Curency
+  total : String = this.lingSer.getTesto().TOT
 
   scontrino !: BillProd[];
   
@@ -33,6 +37,9 @@ export class CheckOutComponent {
     private infoBill : InfoBillService
   ){
     this.scontrino = infoBill.getAcquisti()
+    this.scontrino.forEach(b => {
+      this.conto += b.price * b.quantita;
+    }); 
   }
 
   subscription !: Subscription;
@@ -44,15 +51,18 @@ export class CheckOutComponent {
       this.order = this.lingSer.getTesto().Ord
       this.TakeOut =  this.lingSer.getTesto().TakeOut;
       this.EatIn =  this.lingSer.getTesto().EatIn;
+      this.total = this.lingSer.getTesto().TOT
     });
     this.subscription2 = this.infoBill.infoBill.subscribe(() => { 
       this.scontrino = this.infoBill.getAcquisti()
+      this.scontrino.forEach(b => {
+        this.conto += b.price * b.quantita;
+      }); 
     });
   }
-  
-  passagioMainPage(){
-    //this.infoBill.setAcquisti(this.scontrino)
-  }
 
+  resetBill(){
+    this.infoBill.reset()
+  }
   
 }

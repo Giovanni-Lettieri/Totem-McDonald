@@ -1,7 +1,7 @@
 <header>
     <!-- bottone back -->
     <a [routerLink]="'/MainScreen'">
-        <button id="back" (click)="passagioMainPage()">
+        <button id="back">
             <p id="back-frecia"> < </p>
             <p id="back-text">Back</p>
         </button>
@@ -28,7 +28,7 @@
     </div>
     <!-- carello -->
      <div id="CObox">
-        @for (prod of scontrino; track prod.price){
+        @for (prod of scontrino; track prod){
             <prod-check-out [prodotto]="prod"></prod-check-out>
         }
     </div>   
@@ -36,13 +36,20 @@
 
 <footer>
     <!-- conto totale -->
-    <div>
-        <p></p>
-        <p></p>
+    <div id="prezzo-div">
+        <p id="totale">{{total}}</p>
+        @if(Cur == 'EUR'){    
+            <p id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
+        }
+        @else{
+            <p id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
+        }
     </div>
     <!-- pulsante checkout -->
-     <button>
-
-     </button>
+    <a routerLink="/StartScreen" (click)="resetBill()">
+        <button id="checkoutBut"> 
+            <p id="checkout">CheckOut</p>
+        </button>
+    </a>
 </footer>
 <router-outlet></router-outlet>

@@ -20,6 +20,10 @@ export class InfoBillService {
     this.infoBill.emit()
   }
 
+  reset(){
+    this.acquisti = []
+  }
+
   getAcquisti() : BillProd[] {
     return this.acquisti
   }
