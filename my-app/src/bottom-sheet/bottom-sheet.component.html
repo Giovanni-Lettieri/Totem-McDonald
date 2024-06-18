@@ -24,7 +24,13 @@
       <span id="CM">{{ comMeal }}</span>
       <div id="offerta">
         <div class="offerta-container">
-          <div class="offerta-item" *ngFor="let prod of prodList; let i = index" [class.visible]="i === adAtt" [class.hidden]="i !== adAtt" [@slideAnimation]="i === adAtt ? 'visible' : 'hidden'">
+          <div class="offerta-item" 
+          *ngFor="let prod of prodList; let i = index" 
+          [class.visible]="i === adAtt" 
+          [class.hidden]="i !== adAtt" 
+          [@slideAnimation]="i === adAtt ? 
+          'visible' : 'hidden'" 
+          (click) = "goToAdd(prod)" >
             <img id="CMimage" [src]="prod.image" />
             <p id="CMitem">{{ prod.item }}</p>
             <p id="CMprezzo">{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>

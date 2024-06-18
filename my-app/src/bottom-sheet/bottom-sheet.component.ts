@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
-import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { Component, Inject, OnInit, OnDestroy, ViewContainerRef } from '@angular/core';
+import { MAT_BOTTOM_SHEET_DATA, MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { CommonModule, CurrencyPipe, registerLocaleData } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { PassagioBillService } from '../Service/passagio-bill.service';
@@ -32,6 +32,7 @@ registerLocaleData(localeEn);
   ]
 })
 export class BottomSheetComponent implements OnInit, OnDestroy {
+  viewContainerRef: ViewContainerRef | undefined;
   subscription!: Subscription;
   Cur: string = this.lingSer.getTesto().Curency;
   fatto: string = this.lingSer.getTesto().Fatto;
@@ -45,6 +46,7 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   constructor(
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: Prodotti,
     private bottomSheetRef: MatBottomSheetRef<BottomSheetComponent>,
+    private bottomSheet: MatBottomSheet,
     private service: PassagioBillService,
     private lingSer: ChangeLanguagesService,
     private prodottiService: ProdottiService,
@@ -83,6 +85,17 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
     }
   }
   
+  
+  goToAdd(p : Prodotti) {
+    this.bottomSheetRef.dismiss();
+    this.bottomSheet.open(BottomSheetComponent, {
+      data: p,
+      hasBackdrop: false,
+      panelClass: 'bottom-sheet',
+      viewContainerRef: this.viewContainerRef,
+    });
+  }
+
   ngOnInit(): void {
     setInterval(() => {
       this.adAtt = (this.adAtt + 1) % this.prodList.length;
