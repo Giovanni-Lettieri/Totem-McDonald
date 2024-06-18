@@ -76,5 +76,10 @@ export class ProdottiService {
       this.prodList[this.prodMenuScont[i]].price = this.prodList[this.prodMenuScont[i]].price-(this.prodList[this.prodMenuScont[i]].price*(this.prodList[this.prodMenuScont[i]].sconto/100))
       this.prodCM.push(this.prodList[this.prodMenuScont[i]])
     }
+    for(let i = 0; i <= 11; i++){
+      if(this.prodList[i].sconto == 0){
+        this.prodList[i].sconto =  20
+      }
+    }
   }
 }

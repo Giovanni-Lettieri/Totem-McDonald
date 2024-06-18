@@ -17,6 +17,7 @@
 #T-name{
     font-size: 23px;
     font-weight: bold;
+    white-space: nowrap;
 }
 #cont-price{
     margin-top: 10px;
