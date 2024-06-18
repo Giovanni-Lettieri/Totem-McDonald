@@ -63,7 +63,6 @@ h2 {
 }
 button{
     border-radius: 10px;
-    width:40px ;
     height:30px;
     font-size: large;
 }
@@ -82,18 +81,20 @@ button{
 #P-but{
     border: none;
     background-color:#FFCA40;
-    height: 3vh;  
+    height: 4vh;  
     margin-left: 50px;
     padding-left: 40px;
     padding-right: 70px;
     font-size: 50px;
     border-radius: 25px;
+    padding-top: 0.5vh;
 }
 #M-but{
+    padding-top: 0.5vh;
     border-radius: 25px;
     border: 1px solid gray;
     background-color:#EFECE5;
-    height: 3vh; 
+    height: 4vh; 
     margin-left: -70px;
     padding-left: 40px;
     padding-right: 70px;
@@ -119,7 +120,7 @@ button{
     background-color: #FFCA40;
     width: 200px;
     height: 200px;
-    top: 37vh;
+    top: 39vh;
     border-radius: 70px;
     left: 50%;
     transform: translateX(-50%);
@@ -261,4 +262,15 @@ button{
     top: 140px;
     z-index: 400;
     transform: rotate(-20deg);
+}
+#Blocco{
+    position: absolute;
+    z-index: 900;
+    background-color: #f5f3f7; 
+    /* background-color: violet; */
+    /* margin-left: calc(100% +1px); */
+    margin-left: 100.2%;
+    margin-right: 0%;
+    width: 5vw;
+    height: 100%;
 }

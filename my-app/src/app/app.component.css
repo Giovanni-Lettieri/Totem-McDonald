@@ -2,10 +2,13 @@ body{
     -webkit-user-select: none;
     user-select: none;  
 }
-#logo{
+
+img{
+    width : 250px;
     position: fixed;
-    left: 36%;
-    top: 15.41%;
+    top: 15%;
+    margin-left:415px ;
+    height:222px;
 }
 p{
     font-size:calc((100vw/100)*7);
