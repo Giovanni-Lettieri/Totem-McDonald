@@ -41,7 +41,8 @@ export class ProdCheckOutComponent {
       this.cur = this.lingSer.getTesto().Curency;
       this.rimuoviText  = this.lingSer.getTesto().remove; 
       this.castomText = this.lingSer.getTesto().custom; 
-    
+      
+      this.prodotto().item = this.lingSer.changeBillProd(this.prodotto())
     });
   }
 

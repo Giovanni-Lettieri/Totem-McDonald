@@ -21,6 +21,7 @@ import liProdDeu from '../../public/data/Lingue/Deu/produkte.json';
 import liCatFra from '../../public/data/Lingue/Fra/categories.json';
 import liTestFra from '../../public/data/Lingue/Fra/textes.json';
 import liProdFra from '../../public/data/Lingue/Fra/produits.json';
+import { BillProd } from '../Bill/bill-prod';
 
 
 
@@ -115,6 +116,14 @@ export class ChangeLanguagesService {
     return this.prodList
   }
 
-
-
+  
+  changeBillProd(B : BillProd) : string{ 
+    this.getProduct()
+    for(let i = 0 ; i <= this.prodList.length ; i++) {
+      if(B.image == this.prodList[i].image){
+        return this.prodList[i].item
+      }
+    }
+    return "Errore Traduzione"
+  }
 }

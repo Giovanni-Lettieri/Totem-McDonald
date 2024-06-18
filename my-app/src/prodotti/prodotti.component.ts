@@ -49,7 +49,6 @@ export class ProdottiComponent implements OnInit{
   ngOnInit(): void {  
     
     this.subscription = this.lingSer.cambioLingua.subscribe(() => {
-      
       this.Cur = this.lingSer.getTesto().Curency
       this.prodottiService.pseudoEmit();
       this.ProductList = this.prodottiService.getProdotti();

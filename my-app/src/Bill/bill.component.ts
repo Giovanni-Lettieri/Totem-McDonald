@@ -61,19 +61,15 @@ export class BillComponent implements OnInit {
       this.servCont.agiornaContatore();
       
     });
-
+    //LINGUA
     this.linguaSub = this.lingSer.cambioLingua.subscribe(() => {
       this.Cur = this.lingSer.getTesto().Curency
-      this.pSuport = this.lingSer.getProduct(); 
       this.BillList.forEach(b => {
-        for(let i = 0; i < this.pSuport.length; i++){
-          if(b.image == this.pSuport[i].image){
-            b.item = this.pSuport[i].item;
-            break;
-          }
-        }
+        b.item = this.lingSer.changeBillProd(b)
       });
     });
+
+
     this.checkOutSub = this.infoBill.infoBill.subscribe(() => {
       this.BillList = this.infoBill.getAcquisti(); 
     });

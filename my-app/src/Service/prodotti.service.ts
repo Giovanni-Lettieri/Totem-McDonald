@@ -45,7 +45,7 @@ export class ProdottiService {
   } 
   
   pseudoEmit(){
-    this.prodList = this.lingSer.getProduct()
+    this.prodList = this.lingSer.getProduct() 
     this.flagPop = false
     this.randomizeProdotti()
   }
