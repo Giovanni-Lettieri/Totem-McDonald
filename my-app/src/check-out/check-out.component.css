@@ -1,13 +1,9 @@
-
-body{ background-color: #2b7b3b;} footer{ background-color: blueviolet;} header{background-color: brown;}
-
-
 /* regole generiche */
 :host { position: relative; }
 p{ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-/* body , header , footer{
+body , header , footer{
     background-color: #2b7b3b;
-} */
+}
 
 
 /* pulsante lingua */
@@ -83,6 +79,9 @@ img{
     left: 10vw;
     overflow-y: auto;
     overflow-x: hidden;
+}
+#CObox::-webkit-scrollbar {
+    display: none;
 }
 #importo{
     font-size:80px;
