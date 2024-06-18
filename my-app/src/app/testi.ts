@@ -13,4 +13,6 @@ export interface Testi {
     Curency: string
     CM: string
     check: string
+    remove: string
+    custom : string
 }

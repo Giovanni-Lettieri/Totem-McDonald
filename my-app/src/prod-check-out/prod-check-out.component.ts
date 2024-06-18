@@ -20,10 +20,11 @@ registerLocaleData(localeEn)
 })
 export class ProdCheckOutComponent {
 
-  rimuoviFlag : boolean = false;
+  extraFlag : boolean = false;
   prodotto = input.required<BillProd>()
-  rimuoviText : string = "remove"; //assegna cambio lingua 
-
+  
+  rimuoviText : string = this.lingSer.getTesto().remove; 
+  castomText : string = this.lingSer.getTesto().custom; 
   cur : string = this.lingSer.getTesto().Curency; 
 
   @Output() rimozione = new EventEmitter<BillProd>();
@@ -38,6 +39,9 @@ export class ProdCheckOutComponent {
   ngOnInit(): void {  
     this.subscription = this.lingSer.cambioLingua.subscribe(() => { 
       this.cur = this.lingSer.getTesto().Curency;
+      this.rimuoviText  = this.lingSer.getTesto().remove; 
+      this.castomText = this.lingSer.getTesto().custom; 
+    
     });
   }
 

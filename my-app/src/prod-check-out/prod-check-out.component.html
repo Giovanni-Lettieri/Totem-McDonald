@@ -17,10 +17,13 @@
         <p id="T-cont"> {{  prodotto().quantita   }} </p>
         <button id="M-but" (click)="minus()"><p id="meno">-</p></button>
     </div>
-    @if(rimuoviFlag){
+    @if(extraFlag){
         <span>
             <button (click)="(remove)">
                 <p>{{rimuoviText}}</p>
+            </button>
+            <button>
+                <p>{{castomText}}</p>
             </button>
         </span>
     }

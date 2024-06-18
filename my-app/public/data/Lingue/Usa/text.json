@@ -12,5 +12,7 @@
         "Pop" : "Popular",
         "Curency" : "USD",
         "CM":"Combo Meal",
-        "check" : "CheckOut" 
+        "check" : "CheckOut",
+        "remove" : "Remove",
+        "custom" : "Customize"
     }

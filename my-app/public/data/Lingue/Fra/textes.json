@@ -12,5 +12,7 @@
         "Pop": "Populaire",
         "Curency" : "EUR",
         "CM":"Repas Combo",
-        "check" : "Compte"
+        "check" : "Compte",
+        "remove" : "Retirer",
+        "custom" : "Personnaliser"
 }
