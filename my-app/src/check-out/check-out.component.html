@@ -19,7 +19,7 @@
     <div id="testiMOTE">
         <p id="MO">{{my}}<br>{{order}}</p>
         <span>
-            @if(flagInOut){
+            @if(flagInOut == 1){
                 <p id="TE">{{TakeOut}}</p>
             }@else {
                 <p id="TE">{{EatIn}}</p>
@@ -27,9 +27,9 @@
         </span>
     </div>
     <!-- carello -->
-     <div id="CObox">
-        @for (prod of scontrino; track prod){
-            <prod-check-out [prodotto]="prod"></prod-check-out>
+    <div id="CObox">
+        @for (prod of scontrino; track prod.price){
+            <prod-check-out [prodotto]="prod" (rimozione)="rimuoviProdotto($event)"></prod-check-out>
         }
     </div>   
 </body>
@@ -37,18 +37,18 @@
 <footer>
     <!-- conto totale -->
     <div id="prezzo-div">
-        <p id="totale">{{total}}</p>
-        @if(Cur == 'EUR'){    
-            <p id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
+        <p id="totale">{{tot}}</p>
+        @if(cur == 'EUR'){    
+            <p id="importo">{{conto | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
         }
-        @else{
-            <p id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
+        @else {
+            <p id="importo">{{conto | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
         }
     </div>
     <!-- pulsante checkout -->
     <a routerLink="/StartScreen" (click)="resetBill()">
         <button id="checkoutBut"> 
-            <p id="checkout">CheckOut</p>
+            <p id="checkout">{{check}}</p>
         </button>
     </a>
 </footer>

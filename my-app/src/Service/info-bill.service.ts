@@ -13,7 +13,7 @@ export class InfoBillService {
   
   setAcquisti(b : BillProd[]){
     this.acquisti = b
-    this.infoBill.emit()
+    this.aggiorna()
   }
 
   aggiorna(){

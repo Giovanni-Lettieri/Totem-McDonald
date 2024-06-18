@@ -15,7 +15,6 @@ import { InfoBillService } from '../Service/info-bill.service';
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
 
-
 @Component({
   selector: 'bill',
   standalone: true,
@@ -94,7 +93,7 @@ export class BillComponent implements OnInit {
     this.servCont.agiornaContatore();
   }
 
-  remove(b: BillProd, i: number) {
+  minus(b: BillProd, i: number) {
     b.quantita--;
     if (b.quantita <= 0) {
       this.BillList.splice(i, 1);

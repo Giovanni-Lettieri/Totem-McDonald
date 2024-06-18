@@ -12,4 +12,5 @@ export interface Testi {
     Pop : string
     Curency: string
     CM: string
+    check: string
 }

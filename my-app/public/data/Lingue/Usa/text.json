@@ -11,5 +11,6 @@
         "Fatto":"Done",
         "Pop" : "Popular",
         "Curency" : "USD",
-        "CM":"Combo Meal"
+        "CM":"Combo Meal",
+        "check" : "CheckOut" 
     }

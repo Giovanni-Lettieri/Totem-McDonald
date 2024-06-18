@@ -1,8 +1,15 @@
-import { Component, input } from '@angular/core';
+import { Component, EventEmitter, Output, input, output } from '@angular/core';
 import { BillProd } from '../Bill/bill-prod';
+import { ContoService } from '../Service/conto.service';
 import { CurrencyPipe } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import localeIt from '@angular/common/locales/it';
+import localeEn from '@angular/common/locales/en';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
+
+registerLocaleData(localeIt)
+registerLocaleData(localeEn)
 
 @Component({
   selector: 'prod-check-out',
@@ -12,19 +19,43 @@ import { Subscription } from 'rxjs';
   styleUrl: './prod-check-out.component.css'
 })
 export class ProdCheckOutComponent {
-  rimozione : boolean = false;
-  Cur : string = this.lingSer.getTesto().Curency
+
+  rimuoviFlag : boolean = false;
   prodotto = input.required<BillProd>()
-  remove : string = "remove"; //assegna cambio lingua 
+  rimuoviText : string = "remove"; //assegna cambio lingua 
+
+  cur : string = this.lingSer.getTesto().Curency; 
+
+  @Output() rimozione = new EventEmitter<BillProd>();
+
   constructor(
-    private lingSer : ChangeLanguagesService,
+    private servCont: ContoService,
+    private lingSer: ChangeLanguagesService
   ){}
 
   subscription !: Subscription;
 
   ngOnInit(): void {  
-    this.subscription = this.lingSer.cambioLingua.subscribe(() => {
-      this.Cur = this.lingSer.getTesto().Curency
-    });  
+    this.subscription = this.lingSer.cambioLingua.subscribe(() => { 
+      this.cur = this.lingSer.getTesto().Curency;
+    });
+  }
+
+  add(){
+    this.prodotto().quantita++
+    this.servCont.agiornaContoFinal();
+  }
+
+  minus(){
+    this.prodotto().quantita--
+    if(this.prodotto().quantita <= 0){
+      this.remove()
+    }
+    this.servCont.agiornaContoFinal();
+  }
+
+  remove() {
+    this.rimozione.emit(this.prodotto())
+    this.servCont.agiornaContoFinal();
   }
 }

@@ -2,23 +2,25 @@
     <div id="imgDiv">
         <img [src] = "prodotto().image" >
     </div>
+
     <div id="info">
         <p id="prod"> {{ prodotto().item }} </p>
-        @if(Cur == 'EUR'){
-            <p id="prezzo"> {{prodotto().price | currency:'EUR':'symbol':'1.2-2' : 'it-IT'}} </p>
-        }@else{
-            <p id="prezzo"> {{prodotto().price | currency:'EUR':'symbol':'1.2-2' : 'en-EN'}} </p>
-        }   
+        @if(cur == 'EUR'){    
+            <p id="prezzo">{{prodotto().price | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
+        }
+        @else {
+            <p id="prezzo">{{prodotto().price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
+        }
     </div>
     <div id="counter-cont">
-        <button id="P-but">  +  </button>
+        <button id="P-but" (click)="add()">  +  </button>
         <p id="T-cont"> {{  prodotto().quantita   }} </p>
-        <button id="M-but"><p id="meno">-</p></button>
+        <button id="M-but" (click)="minus()"><p id="meno">-</p></button>
     </div>
-    @if(rimozione){
+    @if(rimuoviFlag){
         <span>
-            <button>
-                <p>{{remove}}</p>
+            <button (click)="(remove)">
+                <p>{{rimuoviText}}</p>
             </button>
         </span>
     }
