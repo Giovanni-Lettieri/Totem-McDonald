@@ -26,7 +26,10 @@ html, body {
     border-top-right-radius: 200px !important;
     box-shadow: none !important;
     background-color: rgb(255, 255, 255);
+    background: #ffffff !important;
 }
+
+
 .mat-ripple-element {
     background-color: rgba(255, 0, 0, 0) !important;
 }

@@ -12,7 +12,7 @@
         </p>
     </div>
     
-    <bill id="ordini" (MandaBill)="riceviBill($event)"></bill>
+    <bill id="ordini" [style.background-color]="rCBackground()" (MandaBill)="riceviBill($event)"></bill>
     <div id="prezzo-div">
         <p id="totale">{{total}}</p>
         @if(Cur == 'EUR'){    

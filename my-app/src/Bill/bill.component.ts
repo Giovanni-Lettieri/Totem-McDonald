@@ -11,6 +11,7 @@ import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { InfoBillService } from '../Service/info-bill.service';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -37,7 +38,8 @@ export class BillComponent implements OnInit {
     private service: PassagioBillService,
     private servCont: ContoService,
     private lingSer : ChangeLanguagesService,
-    private infoBill : InfoBillService
+    private infoBill : InfoBillService,
+    private lDServ: LightDarkServiceService
   ){
     this.BillList = this.infoBill.getAcquisti(); 
 
@@ -97,5 +99,10 @@ export class BillComponent implements OnInit {
     this.servCont.agiornaContatore();
   }
 
-  
+  getTestiColor(){
+    return this.lDServ.testi()
+  }
+  getBackgroundPulsColor(){
+    return this.lDServ.pulsBackground()
+  }
 }

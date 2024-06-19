@@ -12,6 +12,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 registerLocaleData(localeIt);
 registerLocaleData(localeEn);
@@ -50,7 +51,8 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
     private service: PassagioBillService,
     private lingSer: ChangeLanguagesService,
     private prodottiService: ProdottiService,
-    private overlay: OverlayService
+    private overlay: OverlayService,
+    private lDServ: LightDarkServiceService
   ) {
     this.prodList = prodottiService.getCM();
   }
@@ -120,4 +122,15 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
+
+  getBackgroundColor(){
+    return this.lDServ.backgroundBlack()
+  }
+  getTestiColor(){
+    return this.lDServ.testi()
+  }
+  rCBackground(){
+    return this.lDServ.background2()
+  }
+
 }
