@@ -55,7 +55,20 @@ export class CheckOutComponent {
     private servCont: ContoService, 
     private pulsante: StartButtonComponent
   ){
-    this.scontrino = infoBill.getAcquisti()
+    
+    // this.scontrino = infoBill.getAcquisti()
+    this.scontrino = [
+      {
+        item : "ciao", 
+        quantita : 3,
+        price : 4,
+        category : "menu",
+        sconto : 0, 
+        image : "assets/Prodotti/Menu/BigMac Menu.png"
+      }
+    ]
+
+
     this.conto = this.calcoloConto()
   }
 

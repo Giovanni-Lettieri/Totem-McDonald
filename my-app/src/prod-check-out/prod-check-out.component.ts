@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, input, output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Output, input, output } from '@angular/core';
 import { BillProd } from '../Bill/bill-prod';
 import { ContoService } from '../Service/conto.service';
 import { CurrencyPipe } from '@angular/common';
@@ -18,7 +18,9 @@ registerLocaleData(localeEn)
   templateUrl: './prod-check-out.component.html',
   styleUrl: './prod-check-out.component.css'
 })
+
 export class ProdCheckOutComponent {
+
 
   extraFlag : boolean = false;
   prodotto = input.required<BillProd>()
@@ -28,11 +30,34 @@ export class ProdCheckOutComponent {
   cur : string = this.lingSer.getTesto().Curency; 
 
   @Output() rimozione = new EventEmitter<BillProd>();
+  
+  private pressHoldTimer: any;
 
   constructor(
     private servCont: ContoService,
-    private lingSer: ChangeLanguagesService
+    private lingSer: ChangeLanguagesService,
+    private el : ElementRef
   ){}
+  private pressTimer: any;
+
+  @HostListener('mousedown', ['$event'])
+  onMouseDown(event: MouseEvent): void {
+    this.pressHoldTimer = setTimeout(() => {
+      console.log("funge")
+      this.extraFlag = true;
+      clearTimeout(this.pressHoldTimer);
+    },500); 
+  }
+
+ 
+  @HostListener('document:click', ['$event'])
+  ClickFuori(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('section')) {
+      this.extraFlag = false;
+      console.log("basta")
+    }
+  }
 
   subscription !: Subscription;
 
@@ -45,13 +70,15 @@ export class ProdCheckOutComponent {
       this.prodotto().item = this.lingSer.changeBillProd(this.prodotto())
     });
   }
-
+  
   add(){
+    clearTimeout(this.pressHoldTimer);
     this.prodotto().quantita++
     this.servCont.agiornaContoFinal();
   }
 
   minus(){
+    clearTimeout(this.pressHoldTimer);
     this.prodotto().quantita--
     if(this.prodotto().quantita <= 0){
       this.remove()
@@ -62,5 +89,11 @@ export class ProdCheckOutComponent {
   remove() {
     this.rimozione.emit(this.prodotto())
     this.servCont.agiornaContoFinal();
+  }
+
+  edit() {
+    this.extraFlag = true;
+    console.log("asdasdsadsadsadsad")
+    //AGGIUNGI
   }
 }

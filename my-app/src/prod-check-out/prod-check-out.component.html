@@ -1,4 +1,4 @@
-<section>
+<section class="Prodotto">
     <div id="imgDiv">
         <img [src] = "prodotto().image" >
     </div>
@@ -19,14 +19,13 @@
     </div>
     @if(extraFlag){
         <span>
-            <button (click)="(remove)">
-                <p>{{rimuoviText}}</p>
-            </button>
-            <button>
+            <button (click)="edit()"    class="buttonExtra" id="butCustom" >
                 <p>{{castomText}}</p>
+            </button>
+            <button (click)="remove()" class="buttonExtra" id="butRemove">
+                <p>{{rimuoviText}}</p>
             </button>
         </span>
     }
-    
 </section>
 
