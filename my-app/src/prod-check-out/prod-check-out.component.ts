@@ -7,6 +7,7 @@ import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs/internal/Subscription';
+import {PulsantiExtraService} from '../Service/pulsanti-extra.service'
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -21,45 +22,53 @@ registerLocaleData(localeEn)
 
 export class ProdCheckOutComponent {
 
-
   extraFlag : boolean = false;
+
   prodotto = input.required<BillProd>()
   
+  timeout: any;
+
   rimuoviText : string = this.lingSer.getTesto().remove; 
   castomText : string = this.lingSer.getTesto().custom; 
   cur : string = this.lingSer.getTesto().Curency; 
 
   @Output() rimozione = new EventEmitter<BillProd>();
-  
-  private pressHoldTimer: any;
 
   constructor(
     private servCont: ContoService,
     private lingSer: ChangeLanguagesService,
-    private el : ElementRef
+    private extraServ : PulsantiExtraService
   ){}
-  private pressTimer: any;
 
-  @HostListener('mousedown', ['$event'])
-  onMouseDown(event: MouseEvent): void {
-    this.pressHoldTimer = setTimeout(() => {
-      console.log("funge")
-      this.extraFlag = true;
-      clearTimeout(this.pressHoldTimer);
-    },500); 
+  @HostListener('touchstart', ['$event'])
+  onTouchStart(event: TouchEvent): void {
+    this.timeout = setTimeout(() => {
+      this.extraServ.sonoApparso()
+      this.extraFlag = true
+    }, 1000);
   }
 
- 
+  @HostListener('touchend')
+  onTouchEnd(): void {
+    clearTimeout(this.timeout);
+  }
+
+  @HostListener('touchmove')
+  onTouchMove(): void {
+    clearTimeout(this.timeout);
+  }
+  
   @HostListener('document:click', ['$event'])
   ClickFuori(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    if (!target.closest('section')) {
+    if (!target.closest('span')) {
       this.extraFlag = false;
       console.log("basta")
     }
   }
 
   subscription !: Subscription;
+  subscription2 !: Subscription;
 
   ngOnInit(): void {  
     this.subscription = this.lingSer.cambioLingua.subscribe(() => { 
@@ -69,16 +78,17 @@ export class ProdCheckOutComponent {
       
       this.prodotto().item = this.lingSer.changeBillProd(this.prodotto())
     });
+    this.subscription2 = this.extraServ.extraButton.subscribe(() => { 
+      this.extraFlag = false; 
+    });
   }
   
   add(){
-    clearTimeout(this.pressHoldTimer);
     this.prodotto().quantita++
     this.servCont.agiornaContoFinal();
   }
 
   minus(){
-    clearTimeout(this.pressHoldTimer);
     this.prodotto().quantita--
     if(this.prodotto().quantita <= 0){
       this.remove()
@@ -92,7 +102,6 @@ export class ProdCheckOutComponent {
   }
 
   edit() {
-    this.extraFlag = true;
     console.log("asdasdsadsadsadsad")
     //AGGIUNGI
   }
