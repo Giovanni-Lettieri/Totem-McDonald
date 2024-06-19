@@ -1,9 +1,30 @@
 <script>
+  // previene attivazione del menù al click lungo
   document.addEventListener('contextmenu', function(event) {
       event.preventDefault();
   });
+  //Ripple Effect
+  document.addEventListener('click', function(event) {
+  const ripple = document.createElement('div');
+  ripple.classList.add('ripple');
+  
+  const rippleContainer = document.body;
+  const rect = rippleContainer.getBoundingClientRect();
+  
+  const X = event.clientX - rect.left;
+  const Y = event.clientY - rect.top;
+
+  const size = 50;
+  
+  ripple.style.width = ripple.style.height = `${size}px`;
+  ripple.style.left = `${X - size / 2}px`;
+  ripple.style.top = `${Y - size / 2}px`;
+  
+  rippleContainer.appendChild(ripple);
+});
 </script>
 
 <body class="mat-typography">
+  <div class="ripple-container"></div>
   <app-root></app-root>
 </body>

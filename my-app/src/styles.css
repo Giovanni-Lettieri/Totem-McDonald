@@ -33,3 +33,29 @@ html, body {
 .mat-ripple-element {
     background-color: rgba(255, 0, 0, 0) !important;
 }
+.ripple-container {
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ripple {
+    position: fixed;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: rippleEffect 0.2s linear;
+    border: 5px solid rgba(0, 0, 0, 0.7);
+    pointer-events: none; 
+    z-index: 1000;
+  }
+  
+  @keyframes rippleEffect {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
