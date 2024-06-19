@@ -1,13 +1,13 @@
 <a routerLink="/MainScreen" (click)="setIndice(0)">
-    <button id="Eat-In">
+    <button id="Eat-In" [style.background-color]="getPulsBackgroundColor()">
         <img [src]="pulsantiArray[0].immagine">
-        <p>{{pulsantiArray[0].testo}}</p>
+        <p [style.color]="getTestiColor()">{{pulsantiArray[1].testo}}</p>
     </button>
 </a>
 <a routerLink="/MainScreen" (click)="setIndice(1)">
-    <button id="Take-Out" >
+    <button id="Take-Out" [style.background-color]="getPulsBackgroundColor()">
         <img [src]="pulsantiArray[1].immagine">
-        <p>{{pulsantiArray[1].testo}}</p>
+        <p [style.color]="getTestiColor()">{{pulsantiArray[1].testo}}</p>
     </button>
 </a>
 <router-outlet></router-outlet>

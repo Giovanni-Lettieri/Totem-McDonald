@@ -3,6 +3,7 @@ import { CategoryComponent } from "../category/category.component";
 import { ProdottiComponent } from "../prodotti/prodotti.component";
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 @Component({
     selector: 'left-col',
@@ -18,7 +19,7 @@ export class LeftColComponent{
     nome: string = this.lingSer.getTesto().Pop; 
     subscription !: Subscription;
 
-    constructor(private lingSer : ChangeLanguagesService ){}
+    constructor(private lingSer : ChangeLanguagesService, private lDServ: LightDarkServiceService){}
 
     riceviNome(n: string) {
         this.nome = n;
@@ -32,5 +33,11 @@ export class LeftColComponent{
             this.nome = this.lingSer.getTesto().Pop
         
         });
+    }
+    getBackgroundColor(){
+        return this.lDServ.backgroundBlack()
+    }
+    getTestiColor(){
+        return this.lDServ.testi()
     }
 }
