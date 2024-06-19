@@ -30,6 +30,11 @@ registerLocaleData(localeEn)
 
 export class RightColComponent implements OnInit{
   
+  GoToTop() {
+    const lista = document.getElementById('ordini') as HTMLDivElement;
+    lista.scrollTop = 0;
+  }
+  
   my : String =  this.lingSer.getTesto().Mio
   order : String = this.lingSer.getTesto().Ord
   total : String = this.lingSer.getTesto().TOT
