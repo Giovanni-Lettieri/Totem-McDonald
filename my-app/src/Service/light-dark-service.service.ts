@@ -1,0 +1,25 @@
+import { EventEmitter, Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LightDarkServiceService {
+  darkMode: boolean = false
+  cambioMod: EventEmitter<void> = new EventEmitter<void>();
+  constructor() {
+
+  }
+
+  switchMode(){
+    this.darkMode = !this.darkMode
+    this.cambioMod.emit()
+  }
+
+  background(){
+    return (this.darkMode)? 'black': 'white'
+  }
+  testi(){
+    return (this.darkMode)? 'white': 'black'
+  }
+
+}

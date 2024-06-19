@@ -1,5 +1,5 @@
 <html>
-    <body>
+    <body [style.background-color]="getBackgroundColor()">
         <section>
             <span id="cerchio"></span>
             <span id="contorno"></span>
@@ -7,7 +7,12 @@
 
         <img src="assets/M.png" id="logo">
 
-        <div id="titolo"><p>{{Titolo}}<br>{{Titolo2}}</p></div>
+        <div id="titolo"><p [style.color]="getTestiColor()">{{Titolo}}<br>{{Titolo2}}</p></div>
+        
+        <!-- Toggle Switch -->
+        <input type="checkbox" id="switch" (click)="darkModeApp()"/>
+        <label for="switch"></label>
+
         <language id="language"></language>
         <start-button></start-button>
     </body>

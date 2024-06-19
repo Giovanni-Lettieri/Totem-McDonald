@@ -1,6 +1,8 @@
 body{
     -webkit-user-select: none;
     user-select: none;  
+    height: 100%;
+    background-color: #EFECE5;
 }
 
 img{
@@ -46,3 +48,51 @@ p{
     right: -85.5vw;
     top: 5vh;
 }
+
+/* Toggle Button */
+ 
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+label {
+  width: 160px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0);
+  border: 3px solid white;
+  display: block;
+  border-radius: 80px;
+  position: fixed;
+  left:460px;
+  bottom: 100px;
+  z-index: 1;
+}
+
+label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 70px;
+  height: 70px;
+  background: #ffffff;
+  border-radius: 70px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  border-color: black;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+  background: #000000;
+}
+
+label:active:after {
+  width: 100px;
+}
+  

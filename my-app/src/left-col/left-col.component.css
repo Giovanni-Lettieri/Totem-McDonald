@@ -8,6 +8,7 @@ section {
     left: -5px;
     top: 0;
     overflow-x: hidden;
+    z-index: 30;
 }
 #m-logo{
     position:fixed;
