@@ -57,18 +57,7 @@ export class CheckOutComponent {
   ){
     
     // this.scontrino = infoBill.getAcquisti()
-    this.scontrino = [
-      {
-        item : "ciao", 
-        quantita : 3,
-        price : 4,
-        category : "menu",
-        sconto : 0, 
-        image : "assets/Prodotti/Menu/BigMac Menu.png"
-      }
-    ]
-
-
+    this.scontrino = this.infoBill.getAcquisti()
     this.conto = this.calcoloConto()
   }
 
