@@ -79,6 +79,7 @@ export class ProdottiService {
     for(let i = 0; i <= 11; i++){
       if(this.prodList[i].sconto == 0){
         this.prodList[i].sconto =  20
+        this.prodList[i].price = this.prodList[i].price-(this.prodList[i].price*(this.prodList[i].sconto/100))
       }
     }
   }
