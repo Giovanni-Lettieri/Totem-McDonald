@@ -59,6 +59,7 @@ h2 {
 section{
     position: absolute;
     background-color:#ffffff;
+    overflow: hidden;
     height: 2000px;
     width: 2000px;
     top:-200px;
