@@ -63,7 +63,6 @@ export class ProdCheckOutComponent {
     const target = event.target as HTMLElement;
     if (!target.closest('span')) {
       this.extraFlag = false;
-      console.log("basta")
     }
   }
 
@@ -102,7 +101,6 @@ export class ProdCheckOutComponent {
   }
 
   edit() {
-    console.log("asdasdsadsadsadsad")
     //AGGIUNGI
   }
 }
