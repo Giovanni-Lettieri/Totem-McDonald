@@ -21,8 +21,11 @@ export class LightDarkServiceService {
   backgroundBlack(){
     return (this.darkMode)? 'black': 'white'
   }
+  background2(){
+    return (this.darkMode)? '#121212': '#EFECE5'
+  }
   pulsBackground(){
-    return (this.darkMode)? 'black': 'white'
+    return (this.darkMode)? '#090909': 'white'
   }
   testi(){
     return (this.darkMode)? 'white': 'black'

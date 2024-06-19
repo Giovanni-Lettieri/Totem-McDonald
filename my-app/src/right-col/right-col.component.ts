@@ -15,6 +15,7 @@ import { RouterLink } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { CheckOutComponent } from "../check-out/check-out.component";
 import { InfoBillService } from '../Service/info-bill.service';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -47,7 +48,8 @@ export class RightColComponent implements OnInit{
     private servCont: ContoService, 
     private pulsante: StartButtonComponent,
     private lingSer : ChangeLanguagesService, 
-    private infoBill : InfoBillService
+    private infoBill : InfoBillService,
+    private lDServ: LightDarkServiceService
   ) {
     this.billDerivato = this.infoBill.getAcquisti()
   }
@@ -83,6 +85,13 @@ export class RightColComponent implements OnInit{
   }  
   passagioCheckOut(){
     this.infoBill.aggiorna()
+  }
+
+  rCBackground(){
+    return this.lDServ.background2()
+  }
+  getTestiColor(){
+    return this.lDServ.testi()
   }
 }
 

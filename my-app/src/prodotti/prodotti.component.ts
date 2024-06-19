@@ -12,6 +12,7 @@ import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { OverlayService } from '../Service/overlay.service';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -36,7 +37,8 @@ export class ProdottiComponent implements OnInit{
     private bottomSheet: MatBottomSheet, 
     private prodottiService: ProdottiService, 
     private lingSer : ChangeLanguagesService,
-    private overlay: OverlayService
+    private overlay: OverlayService, 
+    private lDServ: LightDarkServiceService
   ){
     effect(() => {
       this.prodottiAttuali = this.ProductList.filter((c) => c.category === this.categoriaAttuale());
@@ -87,6 +89,13 @@ export class ProdottiComponent implements OnInit{
       panelClass: 'bottom-sheet',
       viewContainerRef: this.viewContainerRef,
     });
+  }
+
+  getBackground(){
+    return this.lDServ.backgroundBlack()
+  }
+  getTestiColor(){
+    return this.lDServ.testi()
   }
 }
 
