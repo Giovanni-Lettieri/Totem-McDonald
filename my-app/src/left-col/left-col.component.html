@@ -1,16 +1,16 @@
-<section>
+<section [style.background-color]="getBackgroundColor()">
     <div id="container-l">    
         <img src="assets/M.png" width="17%">
     </div>
     <div id="HW-container">
-        <p id="hey-t">{{Ehi}}</p>
+        <p [style.color]="getTestiColor()" id="hey-t">{{Ehi}}</p>
         <br>
-        <p id="Wup-t">{{WU}}</p>
+        <p [style.color]="getTestiColor()" id="Wup-t">{{WU}}</p>
     </div>
     <div id="PT-container">
-        <p id="popularTxt">{{nome}}</p>
+        <p [style.color]="getTestiColor()" id="popularTxt">{{nome}}</p>
     </div>
-    <div id="fade"></div>
+    <div [style.background-color]="getBackgroundColor()" id="fade"></div>
 
     <category (mandaNomeCat)="riceviNome($event)"></category>
     <app-prodotti [categoriaAttuale]="nome"></app-prodotti>  

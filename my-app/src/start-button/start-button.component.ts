@@ -6,6 +6,7 @@ import { RightColComponent } from '../right-col/right-col.component';
 import { Subscription } from 'rxjs';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Testi } from '../app/testi';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ import { Testi } from '../app/testi';
 export class StartButtonComponent {
   
 
-  constructor(private lingSer : ChangeLanguagesService ){}
+  constructor(private lingSer : ChangeLanguagesService, private lDServ: LightDarkServiceService){}
   subscription !: Subscription;
 
   Testo : Testi = this.lingSer.getTesto()
@@ -55,5 +56,11 @@ export class StartButtonComponent {
 
   getIndice(){
     return this.indice;
+  }
+  getPulsBackgroundColor(){
+    return this.lDServ.pulsBackground()
+  }
+  getTestiColor(){
+    return this.lDServ.testi()
   }
 }

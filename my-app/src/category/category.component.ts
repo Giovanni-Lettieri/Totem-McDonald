@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Category } from './category';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 @Component({
   selector: 'category',
@@ -13,7 +14,7 @@ import { Subscription } from 'rxjs';
 })
 export class CategoryComponent {
   
-  constructor(private lingSer : ChangeLanguagesService){}
+  constructor(private lingSer : ChangeLanguagesService, private lDServ: LightDarkServiceService){}
   
   pulsanteCliccato: number= -1;
 
@@ -43,11 +44,11 @@ export class CategoryComponent {
   }
 
   coloreSfondo(sconto: number, i: number) {
-    return this.pulsanteCliccato == i ? '#FFCA40' : (sconto != 0 ? '#C8161D' : '#EFECE5');
+    return this.pulsanteCliccato == i ? '#FFCA40' : (sconto != 0 ? '#C8161D' : (this.lDServ.darkMode)?'#101010':'#EFECE5');
   }
 
   coloreTesto(sconto: number, i: number) {
-    return this.pulsanteCliccato == i ? '#FFFFFF' : (sconto <= 0 ? '#000000' : '#FFFFFF');
+    return this.pulsanteCliccato == i ? '#FFFFFF' : (sconto <= 0 ? ((this.lDServ.darkMode)?'white':'black') : '#FFFFFF');
   }
 
   mandaDato(n: string, i: number) {
@@ -58,5 +59,9 @@ export class CategoryComponent {
   PulsanteOff() {
     this.pulsanteCliccato = -1;
     this.mandaNomeCat.emit(this.lingSer.getTesto().Pop);
+  }
+
+  getBackgroundColor(){
+    return this.lDServ.backgroundBlack()
   }
 }

@@ -1,9 +1,9 @@
-<nav>
+<nav [style.background-color]="rCBackground()">
     <language id="language"></language>
     <div id="upText-container">   
-        <p id="MR-text">{{my}}<br>{{order}}</p>
+        <p [style.color]="getTestiColor()" id="MR-text">{{my}}<br>{{order}}</p>
 
-        <p id="sottoMyOrder">
+        <p [style.color]="getTestiColor()" id="sottoMyOrder">
             @if(this.indice != null){
                 {{this.pulsanti[this.indice].testo}}
             }@else{
@@ -16,10 +16,10 @@
     <div id="prezzo-div">
         <p id="totale">{{total}}</p>
         @if(Cur == 'EUR'){    
-            <p id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
+            <p [style.color]="getTestiColor()" id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
         }
         @else{
-            <p id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
+            <p [style.color]="getTestiColor()" id="importo">{{ conto | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
         }
     </div>
 

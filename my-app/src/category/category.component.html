@@ -1,4 +1,4 @@
-<div id="contenitore">
+<div id="contenitore" [style.background-color]="getBackgroundColor()">
     <button *ngFor="let c of categoryList; let i = index" 
     [style.background-color]="coloreSfondo(c.sconto, i)" 
     (click)="mandaDato(c.name, i)">
@@ -12,4 +12,4 @@
       <span *ngIf="c.sconto != 0">-{{c.sconto}}% off</span>
     
     </button>
-  </div>
+</div>
