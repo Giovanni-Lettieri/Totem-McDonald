@@ -3,7 +3,7 @@
 </button>
 @if (contMenuLingue) {
     <section (click)="cambiaStato()" id="overlay">
-        <div id="menu">
+        <div id="menu" [style.background-color]="getBackgroundColor()">
             <div id="cont">
                 <span *ngFor="let l of LingueList">
                     <button (click)="selezionaLingua(l)" id="button-2">
