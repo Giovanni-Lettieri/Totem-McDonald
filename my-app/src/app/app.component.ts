@@ -39,7 +39,7 @@ export class AppComponent {
         this.lDServ.switchMode()
     }
     getBackgroundColor(){
-        return this.lDServ.background()
+        return this.lDServ.background2()
     }
     getTestiColor(){
         return this.lDServ.testi()

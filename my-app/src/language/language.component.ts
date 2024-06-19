@@ -3,6 +3,8 @@ import { Lingua } from './lingua';
 import { CommonModule } from '@angular/common';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
+
 @Component({
   selector: 'language',
   standalone: true,
@@ -15,7 +17,7 @@ import { Subscription } from 'rxjs';
 export class LanguageComponent {
   
 
-  constructor(private lingSer : ChangeLanguagesService ){}
+  constructor(private lingSer : ChangeLanguagesService, private lDServ: LightDarkServiceService){}
 
   contMenuLingue:boolean = false;
   selecLingua : Lingua = this.lingSer.getLinguaSel();
@@ -37,5 +39,9 @@ export class LanguageComponent {
       this.selecLingua = l;
       this.lingSer.setLingua(l);
     }
+  }
+
+  getBackgroundColor(){
+    return this.lDServ.background()
   }
 }

@@ -1,7 +1,7 @@
 <a routerLink="/MainScreen" (click)="setIndice(0)">
     <button id="Eat-In" [style.background-color]="getPulsBackgroundColor()">
         <img [src]="pulsantiArray[0].immagine">
-        <p [style.color]="getTestiColor()">{{pulsantiArray[1].testo}}</p>
+        <p [style.color]="getTestiColor()">{{pulsantiArray[0].testo}}</p>
     </button>
 </a>
 <a routerLink="/MainScreen" (click)="setIndice(1)">
