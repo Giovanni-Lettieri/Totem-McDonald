@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , ElementRef, OnInit, ViewChild, viewChild} from '@angular/core';
 import { BillComponent } from '../Bill/bill.component';
 import { Subscription } from 'rxjs';
 import { ContoService } from '../Service/conto.service';
@@ -29,10 +29,10 @@ registerLocaleData(localeEn)
 })
 
 export class RightColComponent implements OnInit{
+  @ViewChild('scroll') scroll !: ElementRef;
   
   GoToTop() {
-    const lista = document.getElementById('ordini') as HTMLDivElement;
-    lista.scrollTop = 0;
+    this.scroll.nativeElement.scrollTop = 0;
   }
   
   my : String =  this.lingSer.getTesto().Mio
@@ -46,6 +46,7 @@ export class RightColComponent implements OnInit{
   indice!: number;
   conto : number = 0;
   
+
   subscription !: Subscription;
   subscription2 !: Subscription;
 

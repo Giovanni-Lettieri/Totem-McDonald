@@ -11,8 +11,9 @@
             }
         </p>
     </div>
-    
-    <bill id="ordini" [style.background-color]="rCBackground()" (MandaBill)="riceviBill($event)" (GoToTop)="GoToTop()"></bill>
+    <div id="ordini" #scroll>
+        <bill [style.background-color]="rCBackground()" (MandaBill)="riceviBill($event)" (GoToTop)="GoToTop()"></bill>
+    </div>
     <div id="prezzo-div">
         <p id="totale">{{total}}</p>
         @if(Cur == 'EUR'){    
