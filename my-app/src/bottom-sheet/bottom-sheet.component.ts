@@ -56,7 +56,6 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   vadoAlBill : boolean = true;
 
   vacciAlBill(){
-    console.log("fammici andare")
     this.vadoAlBill = false
   }
 
