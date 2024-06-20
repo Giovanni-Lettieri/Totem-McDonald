@@ -1,6 +1,23 @@
 <section [style.background-color]="getBackgroundColor()"></section>
 <div [style.background-color]="getBackgroundColor()" id="BS">
-  <img id="immaginePrincipale" [src]="data.image" />
+  
+  
+
+
+  
+  
+  <img 
+    id="immaginePrincipale" 
+    [src]="data.image" 
+    [@andataAlBIll]="vadoAlBill === true ? 'start' : 'end'">
+  
+  
+
+
+
+
+
+  
   <h2 [style.color]="getTestiColor()">{{ data.item }}</h2>
 
   <p id="prezzo">{{ data.price | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
@@ -15,22 +32,37 @@
     </span>
     <button id="P-but" (click)="plus()"><p>+</p></button>
   </div>
-  <button id="button-fatto" (click)="setProd(data, quantita)"><p id="fatto">{{ fatto }}</p></button>
+
+  <!-- tasto done -->
+  <button id="button-fatto" (click)="setProd(data, quantita)"  (click)="vacciAlBill()">
+    <p id="fatto">{{ fatto }}</p>
+  </button>
 
   
-
+  <!-- publicita -->
   <div [style.background-color]="rCBackground()" id="ad" *ngIf="prodList.length > 0">
     <div [style.background-color]="getBackgroundColor()" id="Blocco"></div>
     <div>
       <span [style.color]="getTestiColor()" id="CM">{{ comMeal }}</span>
       <div id="offerta">
         <div class="offerta-container">
+          
+          
+          
+          
+          <!-- elementi nella publicita -->
           <div class="offerta-item" 
           *ngFor="let prod of prodList; let i = index" 
           [class.visible]="i === adAtt" 
           [class.hidden]="i !== adAtt" 
           [@slideAnimation]="i === adAtt ? 'visible' : 'hidden'" 
           (click) = "goToAdd(prod)" >
+            
+          
+          
+          
+          
+          
             <img id="CMimage" [src]="prod.image" />
             <p [style.color]="getTestiColor()" id="CMitem">{{ prod.item }}</p>
             <p id="CMprezzo">{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
