@@ -29,8 +29,7 @@
           *ngFor="let prod of prodList; let i = index" 
           [class.visible]="i === adAtt" 
           [class.hidden]="i !== adAtt" 
-          [@slideAnimation]="i === adAtt ? 
-          'visible' : 'hidden'" 
+          [@slideAnimation]="i === adAtt ? 'visible' : 'hidden'" 
           (click) = "goToAdd(prod)" >
             <img id="CMimage" [src]="prod.image" />
             <p [style.color]="getTestiColor()" id="CMitem">{{ prod.item }}</p>
