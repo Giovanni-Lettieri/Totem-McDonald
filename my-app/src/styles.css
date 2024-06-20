@@ -9,7 +9,53 @@ html, body {
 .bottom-sheet {
     color: rgba(255, 255, 255, 0);
     width: 100vw;
+    position: absolute;
+    z-index: 100000000000000000000000000000000000000000000000000000000;
+    background-clip: content-box;
+    animation: expandHole 0.3s linear forwards;
+    pointer-events: none;
 }
+@keyframes expandHole {
+    0% {
+        clip-path: circle(10% at 50% 45%);
+    }
+    100% {
+        clip-path: circle(100% at 50% 45%);   
+        pointer-events: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #bottomSheet.visible {
     display: block;
 }
@@ -27,9 +73,8 @@ html, body {
     box-shadow: none !important;
     background-color: rgb(255, 255, 255);
     background: #ffffff !important;
+    
 }
-
-
 .mat-ripple-element {
     background-color: rgba(255, 0, 0, 0) !important;
 }
