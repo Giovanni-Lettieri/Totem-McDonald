@@ -11,8 +11,8 @@
             }
         </p>
     </div>
-    <div id="ordini" #scroll>
-        <bill [style.background-color]="rCBackground()" (MandaBill)="riceviBill($event)" (GoToTop)="GoToTop()"></bill>
+    <div [style.background-color]="rCBackground()" id="ordini" #scroll>
+        <bill  (MandaBill)="riceviBill($event)" (GoToTop)="GoToTop()"></bill>
     </div>
     <div id="prezzo-div">
         <p id="totale">{{total}}</p>
