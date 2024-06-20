@@ -42,16 +42,19 @@ export class BillComponent implements OnInit {
     private lDServ: LightDarkServiceService
   ){
     this.BillList = this.infoBill.getAcquisti(); 
-
   }
-  
+
   ngOnInit(): void { 
     this.servCont.agiornaContatore()
     this.prodottiSub = this.service.ProdChange.subscribe(() => {
       const billProd = this.service.getBillProd();
-      this.BillList.forEach(b => {
+      this.BillList.forEach((b , index)=> {
         if(b.image == billProd.image){
           b.quantita += billProd.quantita
+          if(index != 0){
+            this.BillList.splice(index, 1);
+            this.BillList.unshift(b) 
+          }
           this.controllo = false 
         }
       });
@@ -61,9 +64,8 @@ export class BillComponent implements OnInit {
       this.controllo = true ; 
       this.MandaBill.emit(this.BillList);
       this.servCont.agiornaContatore();
-      
+      this.GoToTop.emit()
     });
-    //LINGUA
     this.linguaSub = this.lingSer.cambioLingua.subscribe(() => {
       this.Cur = this.lingSer.getTesto().Curency
       this.BillList.forEach(b => {
@@ -71,9 +73,9 @@ export class BillComponent implements OnInit {
       });
     });
 
-
     this.checkOutSub = this.infoBill.infoBill.subscribe(() => {
-      this.BillList = this.infoBill.getAcquisti(); 
+      this.BillList = this.infoBill.getAcquisti();
+      this.GoToTop.emit()
     });
     
   }
@@ -85,7 +87,9 @@ export class BillComponent implements OnInit {
   }
   
   @Output() MandaBill = new EventEmitter<BillProd[]>();
-
+  @Output() GoToTop = new EventEmitter<void>()
+  
+  
   add(b: BillProd) {
     b.quantita++;
     this.servCont.agiornaContatore();
