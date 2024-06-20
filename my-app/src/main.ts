@@ -18,6 +18,8 @@ bootstrapApplication(AppComponent, appConfig)
     constructor(private lDServ: LightDarkServiceService){
     }
 
+    cic: boolean = this.lDServ.darkMode
+
     getBackGroundColor() {
       return this.lDServ.backgroundBlack()
     }
