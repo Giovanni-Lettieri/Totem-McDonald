@@ -13,6 +13,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { LightDarkServiceService } from '../Service/light-dark-service.service';
+import { transform } from 'typescript';
 
 registerLocaleData(localeIt);
 registerLocaleData(localeEn);
@@ -29,6 +30,14 @@ registerLocaleData(localeEn);
       state('visible', style({ transform: 'translateX(0)', opacity: 1 })),
       transition('hidden => visible', animate('300ms ease-in')),
       transition('visible => hidden', animate('300ms ease-out')),
+    ]),
+
+    trigger('andataAlBIll', [
+      state('start', style({ transform: 'translateX(0%) translateY(0%) scale(1)' })),
+      state('end', style({ transform: 'translateX(60%) translateY(-20%) scale(0.2)'})),
+      transition('start => end', [
+        animate('200ms ease-out', style({ transform: 'translateX(60%) translateY(-20%) scale(0.2)' }))
+      ]),
     ])
   ]
 })
@@ -43,6 +52,12 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   quantita: number = 1;
   src!: String;
   pSuport!: Prodotti[];
+  
+  vadoAlBill : boolean = true;
+
+  vacciAlBill(){
+    this.vadoAlBill = false
+  }
 
   constructor(
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: Prodotti,
