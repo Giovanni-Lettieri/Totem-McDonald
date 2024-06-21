@@ -19,14 +19,14 @@ registerLocaleData(localeEn)
   templateUrl: './bill.component.html',
   styleUrls: ['./bill.component.css'],
   animations: [
-    trigger('goToBottomSheet', [
+    trigger('popBillProd', [
       
-      state('start', style({ transform: 'translateX(0%)' })),
+      state('start', style({ transform: 'scale(1)'  })),
       
-      state('end', style({ transform: 'translateX(-100%)'})),
+      state('end', style({ transform: 'scale(0)' })),
       
       transition('start => end', [
-        animate('200ms ease-out', style({ transform: 'translateX(-100%)' }))
+        animate('400ms ease-out', style({ transform: 'scale(0)' }))
       ]),
     ])
   ]
@@ -37,7 +37,7 @@ export class BillComponent implements OnInit{
   billProd = input.required<BillProd>()
 
   //controllo animazioen
-  animation : boolean = true; 
+  animationFlag : boolean = true; 
 
   //lingua
   curency : string = this.lingSer.getTesto().Curency
@@ -78,11 +78,13 @@ export class BillComponent implements OnInit{
     if (this.billProd().quantita <= 0) {
       this.startAnimation();
     }
-    this.servContoTot.agiornaContatore();
+    setTimeout(() => {    //dal il tempo al animazione di svolgersi prima di eliminare il billProd
+      this.servContoTot.agiornaContatore();
+    } , 400);
   }
 
   //start aimazione rimozioen
   startAnimation(){
-    this.animation = false 
+    this.animationFlag = false 
   }
 }
