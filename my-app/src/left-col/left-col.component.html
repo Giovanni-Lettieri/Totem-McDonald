@@ -1,17 +1,34 @@
-<section [style.background-color]="getBackgroundColor()">
-    <div id="container-l">    
-        <img src="assets/M.png" width="17%">
+<section id="main" [style.background-color]="getBackgroundColor()">
+    <!-- roba back -->
+    <div id="back-cont" 
+    [ngClass]="{'visible': backVisible, 'invisible': !backVisible}" 
+    >
+        <button id="back" (click)="back()">
+            <p id="back-frecia"> < </p>
+            <p id="back-text">Back</p>
+        </button>
     </div>
-    <div id="HW-container">
-        <p [style.color]="getTestiColor()" id="hey-t">{{Ehi}}</p>
-        <br>
-        <p [style.color]="getTestiColor()" id="Wup-t">{{WU}}</p>
-    </div>
-    <div id="PT-container">
-        <p [style.color]="getTestiColor()" id="popularTxt">{{nome}}</p>
-    </div>
-    <div [style.background-color]="getBackgroundColor()" id="fade"></div>
 
-    <category (mandaNomeCat)="riceviNome($event)"></category>
-    <app-prodotti [categoriaAttuale]="nome"></app-prodotti>  
+    <!-- roba logo  -->
+    <div id="top-cont" [@animazioneLogo]="animazioneLogo === true ? 'start' : 'end'">
+        <div id="container-l">    
+            <img src="assets/M.png" width="17%">
+        </div>
+        <div id="HW-container">
+            <p [style.color]="getTestiColor()" id="hey-t">{{Ehi}}</p>
+            <br>
+            <p [style.color]="getTestiColor()" id="Wup-t">{{WU}}</p>
+        </div>
+    </div>
+    
+    <!-- ressto -->
+    <section>
+        <div id="PT-container">
+            <p [style.color]="getTestiColor()" id="popularTxt">{{nome}}</p>
+        </div>
+        <div [style.background-color]="getBackgroundColor()" id="fade"></div>
+
+        <category (mandaNomeCat)="riceviNome($event)" (catSelezionata)="nascondiTopCont()"></category>
+        <app-prodotti [categoriaAttuale]="nome" ></app-prodotti>  
+    </section>
 </section> 
