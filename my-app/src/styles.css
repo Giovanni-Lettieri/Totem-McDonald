@@ -4,80 +4,8 @@ body {
 html, body { 
     height: 100vh; 
     margin: 0; 
-    --mat-text-button-state-layer-color: #2d7a2a00;
-}
-.bottom-sheet {
-    color: rgba(255, 255, 255, 0);
-    width: 100vw;
-    position: absolute;
-    z-index: 100000000000000000000000000000000000000000000000000000000;
-    background-clip: content-box;
-    animation: expandHole 0.3s linear forwards;
-    pointer-events: none;
-}
-@keyframes expandHole {
-    0% {
-        clip-path: circle(10% at 50% 45%);
-    }
-    100% {
-        clip-path: circle(100% at 50% 45%);   
-        pointer-events: auto;
-    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#bottomSheet.visible {
-    display: block;
-}
-.mat-bottom-sheet-container-medium {
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-    border-top-left-radius: 1000px;
-    border-top-right-radius: 1000px;
-}
-.mat-bottom-sheet-container {
-    min-height: 80vh !important;
-    max-height: 100vh !important;
-    border-top-left-radius: 200px !important;
-    border-top-right-radius: 200px !important;
-    box-shadow: none !important;
-    background-color: rgb(255, 255, 255);
-    background: #ffffff !important;
-    
-}
-.mat-ripple-element {
-    background-color: rgba(255, 0, 0, 0) !important;
-}
 .ripple-container {
     color: #fff;
     text-align: center;
@@ -86,9 +14,9 @@ html, body {
     font-size: 18px;
     position: relative;
     z-index: 1;
-  }
+}
   
-  .ripple {
+.ripple {
     position: fixed;
     border-radius: 50%;
     transform: scale(0);
@@ -96,11 +24,11 @@ html, body {
     border: 5px solid rgba(133, 133, 133, 0.7);
     pointer-events: none; 
     z-index: 1000;
-  }
+}
   
-  @keyframes rippleEffect {
+@keyframes rippleEffect {
     to {
-      transform: scale(4);
-      opacity: 0;
+        transform: scale(4);
+        opacity: 0;
     }
-  }
+}

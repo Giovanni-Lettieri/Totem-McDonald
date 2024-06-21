@@ -19,8 +19,11 @@
   ripple.style.width = ripple.style.height = `${size}px`;
   ripple.style.left = `${X - size / 2}px`;
   ripple.style.top = `${Y - size / 2}px`;
-  
   rippleContainer.appendChild(ripple);
+
+  ripple.addEventListener('animationend', function() {
+    ripple.remove();
+  });
 });
 </script>
 

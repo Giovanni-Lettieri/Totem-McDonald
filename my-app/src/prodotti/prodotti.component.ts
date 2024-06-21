@@ -1,13 +1,12 @@
 import { Component, HostListener, ViewContainerRef, effect, input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Prodotti } from './prodotti';
-import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
-import { MatButtonModule } from '@angular/material/button';
 import { ProdottiService } from '../Service/prodotti.service';
-import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
+import { BottomSheetComponent } from '../Bottom-sheet2/bottom-sheet/bottom-sheet.component';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs';
 import { CurrencyPipe } from '@angular/common';
+import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
@@ -19,11 +18,11 @@ registerLocaleData(localeEn)
 
 
 @Component({
-  selector: 'app-prodotti',
-  standalone: true,
-  imports: [CommonModule, MatBottomSheetModule, MatButtonModule,CurrencyPipe],
-  templateUrl: './prodotti.component.html',
-  styleUrl: './prodotti.component.css'
+    selector: 'app-prodotti',
+    standalone: true,
+    templateUrl: './prodotti.component.html',
+    styleUrl: './prodotti.component.css',
+    imports: [CommonModule, CurrencyPipe, BottomSheetComponent]
 })
 
 
@@ -33,17 +32,20 @@ export class ProdottiComponent implements OnInit{
   categoriaAttuale = input.required<string>();
   prodottiAttuali!: Prodotti[];
   viewContainerRef: ViewContainerRef | undefined;
+  
+
   constructor(
-    private bottomSheet: MatBottomSheet, 
     private prodottiService: ProdottiService, 
     private lingSer : ChangeLanguagesService,
     private overlay: OverlayService, 
-    private lDServ: LightDarkServiceService
+    private lDServ: LightDarkServiceService,
+    private btsServ: BottomSheetOpenCloseService
   ){
     effect(() => {
       this.prodottiAttuali = this.ProductList.filter((c) => c.category === this.categoriaAttuale());
     });
     this.prodottiService.randomizeProdotti();
+
   }
   
   subscription !: Subscription;
@@ -68,9 +70,13 @@ export class ProdottiComponent implements OnInit{
     }
   }
 
-  pulsanteOn(i: number) {
+  pulsanteOn(i: number, c: Prodotti) {
     this.pulsanteCliccato = i;
-    this.openBottomSheet(this.prodottiAttuali[i]);
+
+    this.btsServ.bottomSheetOpened()  //QUI 
+    this.btsServ.setC(c)
+
+    // this.openBottomSheet(this.prodottiAttuali[i]);
     this.overlay.switch()
   }
 
@@ -82,14 +88,9 @@ export class ProdottiComponent implements OnInit{
     this.pulsanteCliccato = -1;
   }
 
-  openBottomSheet(data: Prodotti): void {
-    this.bottomSheet.open(BottomSheetComponent, {
-      data: data,
-      hasBackdrop: false,
-      panelClass: 'bottom-sheet',
-      viewContainerRef: this.viewContainerRef,
-    });
-  }
+  // openBottomSheet(data: Prodotti): void {
+
+  // }
 
   getBackground(){
     return this.lDServ.backgroundBlack()
@@ -97,6 +98,7 @@ export class ProdottiComponent implements OnInit{
   getTestiColor(){
     return this.lDServ.testi()
   }
+
 }
 
 

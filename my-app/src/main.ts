@@ -1,8 +1,11 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app/app.component';
 import { Component } from '@angular/core';
 import { LightDarkServiceService } from './Service/light-dark-service.service';
+import { CommonModule } from '@angular/common';
+import { BottomSheetOpenCloseService } from './Service/bottom-sheet-open-close.service';
 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err),);
@@ -12,13 +15,12 @@ bootstrapApplication(AppComponent, appConfig)
     standalone: true,
     templateUrl: '../src/index.html',
     styleUrls: ['../src/styles.css'],
-    imports: [AppComponent]
+    imports: [AppComponent, CommonModule, BrowserAnimationsModule ]
 })
   export class Main{
     constructor(private lDServ: LightDarkServiceService){
     }
-
-    cic: boolean = this.lDServ.darkMode
+    
 
     getBackGroundColor() {
       return this.lDServ.backgroundBlack()

@@ -8,7 +8,8 @@ export class OverlayService {
   BSOpen!: boolean
   mP!: MainPageComponent
   
-   overlayChange: EventEmitter<void> = new EventEmitter<void>();
+  overlayChange: EventEmitter<void> = new EventEmitter<void>();
+  animationStateChanged: any;
 
   constructor() {
     this.BSOpen = false

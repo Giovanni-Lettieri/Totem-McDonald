@@ -1,7 +1,7 @@
 <div class="contenitore" [style.background-color]="getBackground()">
-    <button mat-button 
+    <button 
       *ngFor="let c of prodottiAttuali; let i = index" 
-      (click)="pulsanteOn(i)"
+      (click)="pulsanteOn(i, c)"
       [style.background-color]="getBackground()">
       <span *ngIf="c.sconto != 0">-{{c.sconto}}%</span><br>
       <img [src]="c.image">
@@ -14,7 +14,8 @@
       }@else{
         <p [style.color]="colorePrezzo(i)" class="prezzo">{{c.price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }} </p>
       }    
-        <br>
+      <br>
     </button>
 </div>
+
   

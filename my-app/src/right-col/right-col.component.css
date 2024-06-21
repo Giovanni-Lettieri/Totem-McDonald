@@ -3,7 +3,6 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 50;
   }
   #MR-text {
     font-size: 40px;
@@ -83,8 +82,8 @@ nav{
     display: block;
     position: fixed;
     background-color: #EFECE5;
-    z-index: 0;
     top:0px;
+    z-index: 50;
 }
 button{
     background-color: #FFCA40;
