@@ -65,11 +65,13 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   src!: String;
   pSuport!: Prodotti[];
   data = input.required<Prodotti>()
-  
+  bottomSheetAperto!: boolean
   vadoAlBill : boolean = true;
 
-  startAnimation(){
-    this.animation = false
+  subscriptionBottomSheet!: Subscription
+
+  vacciAlBill(){
+    this.vadoAlBill = false
   }
   constructor(
     private service: PassagioBillService,
