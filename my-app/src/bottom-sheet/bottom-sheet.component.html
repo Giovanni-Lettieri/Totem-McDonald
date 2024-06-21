@@ -9,7 +9,7 @@
   <img 
     id="immaginePrincipale" 
     [src]="data.image" 
-    [@andataAlBIll]="vadoAlBill === true ? 'start' : 'end'">
+    [@andataAlBIll]="animation === true ? 'start' : 'end'">
   
   
 
@@ -34,7 +34,7 @@
   </div>
 
   <!-- tasto done -->
-  <button id="button-fatto" (click)="setProd(data, quantita)"  (click)="vacciAlBill()">
+  <button id="button-fatto" (click)="setProd(data, quantita)"  (click)="startAnimation()">
     <p id="fatto">{{ fatto }}</p>
   </button>
 

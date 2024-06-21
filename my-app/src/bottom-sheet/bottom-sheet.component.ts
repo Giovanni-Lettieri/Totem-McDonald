@@ -13,7 +13,6 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { LightDarkServiceService } from '../Service/light-dark-service.service';
-import { transform } from 'typescript';
 
 registerLocaleData(localeIt);
 registerLocaleData(localeEn);
@@ -53,10 +52,10 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   src!: String;
   pSuport!: Prodotti[];
   
-  vadoAlBill : boolean = true;
+  animation : boolean = true;
 
-  vacciAlBill(){
-    this.vadoAlBill = false
+  startAnimation(){
+    this.animation = false
   }
 
   constructor(
