@@ -8,12 +8,14 @@ export class InfoBillService {
 
   infoBill: EventEmitter<void> = new EventEmitter<void>();
   acquisti :BillProd[] = []
-
+  conto : number = 0 
   constructor() {}
   
   setAcquisti(b : BillProd[]){
     this.acquisti = b
-    this.aggiorna()
+  }
+  setConto(c : number){
+    this.conto = c
   }
 
   aggiorna(){
@@ -26,6 +28,10 @@ export class InfoBillService {
 
   getAcquisti() : BillProd[] {
     return this.acquisti
+  }
+
+  getConto() : number{
+    return this.conto
   }
   
 }

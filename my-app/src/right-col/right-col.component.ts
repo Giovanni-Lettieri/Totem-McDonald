@@ -1,104 +1,158 @@
-import { Component , ElementRef, OnInit, ViewChild, viewChild} from '@angular/core';
-import { BillComponent } from '../Bill/bill.component';
-import { Subscription } from 'rxjs';
-import { ContoService } from '../Service/conto.service';
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { LanguageComponent } from "../language/language.component";
-import { StartButton } from '../start-button/start-button';
-import { StartButtonComponent } from '../start-button/start-button.component';
-import { ChangeLanguagesService } from '../Service/change-languages.service';
-import { CurrencyPipe } from '@angular/common';
-import { registerLocaleData } from '@angular/common';
+import { BillComponent } from "../Bill/bill.component";
+import { CurrencyPipe, registerLocaleData } from "@angular/common";
+import { RouterLink, RouterOutlet } from "@angular/router";
+import { CheckOutComponent } from "../check-out/check-out.component";
+import { LightDarkServiceService } from "../Service/light-dark-service.service";
+import { ChangeLanguagesService } from "../Service/change-languages.service";
+import { Subscription } from "rxjs/internal/Subscription";
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
-import { BillProd } from '../Bill/bill-prod';
-import { RouterLink } from '@angular/router';
-import { RouterOutlet } from '@angular/router';
-import { CheckOutComponent } from "../check-out/check-out.component";
-import { InfoBillService } from '../Service/info-bill.service';
-import { LightDarkServiceService } from '../Service/light-dark-service.service';
-
+import { StartButton } from '../start-button/start-button';
+import { StartButtonComponent } from '../start-button/start-button.component';
+import { BillProd } from "../Bill/bill-prod";
+import { InfoBillService } from "../Service/info-bill.service";
+import { ContoService } from "../Service/conto.service";
+import { PassagioBillService } from "../Service/passagio-bill.service";
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
 
+
 @Component({
-    selector: 'right-col',
-    standalone: true,
-    templateUrl: './right-col.component.html',
-    styleUrl: './right-col.component.css',
-    imports: [BillComponent, LanguageComponent, CurrencyPipe, RouterOutlet, RouterLink, CheckOutComponent]
+  selector: 'right-col',
+  standalone: true,
+  templateUrl: './right-col.component.html',
+  styleUrl: './right-col.component.css',
+  imports: [BillComponent, LanguageComponent, CurrencyPipe, RouterOutlet, RouterLink, CheckOutComponent,StartButtonComponent]
 })
 
 export class RightColComponent implements OnInit{
+
+  //manipolare il dom per portare lo scroll a 0
   @ViewChild('scroll') scroll !: ElementRef;
-  
-  GoToTop() {
-    this.scroll.nativeElement.scrollTop = 0;
-  }
-  
+
+  // variabili per la lingua
   my : String =  this.lingSer.getTesto().Mio
   order : String = this.lingSer.getTesto().Ord
   total : String = this.lingSer.getTesto().TOT
   done : String = this.lingSer.getTesto().Fatto
-  Cur : String = this.lingSer.getTesto().Curency
-
-  pulsanti!: StartButton[];
-  billDerivato !: BillProd[]
-  indice!: number;
-  conto : number = 0;
+  curency : String = this.lingSer.getTesto().Curency
   
+  //varibili dello startButton per takeOut/eatIn
+  pulsantiStart!: StartButton[];
+  indexStart!: number;
 
-  subscription !: Subscription;
-  subscription2 !: Subscription;
+  //subscripscion per i service
+  subLanguage !: Subscription
+  subContoTot !: Subscription
+  subCheck_Bill !: Subscription
+  subProd_Bill !: Subscription
+  
+  //Dati del bill;
+  billList : BillProd [] = []
+  conto : number = this.checkOut_Bill.getConto(); 
+  flagProd_Bill : boolean = true
+
 
   constructor(
-    private servCont: ContoService, 
-    private pulsante: StartButtonComponent,
-    private lingSer : ChangeLanguagesService, 
-    private infoBill : InfoBillService,
-    private lDServ: LightDarkServiceService
-  ) {
-    this.billDerivato = this.infoBill.getAcquisti()
-  }
-  
-  riceviBill(b : BillProd[]){
-    this.billDerivato = b
+    //componenti 
+    private pulsante: StartButtonComponent, //per ottenere scritta Take/eat
+    //service
+    private lDServ: LightDarkServiceService, //  modalita notte e giorno
+    private lingSer : ChangeLanguagesService, // lingua
+    private checkOut_Bill : InfoBillService,     // passagio e ricezione checkout
+    private servContoTot: ContoService,            //aggiornare il conto 
+    private prod_bill: PassagioBillService     //aggiungere al bill dal bottom-sheet
+  ){  
+    this.billList = this.checkOut_Bill.getAcquisti()   //otenere modifiche fatte dal checkout
   }
 
-  ngOnInit(): void {  
-    
-    this.pulsanti = this.pulsante.getPulsante();
-    this.indice = this.pulsante.getIndice();
-    
-    // aggiornamento bill list
-    this.subscription = this.servCont.aggCont.subscribe(() => {
-      this.conto = 0; 
-      this.billDerivato.forEach(b => {
-        this.conto += b.price * b.quantita;
-      }); 
-    });
+  ngOnInit() : void {  
+    //dichiarazioni base
+    this.pulsantiStart = this.pulsante.getPulsante();
+    this.indexStart = this.pulsante.getIndice();
+    this.servContoTot.agiornaContatore()
 
-    //aggiornamento lingua
-    this.subscription2 = this.lingSer.cambioLingua.subscribe(() => {
-      this.billDerivato = this.infoBill.getAcquisti()
+    //Aggiornamento dinamico lingua
+    this.subLanguage = this.lingSer.cambioLingua.subscribe(() => {
+      this.billList.forEach(b => {
+        b.item = this.lingSer.changeBillProd(b)
+      });
+      
       this.my =  this.lingSer.getTesto().Mio
       this.order = this.lingSer.getTesto().Ord
       this.total = this.lingSer.getTesto().TOT
       this.done = this.lingSer.getTesto().Fatto
-      this.Cur = this.lingSer.getTesto().Curency
+      this.curency = this.lingSer.getTesto().Curency
     });
 
+    //Aggiornamento conto alla premuta di un tasto piu o meno
+    this.subContoTot = this.servContoTot.aggCont.subscribe(() => {
+      this.conto = 0; 
+      this.billList.forEach((b , index) => {
+          if(b.quantita <= 0){
+            this.billList.splice(index, 1);
+          }
+          this.conto += b.price * b.quantita;
+          this.checkOut_Bill.setConto(this.conto); 
+      });
+    });
 
-  }  
-  passagioCheckOut(){
-    this.infoBill.aggiorna()
+    //aggiornamento bill al passagio da checkout a bill
+    this.subCheck_Bill = this.checkOut_Bill.infoBill.subscribe(() => {
+      
+      this.billList = this.checkOut_Bill.getAcquisti();
+      this.servContoTot.agiornaContatore()
+      this.GoToTop()
+    });
+
+    //passagio prodotti al bill
+    this.subProd_Bill = this.prod_bill.ProdChange.subscribe(() => {
+      const billProd = this.prod_bill.getBillProd();
+      this.billList.forEach((b , index)=> {
+        if(b.image == billProd.image){
+          b.quantita += billProd.quantita
+          if(index != 0){
+            this.billList.splice(index, 1);
+            this.billList.unshift(b) 
+          }
+          this.flagProd_Bill = false 
+        }
+      });
+      if(this.flagProd_Bill){
+        this.billList.unshift(billProd);
+      }
+      this.flagProd_Bill = true ; 
+      this.servContoTot.agiornaContatore();
+      this.GoToTop()
+    });
+  }
+  ngOnDestroy(): void {
+    this.subProd_Bill.unsubscribe();
+    this.subLanguage.unsubscribe();
+    this.subCheck_Bill.unsubscribe();
+    this.subContoTot.unsubscribe()
   }
 
+  //funzione che riporta lo scroll a 0
+  GoToTop() {
+    this.scroll.nativeElement.scrollTop = 0;
+  }
+
+  //passagio bill al check out
+  passagioCheckOut(){
+    this.checkOut_Bill.setAcquisti(this.billList)
+    this.checkOut_Bill.setConto(this.conto); 
+    this.checkOut_Bill.aggiorna()
+  }
+
+  //modalita day night  
   rCBackground(){
     return this.lDServ.background2()
   }
   getTestiColor(){
     return this.lDServ.testi()
   }
+
 }
-
-
