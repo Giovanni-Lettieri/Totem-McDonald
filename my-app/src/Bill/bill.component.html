@@ -1,24 +1,24 @@
-<section>
-    <div id="contenitore-top" *ngFor="let b of BillList; let i = index">
-        <img [src]="b.image" width="40%">     
+<section [@popBillProd]="animationFlag === true ? 'start' : 'end'">
+    <div id="contenitore-top"> 
+        <img [src]="billProd().image" width="40%">         
         <div id="cont-title">
-            <p [style.color]="getTestiColor()" id="T-name">{{b.item}}</p>
+            <p [style.color]="getTestiColor()" id="T-name">{{billProd().item}}</p>
             <br>
             <div id="cont-price">            
-            @if(Cur == 'EUR'){    
-                <p id="T-price">{{b.price | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
+            @if(curency == 'EUR'){    
+                <p id="T-price">{{billProd().price | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
             }
             @else {
-                <p id="T-price">{{b.price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
+                <p id="T-price">{{billProd().price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
             }
             </div>
         </div>
         <div id="counter-cont">
-            <button [style.background-color]="getBackgroundPulsColor()" [style.color]="getTestiColor()" id="M-but"  (click)="minus(b , i)">-</button>
+            <button [style.background-color]="getBackgroundPulsColor()" [style.color]="getTestiColor()" id="M-but"  (click)="minus()">-</button>
             <span id="C-cont">    
-                <p [style.color]="getTestiColor()" id="T-cont">{{b.quantita}}</p>
-            </span>
-            <button id="P-but" (click)="add(b)">+</button>
+                <p [style.color]="getTestiColor()" id="T-cont">{{billProd().quantita}}</p>
+        </span>
+            <button id="P-but" (click)="add()">+</button>
         </div>
     </div>
 </section>

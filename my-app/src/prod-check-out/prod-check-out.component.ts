@@ -8,6 +8,7 @@ import localeEn from '@angular/common/locales/en';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import {PulsantiExtraService} from '../Service/pulsanti-extra.service'
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -17,12 +18,39 @@ registerLocaleData(localeEn)
   standalone: true,
   imports: [CurrencyPipe],
   templateUrl: './prod-check-out.component.html',
-  styleUrl: './prod-check-out.component.css'
+  styleUrl: './prod-check-out.component.css',
+  animations: [
+    trigger('slideAcquisto', [
+      
+      state('start', style({ transform: 'translateX(0%)' })),
+      
+      state('end', style({ transform: 'translateX(-120%)'})),
+      
+      transition('start => end', [
+        animate('400ms ease-out', style({ transform: 'translateX(-120%)' }))
+      ]),
+    ]),
+
+    trigger('popExtra', [
+      state('start', style({ transform: 'scale(0)' })),
+      state('end', style({ transform: 'scale(1)'})),
+      transition('end => start', [
+        animate('300ms ease-in', style({ transform: 'scale(0)' }))
+      ]),
+      transition('start => end', [
+        animate('300ms ease-out', style({ transform: 'scale(1)' }))
+      ]),
+    ])
+  ]
 })
 
 export class ProdCheckOutComponent {
 
   extraFlag : boolean = false;
+
+  //controllo animazioen
+  animation_slideAcquisto_flag : boolean = true; 
+  animation_popExtra_Flag : boolean = true; 
 
   prodotto = input.required<BillProd>()
   
@@ -44,8 +72,8 @@ export class ProdCheckOutComponent {
   onTouchStart(event: TouchEvent): void {
     this.timeout = setTimeout(() => {
       this.extraServ.sonoApparso()
-      this.extraFlag = true
-    }, 1000);
+      this.animation_popExtra_Flag = false; 
+    }, 500);
   }
 
   @HostListener('touchend')
@@ -62,7 +90,7 @@ export class ProdCheckOutComponent {
   ClickFuori(event: MouseEvent) {
     const target = event.target as HTMLElement;
     if (!target.closest('span')) {
-      this.extraFlag = false;
+      this.animation_popExtra_Flag = true; 
     }
   }
 
@@ -78,7 +106,7 @@ export class ProdCheckOutComponent {
       this.prodotto().item = this.lingSer.changeBillProd(this.prodotto())
     });
     this.subscription2 = this.extraServ.extraButton.subscribe(() => { 
-      this.extraFlag = false; 
+      this.animation_popExtra_Flag = true; 
     });
   }
   
@@ -96,8 +124,11 @@ export class ProdCheckOutComponent {
   }
 
   remove() {
-    this.rimozione.emit(this.prodotto())
-    this.servCont.agiornaContoFinal();
+    this.animation_slideAcquisto_flag = false
+    setTimeout(() => {
+      this.rimozione.emit(this.prodotto())
+      this.servCont.agiornaContoFinal();
+    } , 400);  
   }
 
   edit() {

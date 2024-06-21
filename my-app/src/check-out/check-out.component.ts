@@ -43,7 +43,7 @@ export class CheckOutComponent {
   check : string = this.lingSer.getTesto().check; 
   cur : string = this.lingSer.getTesto().Curency; 
 
-  conto : number = 0; 
+  conto : number = this.infoBill.getConto() 
 
 
   scontrino !: BillProd[];
@@ -77,9 +77,11 @@ export class CheckOutComponent {
     });
     this.subscription2 = this.infoBill.infoBill.subscribe(() => { 
       this.scontrino = this.infoBill.getAcquisti()
+      this.conto = this.infoBill.getConto()
     });
     this.subConto = this.servCont.aggContFinal.subscribe(() => { 
       this.conto =  this.calcoloConto()
+      this.infoBill.setConto(this.conto)
     });
   }
   rimuoviProdotto(pr: BillProd) {
@@ -92,6 +94,7 @@ export class CheckOutComponent {
   }
   passagioMainPage(){
     this.infoBill.setAcquisti(this.scontrino)
+    this.infoBill.aggiorna()
   }  
 
   x!:number 

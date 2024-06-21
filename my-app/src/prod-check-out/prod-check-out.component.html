@@ -1,5 +1,5 @@
 
-<section class="Prodotto" >
+<section class="Prodotto"  [@slideAcquisto]="animation_slideAcquisto_flag === true ? 'start' : 'end'" >
     <div id="imgDiv">
         <img [src] = "prodotto().image" >
     </div>
@@ -18,8 +18,8 @@
         <p id="T-cont"> {{  prodotto().quantita   }} </p>
         <button id="M-but" (click)="minus()"><p id="meno">-</p></button>
     </div>
-    @if(extraFlag){
-        <span>
+    <!-- @if(extraFlag){ -->
+        <span [@popExtra]="animation_popExtra_Flag ? 'start' : 'end'">
             <button (click)="edit()"  class="buttonExtra" id="butCustom" >
                 <p>{{castomText}}</p>
             </button>
@@ -27,6 +27,6 @@
                 <p>{{rimuoviText}}</p>
             </button>
         </span>
-    }
+    <!-- } -->
 </section>
 
