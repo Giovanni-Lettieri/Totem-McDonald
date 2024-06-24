@@ -99,12 +99,10 @@
     position: absolute;
     overflow: hidden;
     height: 900px;
-    background-color: rgb(255, 255, 255); 
-    display: flex;
     
     filter: blur(30px);
     width: 30%;
-    top: 25%;
+    top: 180px;
     right: -50px;
     z-index: 10;
   
