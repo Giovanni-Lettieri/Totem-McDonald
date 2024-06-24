@@ -10,7 +10,7 @@ button{
     height: 400px;
     width: 620px;
     position: absolute;
-    top: 1536px;
+    top: 1236px;
     left: 6%;
     display: grid;
     grid-template-columns: repeat(3, 210px); 

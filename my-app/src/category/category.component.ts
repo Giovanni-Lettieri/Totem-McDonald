@@ -18,8 +18,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       transition('start <=> end', [animate('500ms ease-out', )]),
     ]),
     trigger('CatHeight', [
-      state('start', style({  maxHeight: '270' })),
-      state('end', style({  maxHeight: '180px' })),
+      state('start', style({  Height: '270' })),
+      state('end', style({  Height: '180px' })),
       transition('start <=> end', [animate('500ms ease-out')])
     ])
   ]

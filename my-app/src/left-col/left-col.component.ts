@@ -14,31 +14,29 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     imports: [CategoryComponent, ProdottiComponent , CommonModule],
     animations: [
         trigger('animazioneLogo', [
-          
           state('start', style({ transform: 'translatey(0%)'  })),
+          state('end', style({ transform: 'translatey(-280%)' })),
+          transition('start <=> end', [
+            animate('300ms ease-out',)
+          ])
           
-          state('end', style({ transform: 'translatey(-400%)' })),
-          
-          transition('start => end', [
-            animate('500ms ease-out', style({ transform: 'translatey(-400%)' }))
-          ]),
-          transition('end => start', [
-            animate('500ms ease-in', style({ transform: 'translatey(0%)' }))
-          ]),
-        ])
+        ]),
       ]
 })
 export class LeftColComponent{
 
     backVisible : boolean = false
     animazioneLogo : boolean = true
+    animazioneMain : boolean = true
     back(){
         this.backVisible = false
         this.animazioneLogo = true   
+        this.animazioneMain = true 
     }
     backNeg(){
         this.backVisible = true
-        this.animazioneLogo = false   
+        this.animazioneLogo = false
+        this.animazioneMain = false    
     }
 
 
