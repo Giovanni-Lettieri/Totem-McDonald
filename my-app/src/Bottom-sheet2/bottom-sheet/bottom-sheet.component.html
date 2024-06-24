@@ -4,45 +4,45 @@
 
 <div id="BS" [@holeState]="hiddenCenter ? (bottomSheetAperto ? 'shown' : 'hiddenCenter') : (hidden ? 'hidden' : 'shown')" [style.background-color]="getBackgroundColor()">
 
-<h2 [style.color]="getTestiColor()">{{ data().item }}</h2>
+  <h2 [style.color]="getTestiColor()">{{ data().item }}</h2>
 
-<p id="prezzo">{{ data().price | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
-@if(data().sconto > 0){
-  <span id="scontoAT">-{{ data().sconto }}% off</span>
-}
-<button [style.background-color]="rCBackground()" id="close" (click)="close()" (click)="hCT()" ><p id="X">X</p></button>
-<div id="counter-cont">
-  <button [style.background-color]="rCBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus()"><p id="meno">-</p></button>
-  <span id="C-cont">
-    <p [style.color]="getTestiColor()" id="T-cont">{{ quantita }}</p>
-  </span>
-  <button id="P-but" (click)="plus()"><p>+</p></button>
-</div> 
+  <p id="prezzo">{{ data().price | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+  @if(data().sconto > 0){
+    <span id="scontoAT">-{{ data().sconto }}% off</span>
+  }
+  <button [style.background-color]="rCBackground()" id="close" (click)="close()" (click)="hCT()" ><p id="X">X</p></button>
+  <div id="counter-cont">
+    <button [style.background-color]="rCBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus()"><p id="meno">-</p></button>
+    <span id="C-cont">
+      <p [style.color]="getTestiColor()" id="T-cont" [@bounce]="bounceIncrementazione === false ? 'start' : 'end'">{{ quantita }}</p>
+    </span>
+    <button id="P-but" (click)="plus()"><p>+</p></button>
+  </div> 
 
-<!-- tasto done -->
-<button id="button-fatto" (click)="setProd(data(), quantita)" (click)="hCF()" (click)="hT()" (click)="vacciAlBill()" >
-  <p id="fatto">{{ fatto }}</p>
-</button>
+  <!-- tasto done -->
+  <button id="button-fatto" (click)="setProd(data(), quantita)" (click)="hCF()" (click)="hT()" (click)="vacciAlBill()" >
+    <p id="fatto">{{ fatto }}</p>
+  </button>
 
 
-<!-- publicita -->
-<div [style.background-color]="rCBackground()" id="ad" *ngIf="prodList.length > 0">
-  <div [style.background-color]="getBackgroundColor()" id="Blocco"></div>
-  <div>
-    <span [style.color]="getTestiColor()" id="CM">{{ comMeal }}</span>
-    <div id="offerta">
-      <div class="offerta-container">
-        
-        <!-- elementi nella publicita -->
-        <div class="offerta-item" 
-        *ngFor="let prod of prodList; let i = index" (click) = "goToAdd(prod)" [@slideAnimation]="(i == adAtt) ?'visible':'hidden'">
-          <img id="CMimage" [src]="prod.image" />
-          <p [style.color]="getTestiColor()" id="CMitem">{{ prod.item }}</p>
-          <p id="CMprezzo">{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
-          <span id="CMsconto">-{{ prod.sconto }}% off</span>
+  <!-- publicita -->
+  <div [style.background-color]="rCBackground()" id="ad" *ngIf="prodList.length > 0">
+    <div [style.background-color]="getBackgroundColor()" id="Blocco"></div>
+    <div>
+      <span [style.color]="getTestiColor()" id="CM">{{ comMeal }}</span>
+      <div id="offerta">
+        <div class="offerta-container">
+          
+          <!-- elementi nella publicita -->
+          <div class="offerta-item" 
+          *ngFor="let prod of prodList; let i = index" (click) = "goToAdd(prod)" [@slideAnimation]="(i == adAtt) ?'visible':'hidden'">
+            <img id="CMimage" [src]="prod.image" />
+            <p [style.color]="getTestiColor()" id="CMitem">{{ prod.item }}</p>
+            <p id="CMprezzo">{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
+            <span id="CMsconto">-{{ prod.sconto }}% off</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

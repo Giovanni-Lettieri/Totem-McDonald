@@ -16,7 +16,9 @@
     <!-- + e -  -->
     <div id="counter-cont">
         <button id="P-but" (click)="add()">  +  </button>
-        <p id="T-cont" [@bounce]="bounceIncrementazione === false ? 'start' : 'end'"> {{  prodotto().quantita   }} </p>
+        <span id="C-cont">
+            <p id="T-cont" [@bounce]="bounceIncrementazione === false ? 'start' : 'end'"> {{  prodotto().quantita   }} </p>
+          </span>
         <button id="M-but" (click)="minus()"><p id="meno">-</p></button>
     </div>
     <!-- @if(extraFlag){ -->
