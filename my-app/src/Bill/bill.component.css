@@ -51,6 +51,9 @@ p{
 }
 #C-cont{
     margin-bottom: 80px;
+    text-align: center;
+    position: relative;
+    left: -4px;
 }
 #T-cont{
     font-weight: bolder;

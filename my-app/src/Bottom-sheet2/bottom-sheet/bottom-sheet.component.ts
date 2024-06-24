@@ -60,7 +60,14 @@ registerLocaleData(localeEn);
         animate('0s linear', style({ clipPath: 'circle(8% at 50% 25%)' })),
         animate('0.2s linear', style({ clipPath: 'circle(100% at 50% 25%)' }))
       ])
-    ])
+    ]),
+    trigger('bounce', [
+      state('start', style({ transform: 'translateY(0%)' })),
+      state('end', style({ transform: 'translateY(0%)'})),
+      transition('start => end', [
+        animate('150ms ease-in', style({ transform: 'translateY(-30%)' }))
+      ])
+    ]),
   ]
 })
 export class BottomSheetComponent implements OnInit, OnDestroy {
@@ -80,7 +87,7 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   vadoAlBill : boolean = true;
   hiddenCenter: boolean = true
   hidden: boolean = false
-
+  bounceIncrementazione : boolean = false; 
   subscriptionBottomSheet!: Subscription
 
   vacciAlBill(){
@@ -126,11 +133,18 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
 
   setProd(p: Prodotti, q: number) {
     this.service.setProd(p, q);
+    setTimeout(() => {
+      this.quantita = 1;
+    },200);
     this.close();
   }
 
-  plus() {
+  plus(){
     this.quantita++;
+    this.bounceIncrementazione = true;
+    setTimeout(() => {
+      this.bounceIncrementazione = false;
+    }, 150); 
   }
 
   minus() {
