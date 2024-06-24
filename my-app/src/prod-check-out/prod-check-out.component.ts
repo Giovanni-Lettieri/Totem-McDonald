@@ -21,11 +21,8 @@ registerLocaleData(localeEn)
   styleUrl: './prod-check-out.component.css',
   animations: [
     trigger('slideAcquisto', [
-      
       state('start', style({ transform: 'translateX(0%)' })),
-      
       state('end', style({ transform: 'translateX(-120%)'})),
-      
       transition('start => end', [
         animate('400ms ease-out', style({ transform: 'translateX(-120%)' }))
       ]),
@@ -39,8 +36,8 @@ registerLocaleData(localeEn)
       ]),
       transition('start => end', [
         animate('300ms ease-out', style({ transform: 'scale(1)' }))
-      ]),
-    ])
+      ])
+    ]),
   ]
 })
 
