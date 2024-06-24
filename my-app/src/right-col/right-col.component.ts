@@ -17,6 +17,7 @@ import { ContoService } from "../Service/conto.service";
 import { PassagioBillService } from "../Service/passagio-bill.service";
 import { CheckOutServiceService } from "../Service/check-out-service.service";
 import { ModalitaConsumoService } from "../Service/modalita-consumo.service";
+import { timeout } from "rxjs";
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
 
@@ -96,13 +97,16 @@ export class RightColComponent implements OnInit{
     //Aggiornamento conto alla premuta di un tasto piu o meno
     this.subContoTot = this.servContoTot.aggCont.subscribe(() => {
       this.conto = 0; 
+      //vengono usati 2 for each distinti per evitare problemi datti dal funzioanento dello splice
       this.billList.forEach((b , index) => {
           if(b.quantita <= 0){
             this.billList.splice(index, 1);
-          }
-          this.conto += b.price * b.quantita;
-          this.checkOut_Bill.setConto(this.conto); 
+          }                               
       });
+      this.billList.forEach(b => {
+        this.conto += b.price * b.quantita;
+      })   
+     this.checkOut_Bill.setConto(this.conto);  
     });
 
     //aggiornamento bill al passagio da checkout a bill

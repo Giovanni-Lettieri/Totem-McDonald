@@ -54,8 +54,8 @@ img{
 }
 span{
     position: absolute;
-    margin-left: -40%;
-    margin-top: 13%;
+    margin-left: -10%;
+    margin-top: 2%;
     z-index: 20;
     color: rgb(255, 255, 255);
     background-color:#c8161c;
