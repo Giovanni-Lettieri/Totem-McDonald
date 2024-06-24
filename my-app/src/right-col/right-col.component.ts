@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { LanguageComponent } from "../language/language.component";
 import { BillComponent } from "../Bill/bill.component";
 import { CurrencyPipe, registerLocaleData } from "@angular/common";
-import { RouterLink, RouterOutlet } from "@angular/router";
+import { ActivatedRoute, Router, RouterLink, RouterOutlet } from "@angular/router";
 import { CheckOutComponent } from "../check-out/check-out.component";
 import { LightDarkServiceService } from "../Service/light-dark-service.service";
 import { ChangeLanguagesService } from "../Service/change-languages.service";
@@ -15,6 +15,7 @@ import { BillProd } from "../Bill/bill-prod";
 import { InfoBillService } from "../Service/info-bill.service";
 import { ContoService } from "../Service/conto.service";
 import { PassagioBillService } from "../Service/passagio-bill.service";
+import { CheckOutServiceService } from "../Service/check-out-service.service";
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
 
@@ -63,7 +64,8 @@ export class RightColComponent implements OnInit{
     private lingSer : ChangeLanguagesService, // lingua
     private checkOut_Bill : InfoBillService,     // passagio e ricezione checkout
     private servContoTot: ContoService,            //aggiornare il conto 
-    private prod_bill: PassagioBillService     //aggiungere al bill dal bottom-sheet
+    private prod_bill: PassagioBillService,        //aggiungere al bill dal bottom-sheet
+    private cOServ: CheckOutServiceService, private router: Router,private route: ActivatedRoute
   ){  
     this.billList = this.checkOut_Bill.getAcquisti()   //otenere modifiche fatte dal checkout
   }
@@ -153,6 +155,10 @@ export class RightColComponent implements OnInit{
   }
   getTestiColor(){
     return this.lDServ.testi()
+  }
+
+  checkout(){
+    this.router.navigate(['CheckOut'], {relativeTo:this.route});
   }
 
 }

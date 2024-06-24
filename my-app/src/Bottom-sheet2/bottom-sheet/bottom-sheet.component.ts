@@ -1,5 +1,4 @@
-import { Component, Inject, OnInit, OnDestroy, ViewContainerRef, input } from '@angular/core';
-import { MAT_BOTTOM_SHEET_DATA, MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { Component, OnInit, OnDestroy, ViewContainerRef, input } from '@angular/core';
 import { CommonModule, CurrencyPipe, registerLocaleData } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { PassagioBillService } from '../../Service/passagio-bill.service';
