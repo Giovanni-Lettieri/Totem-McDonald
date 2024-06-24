@@ -13,9 +13,10 @@
             <p id="prezzo">{{prodotto().price | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
         }
     </div>
+    <!-- + e -  -->
     <div id="counter-cont">
         <button id="P-but" (click)="add()">  +  </button>
-        <p id="T-cont"> {{  prodotto().quantita   }} </p>
+        <p id="T-cont" [@bounce]="bounceIncrementazione === false ? 'start' : 'end'"> {{  prodotto().quantita   }} </p>
         <button id="M-but" (click)="minus()"><p id="meno">-</p></button>
     </div>
     <!-- @if(extraFlag){ -->
