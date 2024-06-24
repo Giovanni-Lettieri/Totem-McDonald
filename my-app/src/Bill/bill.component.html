@@ -15,9 +15,9 @@
         </div>
         <div id="counter-cont">
             <button [style.background-color]="getBackgroundPulsColor()" [style.color]="getTestiColor()" id="M-but"  (click)="minus()">-</button>
-            <span id="C-cont">    
+            <span id="C-cont" [@bounce]="bounceIncrementazione === false ? 'start' : 'end'">    
                 <p [style.color]="getTestiColor()" id="T-cont">{{billProd().quantita}}</p>
-        </span>
+            </span>
             <button id="P-but" (click)="add()">+</button>
         </div>
     </div>

@@ -20,15 +20,21 @@ registerLocaleData(localeEn)
   styleUrls: ['./bill.component.css'],
   animations: [
     trigger('popBillProd', [
-      
       state('start', style({ transform: 'scale(1)'  })),
-      
       state('end', style({ transform: 'scale(0)' })),
-      
       transition('start => end', [
         animate('400ms ease-out', style({ transform: 'scale(0)' }))
       ]),
-    ])
+    ]),
+
+
+    trigger('bounce', [
+      state('start', style({ transform: 'translateY(0%)' })),
+      state('end', style({ transform: 'translateY(0%)'})),
+      transition('start => end', [
+        animate('150ms ease-in', style({ transform: 'translateY(-30%)' }))
+      ])
+    ]),
   ]
 })
 
@@ -38,7 +44,7 @@ export class BillComponent implements OnInit{
 
   //controllo animazioen
   animationFlag : boolean = true; 
-
+  bounceIncrementazione : boolean = false
   //lingua
   curency : string = this.lingSer.getTesto().Curency
 
@@ -71,6 +77,10 @@ export class BillComponent implements OnInit{
   add() {
     this.billProd().quantita++;
     this.servContoTot.agiornaContatore();
+    this.bounceIncrementazione = true;
+    setTimeout(() => {
+      this.bounceIncrementazione = false;
+    }, 150); 
   }
 
   minus() {

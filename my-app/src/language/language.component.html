@@ -1,9 +1,9 @@
 <button id="main-button" (click)="cambiaStato()">
     <img id="main-img"  [src]="selecLingua.image">
 </button>
-@if (contMenuLingue) {
-    <section (click)="cambiaStato()" id="overlay">
-        <div id="menu" [style.background-color]="getBackgroundColor()">
+
+    <section (click)="cambiaStato()" [ngClass]="{'hide': !contMenuLingue}">
+        <div id="menu" [style.background-color]="getBackgroundColor()" [@showLanguage]="contMenuLingue === false ? 'start' : 'end'">
             <div id="cont">
                 <span *ngFor="let l of LingueList">
                     <button (click)="selezionaLingua(l)" id="button-2">
@@ -13,4 +13,3 @@
             </div>    
         </div>
     </section>
-}

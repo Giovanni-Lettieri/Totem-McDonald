@@ -7,8 +7,8 @@ import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import {PulsantiExtraService} from '../Service/pulsanti-extra.service'
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {PulsantiExtraService} from '../Service/pulsanti-extra.service';
+import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -25,9 +25,10 @@ registerLocaleData(localeEn)
       state('end', style({ transform: 'translateX(-120%)'})),
       transition('start => end', [
         animate('400ms ease-out', style({ transform: 'translateX(-120%)' }))
-      ]),
+      ])
     ]),
 
+  
     trigger('popExtra', [
       state('start', style({ transform: 'scale(0)' })),
       state('end', style({ transform: 'scale(1)'})),
@@ -38,9 +39,18 @@ registerLocaleData(localeEn)
         animate('300ms ease-out', style({ transform: 'scale(1)' }))
       ])
     ]),
+
+    trigger('bounce', [
+      state('start', style({ transform: 'translateY(0%)' })),
+      state('end', style({ transform: 'translateY(0%)'})),
+      transition('start => end', [
+        animate('150ms ease-in', style({ transform: 'translateY(-30%)' }))
+      ])
+    ]),
+
+
   ]
 })
-
 export class ProdCheckOutComponent {
 
   extraFlag : boolean = false;
@@ -48,6 +58,7 @@ export class ProdCheckOutComponent {
   //controllo animazioen
   animation_slideAcquisto_flag : boolean = true; 
   animation_popExtra_Flag : boolean = true; 
+  bounceIncrementazione : boolean = false; 
 
   prodotto = input.required<BillProd>()
   
@@ -110,6 +121,10 @@ export class ProdCheckOutComponent {
   add(){
     this.prodotto().quantita++
     this.servCont.agiornaContoFinal();
+    this.bounceIncrementazione = true;
+    setTimeout(() => {
+      this.bounceIncrementazione = false;
+    }, 150); 
   }
 
   minus(){

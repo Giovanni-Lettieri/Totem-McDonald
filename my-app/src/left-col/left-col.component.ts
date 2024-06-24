@@ -32,21 +32,26 @@ export class LeftColComponent{
 
     backVisible : boolean = false
     animazioneLogo : boolean = true
-    nascondiTopCont() {
-        this.backVisible = true
-        this.animazioneLogo = false
-    }
     back(){
         this.backVisible = false
-        this.animazioneLogo = true    
+        this.animazioneLogo = true   
     }
-    
+    backNeg(){
+        this.backVisible = true
+        this.animazioneLogo = false   
+    }
+
+
     Ehi : String =  this.lingSer.getTesto().Ehi
     WU : String = this.lingSer.getTesto().WU
     nome: string = this.lingSer.getTesto().Pop; 
     subscription !: Subscription;
 
-    constructor(private lingSer : ChangeLanguagesService, private lDServ: LightDarkServiceService){}
+    constructor(
+        private lingSer : ChangeLanguagesService,
+        private lDServ: LightDarkServiceService,
+        // private changCatSwitch : CategoryComponent
+    ){}
 
     riceviNome(n: string) {
         this.nome = n;

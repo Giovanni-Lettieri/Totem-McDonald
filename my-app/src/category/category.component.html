@@ -1,8 +1,9 @@
 <div id="contenitore" [style.background-color]="getBackgroundColor()">
   <button *ngFor="let c of categoryList; let i = index" 
     [style.background-color]="coloreSfondo(c.sconto, i)" 
-    (click)="mandaDato(c.name, i)" (click)="animazioneLeftCol()">
-
+    (click)="mandaDato(c.name, i)" (click)="animazioneLeftCol()"
+    >
+    <!-- [@CatHaight]="changeCategory === true ? 'start' : 'end'" -->
     <img [src]="c.image" [@riduciImg]="changeCategory === true ? 'start' : 'end'">
     <br>
       <div>

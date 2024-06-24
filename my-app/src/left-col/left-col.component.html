@@ -28,7 +28,7 @@
         </div>
         <div [style.background-color]="getBackgroundColor()" id="fade"></div>
 
-        <category (mandaNomeCat)="riceviNome($event)" (catSelezionata)="nascondiTopCont()"></category>
+        <category (mandaNomeCat)="riceviNome($event)" (catSelezionata)="backNeg()" [changeCategory]="animazioneLogo"></category>
         <app-prodotti [categoriaAttuale]="nome" ></app-prodotti>  
     </section>
 </section> 
