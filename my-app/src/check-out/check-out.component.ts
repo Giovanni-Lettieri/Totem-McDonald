@@ -128,6 +128,7 @@ export class CheckOutComponent {
     this.scontrino.forEach(e => {
       this.x += e.price * e.quantita; 
     });
+    console.log(this.x)
     return this.x
   }
 

@@ -88,9 +88,10 @@ export class BillComponent implements OnInit{
     if (this.billProd().quantita <= 0) {
       this.startAnimation();
     }
-    setTimeout(() => {    //dal il tempo al animazione di svolgersi prima di eliminare il billProd
-      this.servContoTot.agiornaContatore();
-    } , 400);
+    // setTimeout(() => {    //dal il tempo al animazione di svolgersi prima di eliminare il billProd
+    //   this.servContoTot.agiornaContatore();
+    // } , 400);
+    this.servContoTot.agiornaContatore();
   }
 
   //start aimazione rimozioen
