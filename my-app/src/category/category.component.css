@@ -2,7 +2,6 @@ button{
     border-radius: 60px;
     border:none;
     margin-right: 20px;
-    height: 270px;
     width: 250px;
 }
 #contenitore {
@@ -10,7 +9,8 @@ button{
     height: 850px;
     width: 70%;   
     position: absolute;
-    top: 518px;
+    /* top: 340px; */
+    top: 200;2
     left: 0px;
     padding-left: 70px;
     display: grid;
