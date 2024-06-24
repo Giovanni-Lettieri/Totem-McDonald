@@ -1,8 +1,6 @@
 <section id="main" [style.background-color]="getBackgroundColor()">
     <!-- roba back -->
-    <div id="back-cont" 
-    [ngClass]="{'visible': backVisible, 'invisible': !backVisible}" 
-    >
+    <div id="back-cont" [ngClass]="{'visible': backVisible, 'invisible': !backVisible}" >
         <button id="back" (click)="back()">
             <p id="back-frecia"> < </p>
             <p id="back-text">Back</p>
@@ -29,7 +27,8 @@
             </div>
             <div [style.background-color]="getBackgroundColor()" id="fade"></div>
 
-            <category (mandaNomeCat)="riceviNome($event)" (catSelezionata)="backNeg()" [changeCategory]="animazioneLogo"></category>
+            <!-- [changeCategory]="animazioneLogo" -->
+            <category (mandaNomeCat)="riceviNome($event)" (catSelezionata)="backNeg()" ></category>
             <app-prodotti [categoriaAttuale]="nome" ></app-prodotti>  
     </div>
 </section> 
