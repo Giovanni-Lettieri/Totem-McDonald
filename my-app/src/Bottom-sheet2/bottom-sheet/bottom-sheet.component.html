@@ -1,8 +1,8 @@
 <section [style.background-color]="getBackgroundColor()"></section>
+
 <img id="immaginePrincipale" [src]="data().image" [@andataAlBIll]="vadoAlBill ? 'start' : 'end'">
-<div id="BS" [@holeState]="bottomSheetAperto ? 'shown' : 'hidden'" [style.background-color]="getBackgroundColor()">
 
-
+<div id="BS" [@holeState]="hiddenCenter ? (bottomSheetAperto ? 'shown' : 'hiddenCenter') : (hidden ? 'hidden' : 'shown')" [style.background-color]="getBackgroundColor()">
 
 <h2 [style.color]="getTestiColor()">{{ data().item }}</h2>
 
@@ -10,7 +10,7 @@
 @if(data().sconto > 0){
   <span id="scontoAT">-{{ data().sconto }}% off</span>
 }
-<button [style.background-color]="rCBackground()" id="close" (click)="close()"><p id="X">X</p></button>
+<button [style.background-color]="rCBackground()" id="close" (click)="close()" (click)="hCT()" ><p id="X">X</p></button>
 <div id="counter-cont">
   <button [style.background-color]="rCBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus()"><p id="meno">-</p></button>
   <span id="C-cont">
@@ -20,7 +20,7 @@
 </div> 
 
 <!-- tasto done -->
-<button id="button-fatto" (click)="setProd(data(), quantita)"  (click)="vacciAlBill()">
+<button id="button-fatto" (click)="setProd(data(), quantita)" (click)="hCF()" (click)="hT()" (click)="vacciAlBill()" >
   <p id="fatto">{{ fatto }}</p>
 </button>
 
@@ -35,7 +35,7 @@
         
         <!-- elementi nella publicita -->
         <div class="offerta-item" 
-        *ngFor="let prod of prodList; let i = index" [@slideAnimation]="i === adAtt ? 'visible' : 'hidden'" (click) = "goToAdd(prod)" >
+        *ngFor="let prod of prodList; let i = index" (click) = "goToAdd(prod)" [@slideAnimation]="(i == adAtt) ?'visible':'hidden'">
           <img id="CMimage" [src]="prod.image" />
           <p [style.color]="getTestiColor()" id="CMitem">{{ prod.item }}</p>
           <p id="CMprezzo">{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
@@ -46,4 +46,3 @@
   </div>
 </div>
 </div>
-

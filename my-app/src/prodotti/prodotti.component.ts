@@ -71,12 +71,10 @@ export class ProdottiComponent implements OnInit{
   }
 
   pulsanteOn(i: number, c: Prodotti) {
-    this.pulsanteCliccato = i;
-
+      this.btsServ.hiddenCenterTrue
     this.btsServ.bottomSheetOpened()  //QUI 
     this.btsServ.setC(c)
 
-    // this.openBottomSheet(this.prodottiAttuali[i]);
     this.overlay.switch()
   }
 
@@ -87,10 +85,6 @@ export class ProdottiComponent implements OnInit{
   pulsanteOff() {
     this.pulsanteCliccato = -1;
   }
-
-  // openBottomSheet(data: Prodotti): void {
-
-  // }
 
   getBackground(){
     return this.lDServ.backgroundBlack()

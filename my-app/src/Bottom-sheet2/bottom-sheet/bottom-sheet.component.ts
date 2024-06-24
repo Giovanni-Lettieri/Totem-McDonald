@@ -39,15 +39,27 @@ registerLocaleData(localeEn);
     ]),
     trigger('holeState', [
       state('shown', style({
-        clipPath: 'circle(100% at 60% 35%)',
+        clipPath: 'circle(100% at 50% 25%)',
+        pointerEvents: 'auto'
+      })),
+      state('hiddenCenter', style({
+        clipPath: 'circle(8% at 50% 25%)',
         pointerEvents: 'auto'
       })),
       state('hidden', style({
-        clipPath: 'circle(5% at 85% 15%)',
+        clipPath: 'circle(2% at 84% 13%)',
         pointerEvents: 'none'
       })),
+    
+      transition('shown => hiddenCenter', animate('0.2s linear')),
+      transition('hiddenCenter => shown', animate('0.2s linear')),
+      transition('hidden => hiddenCenter', animate('0.2s linear')),
+      transition('hiddenCenter => hidden', animate('0.2s linear')),
       transition('shown => hidden', animate('0.2s linear')),
-      transition('hidden => shown', animate('0.2s linear'))
+      transition('hidden => shown', [
+        animate('0s linear', style({ clipPath: 'circle(8% at 50% 25%)' })),
+        animate('0.2s linear', style({ clipPath: 'circle(100% at 50% 25%)' }))
+      ])
     ])
   ]
 })
@@ -66,6 +78,8 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   data = input.required<Prodotti>()
   bottomSheetAperto!: boolean
   vadoAlBill : boolean = true;
+  hiddenCenter: boolean = true
+  hidden: boolean = false
 
   subscriptionBottomSheet!: Subscription
 
@@ -98,6 +112,16 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   close(): void { 
     this.btsServ.bottomSheetClosed()
     this.overlay.switch();
+  }
+
+  hCT(){
+    this.btsServ.hiddenCenterTrue()
+  }
+  hCF(){
+    this.btsServ.hiddenCenterFalse()
+  }
+  hT(){
+    this.btsServ.hiddenTrue()
   }
 
   setProd(p: Prodotti, q: number) {
@@ -146,7 +170,9 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
     });
     this.subscriptionBottomSheet = this.btsServ.bTAChange.subscribe(() => {
       this.bottomSheetAperto = this.btsServ.bottomSheetAperto
+      this.hiddenCenter = this.btsServ.hiddenCenter
       this.vadoAlBill = this.btsServ.vaiAlBill
+      this.hidden = this.btsServ.hidden
     });
   }
 
