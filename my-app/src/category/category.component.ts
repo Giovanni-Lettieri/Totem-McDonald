@@ -4,13 +4,27 @@ import { Category } from './category';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs';
 import { LightDarkServiceService } from '../Service/light-dark-service.service';
-
+import { trigger, state, style, animate, transition } from '@angular/animations';
 @Component({
   selector: 'category',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  styleUrls: ['./category.component.css'],
+  animations: [
+    trigger('popBillProd', [
+      state('start', style({ transform: 'scale(1)'  })),
+      state('end', style({ transform: 'scale(0)' })),
+      transition('start => end', [ animate('400ms ease-out', style({ transform: 'scale(0)' })) ]),
+    ]),
+    
+    trigger('riduciImg', [
+      state('start', style({ transform: 'scale(1)'  })),
+      state('end', style({ transform: 'scale(0.6)' })),
+      transition('start <=> end', [animate('500ms ease-out', )]),
+    ])
+
+  ]
 })
 export class CategoryComponent {
   
@@ -19,10 +33,11 @@ export class CategoryComponent {
   pulsanteCliccato: number= -1;
 
   @Output() mandaNomeCat = new EventEmitter<string>();
+  @Output() catSelezionata = new EventEmitter<void>()
 
   categoryList: Category[] = this.lingSer.getCategory();
   subscription !: Subscription;
-   
+  
   ngOnInit(): void {  
     this.subscription = this.lingSer.cambioLingua.subscribe(() => {
       this.categoryList = this.lingSer.getCategory();
@@ -54,6 +69,12 @@ export class CategoryComponent {
   mandaDato(n: string, i: number) {
     this.pulsanteCliccato = i;
     this.mandaNomeCat.emit(n);
+  }
+
+  changeCategory : boolean = true 
+  animazioneLeftCol(){
+    this.catSelezionata.emit()
+    this.changeCategory = false
   }
 
   PulsanteOff() {
