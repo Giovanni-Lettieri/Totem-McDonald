@@ -105,7 +105,6 @@ export class CheckOutComponent {
 
     this.subAnim = this.cOServ.entrataChange.subscribe(() => { 
       this.entrata = this.cOServ.entrata
-      console.log(this.entrata)
     });
   }
   rimuoviProdotto(pr: BillProd) {

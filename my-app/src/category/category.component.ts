@@ -11,18 +11,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   imports: [CommonModule],
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
-  // animations: [
-  //   trigger('riduciImg', [
-  //     state('start', style({ transform: 'scale(1)'  })),
-  //     state('end', style({ transform: 'scale(0.6)' })),
-  //     transition('start <=> end', [animate('500ms ease-out', )]),
-  //   ]),
-  //   trigger('CatHeight', [
-  //     state('start', style({  Height: '270' })),
-  //     state('end', style({  Height: '180px' })),
-  //     transition('start <=> end', [animate('500ms ease-out')])
-  //   ])
-  // ]
+  animations: [
+  ]
 })
 export class CategoryComponent {
   
@@ -74,7 +64,7 @@ export class CategoryComponent {
 
  
 
-  // @Input() changeCategory : boolean = true;
+  @Input() changeCategory : boolean = true;
 
   animazioneLeftCol(){
     this.catSelezionata.emit()

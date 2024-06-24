@@ -95,6 +95,26 @@
     top:1120px;
     left: 9%;
 }
+.start{
+    position:relative;
+    top:-100px;
+    transition: top 300ms ease-out;
+}
+.end{
+    top:-200px;
+    position:relative;
+    transition: top 300ms ease-out;
+}
+
+@keyframes ridSpazio {
+    0% {
+        top:-100px;
+    }
+    100% {
+        top:-200px;
+    }
+}
+
 #fade {
     position: absolute;
     overflow: hidden;

@@ -4,27 +4,60 @@ button{
     margin-right: 20px;
     width: 250px;
 }
-#contenitore {
+
+@keyframes ridSpazio {
+    0% {
+        grid-template-rows: repeat(3, 290px); 
+        height: 880px;
+    }
+    100% {
+        grid-template-rows: repeat(3, 260px); 
+        height: 800px;
+    }
+}
+.contenitoreStart {
     background-color: white;
-    height: 850px;
+    height: 880px;
     width: 70%;   
     position: absolute;
-    /* top: 340px; */
     top: 200;
     left: 0px;
     padding-left: 70px;
     display: grid;
-    grid-template-rows: repeat(3, 280px); 
+    grid-template-rows: repeat(3, 290px); 
+    grid-auto-flow: column;
+    row-gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-right: 30px;
+    transition: grid-template-rows 300ms ease-out;
+    transition: height 300ms ease-out;
+}
+
+.contenitoreEnd {
+    background-color: white;
+    height: 800px;
+    width: 70%;   
+    position: absolute;
+    top: 200;
+    left: 0px;
+    padding-left: 70px;
+    display: grid;
+    grid-template-rows: repeat(3, 260px); 
     grid-auto-flow: column;
     row-gap: 10px;
     overflow-x: auto;
     overflow-y: hidden;
     color: yellow;
     padding-right: 30px;
+    transition: grid-template-rows 1000ms ease-out;
+    transition: height 300ms ease-out;
 }
 
-
-#contenitore::-webkit-scrollbar {
+.contenitoreStart::-webkit-scrollbar {
+    display: none;
+}
+.contenitoreEnd::-webkit-scrollbar {
     display: none;
 }
 img{
@@ -54,7 +87,27 @@ span{
     display: inline;
     font-size:calc((100vw/100)*1.5);
     white-space: nowrap;
+    position:relative;  
+    bottom :10px;
 }
 div{
     margin-bottom: 0.7vh;
+}
+@keyframes CatHeight {
+    0% {
+        height: 270px;
+    }
+    100% {
+        height: 230px;
+    }
+}
+
+.start {
+    height: 280px;
+    transition: height 300ms ease-out;
+}
+
+.end {
+    height: 250px;
+    transition: height 300ms ease-out;
 }

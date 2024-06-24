@@ -1,16 +1,18 @@
-<div id="contenitore" [style.background-color]="getBackgroundColor()">
+<div [style.background-color]="getBackgroundColor()" [ngClass]="changeCategory === true ? 'contenitoreStart' : 'contenitoreEnd'">
   <button *ngFor="let c of categoryList; let i = index" 
     [style.background-color]="coloreSfondo(c.sconto, i)" 
-    (click)="mandaDato(c.name, i)" (click)="animazioneLeftCol()"> 
-    <!-- [@CatHaight]="changeCategory === true ? 'start' : 'end'" -->
-    <!-- [@riduciImg]="changeCategory === true ? 'start' : 'end'" -->
-    <img [src]="c.image" >
+    (click)="mandaDato(c.name, i)" (click)="animazioneLeftCol()"
+    [ngClass]="changeCategory === true ? 'start' : 'end'"> 
+
+    <img [src]="c.image" [@riduciImg]="changeCategory === true ? 'start' : 'end'">
+
     <br>
       <div>
         <p [style.color]="coloreTesto(c.sconto, i)">{{c.name}}</p>
       </div>
     <br>    
-      <span *ngIf="c.sconto != 0">-{{c.sconto}}% off</span>
+    
+    <span *ngIf="c.sconto != 0">-{{c.sconto}}% off</span>
     
   </button>
 </div>

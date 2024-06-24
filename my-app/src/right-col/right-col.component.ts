@@ -155,10 +155,8 @@ export class RightColComponent implements OnInit{
   //testo dello start button
   modCons() : String{
     if(this.servButton.getBottone() == 0 ){
-      console.log(this.lingSer.getTesto().EatIn)
       return this.lingSer.getTesto().EatIn
     }
-    console.log(this.lingSer.getTesto().TakeOut)
     return this.lingSer.getTesto().TakeOut
   }
 
