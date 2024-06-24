@@ -2,7 +2,7 @@ import { Component, HostListener, ViewContainerRef, effect, input, OnInit } from
 import { CommonModule } from '@angular/common';
 import { Prodotti } from './prodotti';
 import { ProdottiService } from '../Service/prodotti.service';
-import { BottomSheetComponent } from '../Bottom-sheet2/bottom-sheet/bottom-sheet.component';
+import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs';
 import { CurrencyPipe } from '@angular/common';

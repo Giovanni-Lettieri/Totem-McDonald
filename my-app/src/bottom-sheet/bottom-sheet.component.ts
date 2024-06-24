@@ -1,17 +1,17 @@
 import { Component, OnInit, OnDestroy, ViewContainerRef, input } from '@angular/core';
 import { CommonModule, CurrencyPipe, registerLocaleData } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { PassagioBillService } from '../../Service/passagio-bill.service';
-import { Prodotti } from '../../prodotti/prodotti';
-import { ChangeLanguagesService } from '../../Service/change-languages.service';
-import { ProdottiService } from '../../Service/prodotti.service';
+import { PassagioBillService } from '../Service/passagio-bill.service';
+import { Prodotti } from '../prodotti/prodotti';
+import { ChangeLanguagesService } from '../Service/change-languages.service';
+import { ProdottiService } from '../Service/prodotti.service';
 import { Subscription } from 'rxjs';
-import { OverlayService } from '../../Service/overlay.service';
+import { OverlayService } from '../Service/overlay.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { LightDarkServiceService } from '../../Service/light-dark-service.service';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
-import { BottomSheetOpenCloseService } from '../../Service/bottom-sheet-open-close.service';
+import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
 
 registerLocaleData(localeIt);
 registerLocaleData(localeEn);
