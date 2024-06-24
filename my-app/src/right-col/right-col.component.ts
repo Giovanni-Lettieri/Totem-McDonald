@@ -16,6 +16,7 @@ import { InfoBillService } from "../Service/info-bill.service";
 import { ContoService } from "../Service/conto.service";
 import { PassagioBillService } from "../Service/passagio-bill.service";
 import { CheckOutServiceService } from "../Service/check-out-service.service";
+import { ModalitaConsumoService } from "../Service/modalita-consumo.service";
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
 
@@ -39,6 +40,7 @@ export class RightColComponent implements OnInit{
   total : String = this.lingSer.getTesto().TOT
   done : String = this.lingSer.getTesto().Fatto
   curency : String = this.lingSer.getTesto().Curency
+  modConsumo : String = this.modCons()
   
   //varibili dello startButton per takeOut/eatIn
   pulsantiStart!: StartButton[];
@@ -57,25 +59,24 @@ export class RightColComponent implements OnInit{
 
 
   constructor(
-    //componenti 
-    private pulsante: StartButtonComponent, //per ottenere scritta Take/eat
     //service
     private lDServ: LightDarkServiceService, //  modalita notte e giorno
     private lingSer : ChangeLanguagesService, // lingua
     private checkOut_Bill : InfoBillService,     // passagio e ricezione checkout
     private servContoTot: ContoService,            //aggiornare il conto 
     private prod_bill: PassagioBillService,        //aggiungere al bill dal bottom-sheet
-    private cOServ: CheckOutServiceService, private router: Router,private route: ActivatedRoute
+    private servButton : ModalitaConsumoService,   //modalita di consumo(scritta eat in take out)
+    //Routing
+    private router: Router,
+    private route: ActivatedRoute
   ){  
     this.billList = this.checkOut_Bill.getAcquisti()   //otenere modifiche fatte dal checkout
   }
 
   ngOnInit() : void {  
     //dichiarazioni base
-    this.pulsantiStart = this.pulsante.getPulsante();
-    this.indexStart = this.pulsante.getIndice();
     this.servContoTot.agiornaContatore()
-
+    
     //Aggiornamento dinamico lingua
     this.subLanguage = this.lingSer.cambioLingua.subscribe(() => {
       this.billList.forEach(b => {
@@ -87,6 +88,9 @@ export class RightColComponent implements OnInit{
       this.total = this.lingSer.getTesto().TOT
       this.done = this.lingSer.getTesto().Fatto
       this.curency = this.lingSer.getTesto().Curency
+      this.modConsumo = this.modCons()
+
+
     });
 
     //Aggiornamento conto alla premuta di un tasto piu o meno
@@ -103,7 +107,6 @@ export class RightColComponent implements OnInit{
 
     //aggiornamento bill al passagio da checkout a bill
     this.subCheck_Bill = this.checkOut_Bill.infoBill.subscribe(() => {
-      
       this.billList = this.checkOut_Bill.getAcquisti();
       this.servContoTot.agiornaContatore()
       this.GoToTop()
@@ -147,6 +150,16 @@ export class RightColComponent implements OnInit{
     this.checkOut_Bill.setAcquisti(this.billList)
     this.checkOut_Bill.setConto(this.conto); 
     this.checkOut_Bill.aggiorna()
+  }
+
+  //testo dello start button
+  modCons() : String{
+    if(this.servButton.getBottone() == 0 ){
+      console.log(this.lingSer.getTesto().EatIn)
+      return this.lingSer.getTesto().EatIn
+    }
+    console.log(this.lingSer.getTesto().TakeOut)
+    return this.lingSer.getTesto().TakeOut
   }
 
   //modalita day night  

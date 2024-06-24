@@ -3,14 +3,7 @@
     
     <div id="upText-container">   
         <p [style.color]="getTestiColor()" id="MR-text">{{my}}<br>{{order}}</p>
-
-        <p [style.color]="getTestiColor()" id="sottoMyOrder">
-            @if(this.indexStart != null){
-                {{this.pulsantiStart[this.indexStart].testo}}
-            }@else{
-                {{this.pulsantiStart[0].testo}}
-            }
-        </p>
+        <p [style.color]="getTestiColor()" id="sottoMyOrder">{{modConsumo}}</p>
     </div>
     
     

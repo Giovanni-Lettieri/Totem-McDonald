@@ -16,6 +16,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { CheckOutServiceService } from '../Service/check-out-service.service';
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
+import { ModalitaConsumoService } from '../Service/modalita-consumo.service';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -45,7 +46,7 @@ registerLocaleData(localeEn)
   })
 export class CheckOutComponent {
   
-  flagInOut : number = this.pulsante.getIndice();
+  flagInOut : number = this.servButton.getBottone();
 
   my: string =  this.lingSer.getTesto().Mio;
   order: string = this.lingSer.getTesto().Ord;
@@ -63,8 +64,9 @@ export class CheckOutComponent {
     private lingSer : ChangeLanguagesService,
     private infoBill : InfoBillService,
     private servCont: ContoService, 
-    private pulsante: StartButtonComponent, 
+    private servButton : ModalitaConsumoService,   //modalita di consumo(scritta eat in take out)
     private cOServ: CheckOutServiceService,
+    
     private router: Router
   ){
     this.scontrino = this.infoBill.getAcquisti()

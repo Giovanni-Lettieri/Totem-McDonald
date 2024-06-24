@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Testi } from '../app/testi';
 import { LightDarkServiceService } from '../Service/light-dark-service.service';
+import { ModalitaConsumoService } from '../Service/modalita-consumo.service';
 
 
 @Component({
@@ -20,12 +21,17 @@ import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 
 export class StartButtonComponent {
-  
 
-  constructor(private lingSer : ChangeLanguagesService, private lDServ: LightDarkServiceService){}
+  constructor(
+    private lingSer : ChangeLanguagesService, 
+    private lDServ: LightDarkServiceService,
+    private servButton : ModalitaConsumoService
+  ){}
+  
+  Testo : Testi = this.lingSer.getTesto()
+  
   subscription !: Subscription;
 
-  Testo : Testi = this.lingSer.getTesto()
   pulsantiArray: StartButton[] = [
     {
       testo: this.Testo.EatIn ,
@@ -43,22 +49,13 @@ export class StartButtonComponent {
       this.pulsantiArray[0].testo = this.Testo.EatIn
       this.pulsantiArray[1].testo = this.Testo.TakeOut  
     });}
-
-  indice!: number;
-
-  getPulsante(){
-    return this.pulsantiArray;
+  
+  setIndice(indice: number) {
+    this.servButton.setBottone(indice)
   }
 
-  setIndice(i: number){
-    this.indice = i;
-  }
-
-  getIndice(){
-    return this.indice;
-  }
   getPulsBackgroundColor(){
-    return this.lDServ.pulsBackground()
+    return this.lDServ.pulsBackground() 
   }
   getTestiColor(){
     return this.lDServ.testi()
