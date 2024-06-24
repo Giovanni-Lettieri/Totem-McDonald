@@ -5,7 +5,7 @@ import { LeftColComponent } from '../left-col/left-col.component';
 import { CategoryComponent } from "../category/category.component";
 import { Subscription } from 'rxjs';
 import { OverlayService } from '../Service/overlay.service';
-import { BottomSheetComponent } from "../Bottom-sheet2/bottom-sheet/bottom-sheet.component";
+import { BottomSheetComponent } from "../bottom-sheet/bottom-sheet.component";
 import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
 
 @Component({
