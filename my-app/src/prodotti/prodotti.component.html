@@ -1,7 +1,7 @@
 <div class="contenitore" [style.background-color]="getBackground()">
     <button 
       *ngFor="let c of prodottiAttuali; let i = index" 
-      (click)="pulsanteOn(i, c)"
+      (click)="pulsanteOn(c)"
       [style.background-color]="getBackground()">
       <span *ngIf="c.sconto != 0">-{{c.sconto}}%</span><br>
       <img [src]="c.image">

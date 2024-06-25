@@ -15,4 +15,5 @@ export interface Testi {
     check: string
     remove: string
     custom : string
+    chose :string
 }

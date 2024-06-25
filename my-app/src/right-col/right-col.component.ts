@@ -15,9 +15,7 @@ import { BillProd } from "../Bill/bill-prod";
 import { InfoBillService } from "../Service/info-bill.service";
 import { ContoService } from "../Service/conto.service";
 import { PassagioBillService } from "../Service/passagio-bill.service";
-import { CheckOutServiceService } from "../Service/check-out-service.service";
 import { ModalitaConsumoService } from "../Service/modalita-consumo.service";
-import { timeout } from "rxjs";
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
 
@@ -90,8 +88,6 @@ export class RightColComponent implements OnInit{
       this.done = this.lingSer.getTesto().Fatto
       this.curency = this.lingSer.getTesto().Curency
       this.modConsumo = this.modCons()
-
-
     });
 
     //Aggiornamento conto alla premuta di un tasto piu o meno

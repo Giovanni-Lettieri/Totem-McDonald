@@ -448,6 +448,13 @@
         "sconto": 0
     },
     {
+        "item": "Patatine Grandi",
+        "price": 3.99,
+        "image": "/assets/Prodotti/Patatine/Patatine Grandi.png",
+        "category": "Patatine",
+        "sconto": 0
+    },
+    {
         "item": "Patatine Medie",
         "price": 2.99,
         "image": "/assets/Prodotti/Patatine/Patatine Medie.png",
@@ -472,6 +479,13 @@
         "item": "Ricche Cheddar",
         "price": 3.99,
         "image": "/assets/Prodotti/Patatine/Ricche Cheddar.png",
+        "category": "Patatine",
+        "sconto": 0
+    },
+    {
+        "item": "Ricche Kebab",
+        "price": 3.50,
+        "image": "/assets/Prodotti/Patatine/Ricche Kebab.png",
         "category": "Patatine",
         "sconto": 0
     },

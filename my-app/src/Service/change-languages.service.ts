@@ -126,4 +126,16 @@ export class ChangeLanguagesService {
     }
     return "Errore Traduzione"
   }
+
+  changeProd(p : Prodotti) : string{ 
+    this.getProduct()
+    for(let i = 0 ; i <= this.prodList.length ; i++) {
+      if(p.image == this.prodList[i].image){
+        return this.prodList[i].item
+      }
+    }
+    return "Errore Traduzione"
+  }
+  
+
 }

@@ -6,10 +6,13 @@ import { Prodotti } from '../prodotti/prodotti';
 })
 export class BottomSheetOpenCloseService {
   bottomSheetAperto: boolean = false //QUI
+  bottomSideAperto : boolean = false
   vaiAlBill: boolean = true
   hiddenCenter: boolean = true;
   hidden: boolean = false
+  
   bTAChange: EventEmitter<void> = new EventEmitter<void>();
+  sideChange : EventEmitter<void> = new EventEmitter<void>();
   c: Prodotti = {
     item: "",
     price: 0,
@@ -19,6 +22,8 @@ export class BottomSheetOpenCloseService {
   }
   constructor() { }
 
+
+  //originale
   bottomSheetOpened(){
     this.bottomSheetAperto = true
     this.hiddenCenter = true
@@ -43,6 +48,22 @@ export class BottomSheetOpenCloseService {
     this.hidden = true
     this.bTAChange.emit()
   }
+
+  //bottom sheet side
+  bottomSideOpened(){
+    this.bottomSideAperto = true
+    this.hiddenCenter = true
+    this.vaiAlBill = true
+    this.sideChange.emit()
+  }
+  bottomSideClosed(){
+    this.bottomSideAperto = false
+    this.hidden = true
+    this.sideChange.emit()
+  }
+
+
+  //generiche 
   getC(){
     return this.c;
   }

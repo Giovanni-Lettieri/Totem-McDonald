@@ -1,0 +1,67 @@
+<div id="bottomSheet" >
+    <!-- pulsante chiusura -->
+    <button (click)="close()" id="close">
+        <p>X</p>
+    </button>
+
+    <!-- pulsante info -->
+    <button>
+        <p>i</p>
+    </button>
+
+    <!-- titolo categoria -->
+    <h1>{{this.lingSer.getCategory()[4].name}}</h1>
+
+    <!-- prodotti della categoria-->
+    <div>
+        @for(prod of sideList ; track prod.item){
+        <div>
+            <div>
+                <img [src]="prod.image">
+            </div>
+            <div>
+                <p>{{prod.item}}</p>
+                <p>{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : curency === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+            </div>
+        </div>
+        }
+    </div>
+    <!-- + - e contatore -->
+
+    <div>
+        <button>
+            <p>+</p>
+        </button>
+        <span>
+            <p>{{counter}}</p>
+        </span>
+        <button>
+            <p>-</p>
+        </button>
+    </div>
+
+    <!-- salse -->
+    
+    <div>
+        <h1><p>{{chose}}</p><p>{{ this.lingSer.getCategory()[9].name }}</p></h1>
+        <div>
+            @for(s of sauceList ;  track s.item){
+            <button>
+                <img [src]="s.image">
+                <span>
+                    <p> {{s.item }}</p>
+                </span>
+            </button>
+            }
+        </div>
+
+        <!-- tasto done -->
+
+        <div>
+            <button>
+                <p>{{done}}</p>
+            </button>
+        </div>
+    </div>
+
+</div>

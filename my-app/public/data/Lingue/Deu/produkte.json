@@ -448,6 +448,13 @@
         "sconto": 0
     },
     {
+        "item": "Große Pommes",
+        "price": 3.99,
+        "image": "/assets/Prodotti/Patatine/Patatine Grandi.png",
+        "category": "Pommes Frites",
+        "sconto": 0
+    },
+    {
         "item": "Mittlere Pommes",
         "price": 2.99,
         "image": "/assets/Prodotti/Patatine/Patatine Medie.png",
@@ -472,6 +479,13 @@
         "item": "Reichhaltiger Cheddar",
         "price": 3.99,
         "image": "/assets/Prodotti/Patatine/Ricche Cheddar.png",
+        "category": "Pommes Frites",
+        "sconto": 0
+    },
+    {
+        "item": "Reichhaltiger Keaba",
+        "price": 3.50,
+        "image": "/assets/Prodotti/Patatine/Ricche Kebab.png",
         "category": "Pommes Frites",
         "sconto": 0
     },

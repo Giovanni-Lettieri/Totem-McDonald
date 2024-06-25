@@ -1,16 +1,22 @@
-<section [style.background-color]="getBackgroundColor()"></section>
+
 
 <img id="immaginePrincipale" [src]="data().image" [@andataAlBIll]="vadoAlBill ? 'start' : 'end'">
 
 <div id="BS" [@holeState]="hiddenCenter ? (bottomSheetAperto ? 'shown' : 'hiddenCenter') : (hidden ? 'hidden' : 'shown')" [style.background-color]="getBackgroundColor()">
 
+  <!-- nama -->
   <h2 [style.color]="getTestiColor()">{{ data().item }}</h2>
 
+  <!-- prezzo -->
   <p id="prezzo">{{ data().price | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
   @if(data().sconto > 0){
     <span id="scontoAT">-{{ data().sconto }}% off</span>
   }
+
+  <!-- pulsante chiusura -->
   <button [style.background-color]="rCBackground()" id="close" (click)="close()" (click)="hCT()" ><p id="X">X</p></button>
+  
+  <!-- + e - -->
   <div id="counter-cont">
     <button [style.background-color]="rCBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus()"><p id="meno">-</p></button>
     <span id="C-cont">

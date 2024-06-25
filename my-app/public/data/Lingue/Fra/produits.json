@@ -448,9 +448,23 @@
         "sconto": 0
     },
     {
+        "item": "Grandes Frites",
+        "price": 3.99,
+        "image": "/assets/Prodotti/Patatine/Patatine Grandi.png",
+        "category": "Frites",
+        "sconto": 0
+    },
+    {
         "item": "Frites Moyennes",
         "price": 2.99,
         "image": "/assets/Prodotti/Patatine/Patatine Medie.png",
+        "category": "Frites",
+        "sconto": 0
+    },
+    {
+        "item": "Frites Kebab",
+        "price": 3.50,
+        "image": "/assets/Prodotti/Patatine/Ricche Kebab.png",
         "category": "Frites",
         "sconto": 0
     },

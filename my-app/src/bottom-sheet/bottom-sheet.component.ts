@@ -169,7 +169,7 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
       this.adAtt = (this.adAtt + 1) % this.prodList.length;
     }, 5000);
 
-    //Cambio Lingua
+    // Cambio Lingua
     this.subscription = this.lingSer.cambioLingua.subscribe(() => {
       this.Cur = this.lingSer.getTesto().Curency;
       this.fatto = this.lingSer.getTesto().Fatto;

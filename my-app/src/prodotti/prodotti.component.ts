@@ -51,7 +51,6 @@ export class ProdottiComponent implements OnInit{
   subscription !: Subscription;
 
   ngOnInit(): void {  
-    
     this.subscription = this.lingSer.cambioLingua.subscribe(() => {
       this.Cur = this.lingSer.getTesto().Curency
       this.prodottiService.pseudoEmit();
@@ -70,11 +69,15 @@ export class ProdottiComponent implements OnInit{
     }
   }
 
-  pulsanteOn(i: number, c: Prodotti) {
-      this.btsServ.hiddenCenterTrue
-    this.btsServ.bottomSheetOpened()  //QUI 
-    this.btsServ.setC(c)
+  pulsanteOn(c: Prodotti) {
+    
 
+    if(c.category === this.lingSer.getCategory()[4].name){
+      this.btsServ.bottomSideOpened()   //patatine
+    }else{
+      this.btsServ.bottomSheetOpened()  //Originale 
+    }
+    this.btsServ.setC(c)
     this.overlay.switch()
   }
 

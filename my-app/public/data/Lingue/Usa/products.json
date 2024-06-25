@@ -448,6 +448,13 @@
         "sconto": 0
     },
     {
+        "item": "Large Fries",
+        "price": 3.99,
+        "image": "/assets/Prodotti/Patatine/Patatine Grandi.png",
+        "category": "Fries",
+        "sconto": 0
+    },
+    {
         "item": "Medium Fries",
         "price": 2.99,
         "image": "/assets/Prodotti/Patatine/Patatine Medie.png",
@@ -455,7 +462,7 @@
         "sconto": 0
     },
     {
-        "item": "PSmall Fries",
+        "item": "Small Fries",
         "price": 1.99,
         "image": "/assets/Prodotti/Patatine/Patatine Picolle.png",
         "category": "Fries",
@@ -472,6 +479,13 @@
         "item": "Rich Cheddar",
         "price": 3.99,
         "image": "/assets/Prodotti/Patatine/Ricche Cheddar.png",
+        "category": "Fries",
+        "sconto": 0
+    },
+    {
+        "item": "Rich Kebab",
+        "price": 3.50,
+        "image": "/assets/Prodotti/Patatine/Ricche Kebab.png",
         "category": "Fries",
         "sconto": 0
     },

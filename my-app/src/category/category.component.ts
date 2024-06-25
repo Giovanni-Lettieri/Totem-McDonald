@@ -12,6 +12,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
   animations: [
+    
   ]
 })
 export class CategoryComponent {
