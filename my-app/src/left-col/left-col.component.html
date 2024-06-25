@@ -1,9 +1,9 @@
 <section id="main" [style.background-color]="getBackgroundColor()">
     <!-- roba back -->
-    <div id="back-cont" [ngClass]="{'visible': backVisible, 'invisible': !backVisible}" >
-        <button id="back" (click)="back()">
-            <p id="back-frecia"> < </p>
-            <p id="back-text">Back</p>
+    <div id="back-cont" [ngClass]="{'visible': backVisible, 'invisible': !backVisible}" [style.background-color]="getBackgroundColor()" >
+        <button id="back" (click)="back()" [style.background-color]="getBackgroundColor()">
+            <p [style.color]="getTestiColor()" id="back-frecia"> < </p>
+            <p [style.color]="getTestiColor()" id="back-text">Back</p>
         </button>
     </div>
 
