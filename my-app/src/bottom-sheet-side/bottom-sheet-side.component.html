@@ -1,49 +1,51 @@
 <div id="bottomSheet" >
     <!-- pulsante chiusura -->
     <button (click)="close()" id="close">
-        <p>X</p>
+        <p id="X">X</p>
     </button>
 
     <!-- pulsante info -->
-    <button>
-        <p>i</p>
+    <button id="info">
+        <p id="I">i</p>
     </button>
 
     <!-- titolo categoria -->
-    <h1>{{this.lingSer.getCategory()[4].name}}</h1>
+    <div id="patatine-cont">
+        <p  id="patatine-txt">{{this.lingSer.getCategory()[4].name}}</p>
+    </div>
 
     <!-- prodotti della categoria-->
-    <div>
+    <div  id="sezione-patatine">
         @for(prod of sideList ; track prod.item){
-        <div>
-            <div>
+        <div id="cont-patatine">
+            <div id="cont-img-pat">
                 <img [src]="prod.image">
             </div>
-            <div>
-                <p>{{prod.item}}</p>
-                <p>{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : curency === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+            <div id="contPrezName">
+                <p id="nome"> {{prod.item}}</p>
+                <p id="Prezzo" >{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : curency === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
             </div>
         </div>
         }
     </div>
     <!-- + - e contatore -->
 
-    <div>
-        <button>
-            <p>+</p>
+    <div id="counter-cont">
+        <button id="M-but" class="BottoneCounter">
+            <p id="meno">-</p>
         </button>
-        <span>
-            <p>{{counter}}</p>
+        <span id="C-cont">
+            <p id="T-cont">{{counter}}</p>
         </span>
-        <button>
-            <p>-</p>
+        <button id="P-but" class="BottoneCounter">
+            <p>+</p>
         </button>
     </div>
 
     <!-- salse -->
     
     <div>
-        <h1><p>{{chose}}</p><p>{{ this.lingSer.getCategory()[9].name }}</p></h1>
+        <h2><p>{{chose}}</p><p>{{ this.lingSer.getCategory()[9].name }}</p></h2>
         <div>
             @for(s of sauceList ;  track s.item){
             <button>

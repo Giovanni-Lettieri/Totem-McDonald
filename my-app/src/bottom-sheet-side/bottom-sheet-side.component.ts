@@ -91,10 +91,19 @@ export class BottomSheetSideComponent {
         this.suportList = this.suportList.filter((c) => c.category === this.lingSer.getCategory()[4].name)
         const index = this.suportList.findIndex(obj => obj.item === this.sideSelected().item);
         if (index <= 2) {  
+
+          //cambia nelle lingue
+
           this.suportList.splice(3, 3);
+          this.suportList[0].item = "Picole"
+          this.suportList[1].item = "Medie"
+          this.suportList[2].item = "Grandi"
         } 
         else{
           this.suportList.splice(0, 3);
+          this.suportList[0].item = "Chedar"
+          this.suportList[1].item = "Bacon"
+          this.suportList[2].item = "Kebab"
         }
         this.sideList = this.suportList
       } 
