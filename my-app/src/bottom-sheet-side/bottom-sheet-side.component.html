@@ -1,4 +1,4 @@
-<div id="bottomSheet" >
+<div id="bottomSheet">
     <!-- pulsante chiusura -->
     <button (click)="close()" id="close">
         <p id="X">X</p>
@@ -18,8 +18,8 @@
     <div  id="sezione-patatine">
         @for(prod of sideList ; track prod.item){
         <div id="cont-patatine">
-            <div id="cont-img-pat">
-                <img [src]="prod.image">
+            <div id="cont-img-pat" (click)="setPatatine(prod)" [style.background-color]="getColorFries(prod)">
+                <img [src]="prod.image" [style.scale]="getScaleFires(prod)">
             </div>
             <div id="contPrezName">
                 <p id="nome"> {{prod.item}}</p>
@@ -29,41 +29,43 @@
         }
     </div>
     <!-- + - e contatore -->
-
     <div id="counter-cont">
-        <button id="M-but" class="BottoneCounter">
-            <p id="meno">-</p>
+        <button id="M-but" class="BottoneCounter"   (click)="minus()">  
+            <p>-</p>
         </button>
         <span id="C-cont">
-            <p id="T-cont">{{counter}}</p>
+            <p  [@bounce]="bounceIncrementazione === false ? 'start' : 'end'">{{quantita}}</p>
         </span>
-        <button id="P-but" class="BottoneCounter">
+        <button id="P-but" class="BottoneCounter"   (click)="plus()">
             <p>+</p>
         </button>
     </div>
 
     <!-- salse -->
-    
-    <div>
-        <h2><p>{{chose}}</p><p>{{ this.lingSer.getCategory()[9].name }}</p></h2>
-        <div>
-            @for(s of sauceList ;  track s.item){
-            <button>
-                <img [src]="s.image">
-                <span>
-                    <p> {{s.item }}</p>
-                </span>
-            </button>
-            }
+    <div id="Sez-Salse">
+        <div id="titolo-salse">
+            <span>{{chose}}</span><span>{{ this.lingSer.getCategory()[9].name }}</span>
         </div>
-
-        <!-- tasto done -->
-
-        <div>
-            <button>
-                <p>{{done}}</p>
-            </button>
+        <div id="Binari">
+            <div id="Scor-Salse">
+                @for(s of sauceList ;  track s.item){
+                <button id="Salsa" (click)="setSalsa(s)" [style.background-color]="getColorSalsa(s)" [style.border]="getBorderSalsa(s)" >
+                    <img [src]="s.image">
+                    <div [style.display]="getMarginTopTxtSalsa(s)">
+                        <p> {{s.item}}</p>
+                    </div>
+                </button>
+                }
+            </div>
         </div>
+    </div>    
+    <!-- tasto done -->
+
+    <div id="Fatto">
+        <button (click)="fatto()" [style.background-color]="getPosibilitaPremuta()">
+            <p>{{done}}</p>
+        </button>
     </div>
+    
 
 </div>

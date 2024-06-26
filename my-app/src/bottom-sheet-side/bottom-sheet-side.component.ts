@@ -11,7 +11,8 @@ import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.
 import { OverlayService } from '../Service/overlay.service';
 import { LightDarkServiceService } from '../Service/light-dark-service.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Category } from '../category/category';
+import { PassagioBillService } from '../Service/passagio-bill.service';
+
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
 
@@ -22,20 +23,31 @@ registerLocaleData(localeEn)
   templateUrl: './bottom-sheet-side.component.html',
   styleUrl: './bottom-sheet-side.component.css',
   animations:[
-
+    trigger('bounce', [
+      state('start', style({ transform: 'translateY(0%)' })),
+      state('end', style({ transform: 'translateY(0%)'})),
+      transition('start => end', [
+        animate('150ms ease-in', style({ transform: 'translateY(-30%)' }))
+      ])
+    ])
   ]
 })
 export class BottomSheetSideComponent {
-  //origine butom shet
-  sideSelected = input.required<Prodotti>() //prodotto da cui si e aperto il bottmo sheet e che verra cambiato eventualmente con gli altri
-  
+
+  //Prodotti selezionati
+  sideSelected = input.required<Prodotti>()
+  fries !: Prodotti   
+  salsa !: Prodotti 
+
   //liste prodotti
   sideList !: Prodotti[]   //prodotti della categoria del sideSelected
   sauceList : Prodotti[] = this.lingSer.getProduct()    //lista salse
   suportList : Prodotti[] = this.lingSer.getProduct() 
 
   //suporto 
-  counter : number = 1 // numero del prodotto ordinato 
+  quantita : number = 1 // numero del prodotto ordinato 
+  salsaSelezionata : boolean = false
+  patatineSelezionata : boolean = false
 
   //lingua
   chose : string = this.lingSer.getTesto().chose
@@ -48,6 +60,9 @@ export class BottomSheetSideComponent {
   hiddenCenter: boolean = true
   hidden: boolean = false
 
+  //animazioni
+  bounceIncrementazione : boolean = false
+
   //subscription
   subLanguage !: Subscription
   subBottomSide !: Subscription
@@ -57,6 +72,7 @@ export class BottomSheetSideComponent {
     private btsServ : BottomSheetOpenCloseService,
     private overlay : OverlayService,
     private lDServ : LightDarkServiceService,
+    private pasBill : PassagioBillService
   ){
     effect(() => {
       this.sauceList = this.sauceList.filter((c) => c.category  === this.lingSer.getCategory()[9].name) //stessa cosa specificatemente per le salse 
@@ -83,7 +99,6 @@ export class BottomSheetSideComponent {
       this.hiddenCenter = this.btsServ.hiddenCenter
       this.vadoAlBill = this.btsServ.vaiAlBill
       this.hidden = this.btsServ.hidden
-      
     setTimeout(() => {
       if(this.bottomSideAperto == true){
         this.suportList = this.lingSer.getProduct()
@@ -94,15 +109,10 @@ export class BottomSheetSideComponent {
           //cambia nelle lingue
 
           this.suportList.splice(3, 3);
-          this.suportList[0].item = "Picole"
-          this.suportList[1].item = "Medie"
-          this.suportList[2].item = "Grandi"
+        
         } 
         else{
           this.suportList.splice(0, 3);
-          this.suportList[0].item = "Chedar"
-          this.suportList[1].item = "Bacon"
-          this.suportList[2].item = "Kebab"
         }
         this.sideList = this.suportList
       } 
@@ -111,10 +121,109 @@ export class BottomSheetSideComponent {
     });
   }
 
+  //selezione prodotti
+  setPatatine(p: Prodotti) {
+    this.fries = p;
+    this.quantita = 1
+    this.patatineSelezionata = true
+  }
+  setSalsa(p: Prodotti) {
+    this.salsa = p;
+    this.salsaSelezionata = true
+  }
+
+  //cambio css prodotto in base alla selezione
+  
+  //patatine
+  getColorFries(p : Prodotti){
+      if(p === this.fries){
+          return  'rgb(200, 22, 29)'
+        }
+        return 'white'
+      }
+  getScaleFires(p : Prodotti){
+    if(p === this.fries){
+      return  1.5
+    }
+    return 1.3
+  }
+  //salse
+  getColorSalsa(p : Prodotti){
+    if(p === this.salsa){
+      return 'white'
+    }
+    return '#EFECE5'
+  }
+  getBorderSalsa(p : Prodotti){
+    if(p === this.salsa){
+      return 'none'
+    }
+    return 'solid 1px gray'
+  }
+  getMarginTopTxtSalsa(p:Prodotti){
+    if(p === this.salsa){
+      return 'block'
+    }
+    return 'none'
+  }
+  //tasto done
+  getPosibilitaPremuta(){
+    if(this.patatineSelezionata){
+      return  '#FFCA40'
+    }
+    return 'rgb(200, 22, 29)'
+  }
+
+  //pulsanti + e -
+  plus(){
+    this.quantita++;
+    this.bounceIncrementazione = true;
+    setTimeout(() => {
+      this.bounceIncrementazione = false;
+    }, 150); 
+  }
+
+  minus(){
+    if (this.quantita > 1) {
+      this.quantita--;
+    }
+  } 
+
+
   // chiusura
   close(): void { 
     this.btsServ.bottomSideClosed()
     this.overlay.switch();
+    this.quantita = 1
+    this.salsaSelezionata = false
+    setTimeout(() => {
+      this.patatineSelezionata = false;
+    }, 270);     
+    this.fries = {
+      item : '', 
+      price : 0, 
+      image : '',
+      category : '', 
+      sconto : 0
+    }
+    this.salsa = {
+      item : '', 
+      price : 0, 
+      image : '',
+      category : '', 
+      sconto : 0
+    }
+  }
+
+  // tasto done
+  fatto(){
+    if(this.patatineSelezionata){
+      this.pasBill.setProd(this.fries , this.quantita)
+      if(this.salsaSelezionata){    
+        this.pasBill.setProd(this.salsa , 1)
+      }
+      this.close()
+    }
   }
 
   // animazioni
