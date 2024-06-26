@@ -31,11 +31,11 @@ export class BottomSheetSideComponent {
   
   //liste prodotti
   sideList !: Prodotti[]   //prodotti della categoria del sideSelected
-  sauceList !: Prodotti[]     //lista salse
+  sauceList : Prodotti[] = this.lingSer.getProduct()    //lista salse
   suportList : Prodotti[] = this.lingSer.getProduct() 
 
   //suporto 
-  counter : number = 0 // numero del prodotto ordinato 
+  counter : number = 1 // numero del prodotto ordinato 
 
   //lingua
   chose : string = this.lingSer.getTesto().chose
@@ -69,7 +69,6 @@ export class BottomSheetSideComponent {
       this.chose = this.lingSer.getTesto().chose
       this.done = this.lingSer.getTesto().Fatto
       this.curency = this.lingSer.getTesto().Curency
-
       this.sideList.forEach(si => {
         si.item = this.lingSer.changeProd(si)         
       });
