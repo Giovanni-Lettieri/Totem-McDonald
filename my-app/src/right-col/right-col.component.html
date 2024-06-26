@@ -24,7 +24,7 @@
     </div>
 
     <a (click)="checkout()">
-        <button (click)="passagioCheckOut()"> 
+        <button (click)="passagioCheckOut()" [style.background-color]="getPosibilitaPremuta()"> 
             <p id="fatto">{{done}}</p>
         </button>
     </a>

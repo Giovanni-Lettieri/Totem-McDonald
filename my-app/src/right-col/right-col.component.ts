@@ -151,6 +151,11 @@ export class RightColComponent implements OnInit{
     this.checkOut_Bill.setConto(this.conto); 
     this.checkOut_Bill.aggiorna()
   }
+  checkout(){
+    if(this.billList.length > 0){  
+      this.router.navigate(['CheckOut'], {relativeTo:this.route});
+    }
+  }
 
   //testo dello start button
   modCons() : String{
@@ -167,9 +172,15 @@ export class RightColComponent implements OnInit{
   getTestiColor(){
     return this.lDServ.testi()
   }
-
-  checkout(){
-    this.router.navigate(['CheckOut'], {relativeTo:this.route});
+  
+  //colore tanto done
+  getPosibilitaPremuta(){
+    if(this.billList.length > 0){
+      return '#FFCA40'
+    }
+    return 'rgb(200, 22, 29)'
   }
+
+  
 
 }
