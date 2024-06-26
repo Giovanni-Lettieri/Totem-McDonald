@@ -21,15 +21,15 @@
           </span>
         <button id="M-but" (click)="minus()"><p id="meno">-</p></button>
     </div>
-    <!-- @if(extraFlag){ -->
-        <span [@popExtra]="animation_popExtra_Flag ? 'start' : 'end'">
-            <button (click)="edit()"  class="buttonExtra" id="butCustom" >
+        
+    <!-- bottone extra -->
+    <span [@popExtra]="animation_popExtra_Flag ? 'start' : 'end'">
+        <button (click)="edit()"  class="buttonExtra" id="butCustom" >
                 <p>{{castomText}}</p>
             </button>
             <button (click)="remove()" class="buttonExtra" id="butRemove">
                 <p>{{rimuoviText}}</p>
             </button>
         </span>
-    <!-- } -->
 </section>
 
