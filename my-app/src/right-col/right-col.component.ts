@@ -116,7 +116,7 @@ export class RightColComponent implements OnInit{
     this.subProd_Bill = this.prod_bill.ProdChange.subscribe(() => {
       const billProd = this.prod_bill.getBillProd();
       this.billList.forEach((b , index)=> {
-        if(b.image == billProd.image){
+        if(b.image == billProd.image  /*aggiungere controllo aray ingredienti*/){
           b.quantita += billProd.quantita
           if(index != 0){
             this.billList.splice(index, 1);
