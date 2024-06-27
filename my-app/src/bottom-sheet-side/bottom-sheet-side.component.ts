@@ -36,7 +36,7 @@ export class BottomSheetSideComponent {
 
   //Prodotti selezionati
   sideSelected = input.required<Prodotti>()
-  fries !: Prodotti   
+  fries !: Prodotti 
   salsa !: Prodotti 
 
   //liste prodotti
@@ -77,6 +77,7 @@ export class BottomSheetSideComponent {
     effect(() => {
       this.sauceList = this.sauceList.filter((c) => c.category  === this.lingSer.getCategory()[9].name) //stessa cosa specificatemente per le salse 
     });
+  
   }
 
   ngOnInit(): void {
@@ -86,11 +87,11 @@ export class BottomSheetSideComponent {
       this.done = this.lingSer.getTesto().Fatto
       this.curency = this.lingSer.getTesto().Curency
       this.sideList.forEach(si => {
-        si.item = this.lingSer.changeProd(si)         
+        si.item = this.lingSer.changeProd(si.image)         
       });
       
       this.sauceList.forEach(sa => {
-        sa.item = this.lingSer.changeProd(sa)         
+        sa.item = this.lingSer.changeProd(sa.image)         
       });
     });
     //bottom sheet 
@@ -99,7 +100,7 @@ export class BottomSheetSideComponent {
       this.hiddenCenter = this.btsServ.hiddenCenter
       this.vadoAlBill = this.btsServ.vaiAlBill
       this.hidden = this.btsServ.hidden
-    setTimeout(() => {
+      setTimeout(() => {
       if(this.bottomSideAperto == true){
         this.suportList = this.lingSer.getProduct()
         this.suportList = this.suportList.filter((c) => c.category === this.lingSer.getCategory()[4].name)
@@ -115,9 +116,9 @@ export class BottomSheetSideComponent {
           this.suportList.splice(0, 3);
         }
         this.sideList = this.suportList
+        this.setPatatine(this.sideSelected())
       } 
     },0);
-       
     });
   }
 
@@ -136,13 +137,13 @@ export class BottomSheetSideComponent {
   
   //patatine
   getColorFries(p : Prodotti){
-      if(p === this.fries){
-          return  'rgb(200, 22, 29)'
-        }
-        return 'white'
-      }
+    if(p.image == this.fries.image){
+      return  'rgb(200, 22, 29)'
+    }
+    return 'white'
+  }
   getScaleFires(p : Prodotti){
-    if(p === this.fries){
+    if(p.image == this.fries.image){
       return  1.5
     }
     return 1.3
@@ -166,13 +167,6 @@ export class BottomSheetSideComponent {
     }
     return 'none'
   }
-  //tasto done
-  getPosibilitaPremuta(){
-    if(this.patatineSelezionata){
-      return  '#FFCA40'
-    }
-    return 'rgb(200, 22, 29)'
-  }
 
   //pulsanti + e -
   plus(){
@@ -195,17 +189,7 @@ export class BottomSheetSideComponent {
     this.btsServ.bottomSideClosed()
     this.overlay.switch();
     this.quantita = 1
-    this.salsaSelezionata = false
-    setTimeout(() => {
-      this.patatineSelezionata = false;
-    }, 270);     
-    this.fries = {
-      item : '', 
-      price : 0, 
-      image : '',
-      category : '', 
-      sconto : 0
-    }
+    this.salsaSelezionata = false 
     this.salsa = {
       item : '', 
       price : 0, 
@@ -213,17 +197,20 @@ export class BottomSheetSideComponent {
       category : '', 
       sconto : 0
     }
+    setTimeout(() => {
+      this.patatineSelezionata = false;
+    }, 270);
   }
 
   // tasto done
   fatto(){
-    if(this.patatineSelezionata){
+      
       this.pasBill.setProd(this.fries , this.quantita)
       if(this.salsaSelezionata){    
         this.pasBill.setProd(this.salsa , 1)
       }
+
       this.close()
-    }
   }
 
   // animazioni
