@@ -111,7 +111,7 @@ export class ProdCheckOutComponent {
       this.rimuoviText  = this.lingSer.getTesto().remove; 
       this.castomText = this.lingSer.getTesto().custom; 
       
-      this.prodotto().item = this.lingSer.changeBillProd(this.prodotto())
+      this.prodotto().item = this.lingSer.changeProd(this.prodotto().image)
     });
     this.subscription2 = this.extraServ.extraButton.subscribe(() => { 
       this.animation_popExtra_Flag = true; 

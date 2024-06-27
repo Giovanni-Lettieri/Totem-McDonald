@@ -36,9 +36,15 @@ export class ChangeLanguagesService {
 
   constructor() {}
 
-  lingueList : Lingua[] = lingueJson;
-  linguaUtilizata : Lingua = this.lingueList[0];
 
+  //lista deggli src per ogni lingua
+  lingueList : Lingua[] = lingueJson;              
+  
+  //lingua selezionata 
+  linguaUtilizata : Lingua = this.lingueList[0];  //lingua preimpostata
+
+
+  //variabili di suporto
   prodList !: Prodotti[]; 
   cateList !: Category[]; 
   testSelect !: Testi;
@@ -49,12 +55,15 @@ export class ChangeLanguagesService {
       this.cambioLingua.emit()
     }
   }
+
   getLinguaSel(){
     return this.linguaUtilizata;
   }
   getLingue(){
     return this.lingueList
   }
+
+  //ritorna i tsti fissi
   getTesto(){
     switch(this.linguaUtilizata.id){
       case 0:
@@ -75,6 +84,8 @@ export class ChangeLanguagesService {
     }
     return this.testSelect
   }
+
+  // ritorna le categorie
   getCategory(){
     switch(this.linguaUtilizata.id){
       case 0:
@@ -95,6 +106,8 @@ export class ChangeLanguagesService {
     }
     return this.cateList
   }
+
+  // ritorna i prodotti
   getProduct(){
     switch(this.linguaUtilizata.id){
       case 0:
@@ -116,21 +129,11 @@ export class ChangeLanguagesService {
     return this.prodList
   }
 
-  
-  changeBillProd(B : BillProd) : string{ 
+  //retrun del nome tradotto di un prodotto specifico
+  changeProd(p : string) : string{ 
     this.getProduct()
     for(let i = 0 ; i <= this.prodList.length ; i++) {
-      if(B.image == this.prodList[i].image){
-        return this.prodList[i].item
-      }
-    }
-    return "Errore Traduzione"
-  }
-
-  changeProd(p : Prodotti) : string{ 
-    this.getProduct()
-    for(let i = 0 ; i <= this.prodList.length ; i++) {
-      if(p.image == this.prodList[i].image){
+      if(p == this.prodList[i].image){
         return this.prodList[i].item
       }
     }

@@ -79,7 +79,7 @@ export class RightColComponent implements OnInit{
     //Aggiornamento dinamico lingua
     this.subLanguage = this.lingSer.cambioLingua.subscribe(() => {
       this.billList.forEach(b => {
-        b.item = this.lingSer.changeBillProd(b)
+        b.item = this.lingSer.changeProd(b.image)
       });
       
       this.my =  this.lingSer.getTesto().Mio
