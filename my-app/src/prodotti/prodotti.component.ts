@@ -4,7 +4,7 @@ import { Prodotti } from './prodotti';
 import { ProdottiService } from '../Service/prodotti.service';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { ChangeLanguagesService } from '../Service/change-languages.service';
-import { Subscription } from 'rxjs';
+import { Subscription, subscribeOn } from 'rxjs';
 import { CurrencyPipe } from '@angular/common';
 import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
 import { registerLocaleData } from '@angular/common';
@@ -72,7 +72,7 @@ export class ProdottiComponent implements OnInit{
   pulsanteOn(c: Prodotti) {
     
 
-    if(c.category === this.lingSer.getCategory()[4].name){
+    if(c.image.substring(0,25) === '/assets/Prodotti/Patatine'){
       this.btsServ.bottomSideOpened()   //patatine
     }else{
       this.btsServ.bottomSheetOpened()  //Originale 
