@@ -140,7 +140,7 @@ export class BottomSheetSideComponent {
     if(p.image == this.fries.image){
       return  'rgb(200, 22, 29)'
     }
-    return 'white'
+    return this.getBackgroundColor()
   }
   getScaleFires(p : Prodotti){
     if(p.image == this.fries.image){
@@ -151,9 +151,9 @@ export class BottomSheetSideComponent {
   //salse
   getColorSalsa(p : Prodotti){
     if(p === this.salsa){
-      return 'white'
+      return this.getBackgroundColor()
     }
-    return '#EFECE5'
+    return this.rCBackground()
   }
   getBorderSalsa(p : Prodotti){
     if(p === this.salsa){

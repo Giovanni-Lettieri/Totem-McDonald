@@ -12,7 +12,6 @@ p{  /* tutti i testi */
     overflow: hidden;
     left: 0;
     bottom: 0;
-    background-color: rgb(255, 255, 255);
     position: fixed;
     z-index: 200;
     border-top-left-radius: 200px;
@@ -124,8 +123,8 @@ p{  /* tutti i testi */
 /* + - e couter */
 #counter-cont {
     position: absolute;
-    top: 38.5vh;
-    left: 32vw;
+    top: 39.5vh;
+    left: 33.5vw;
     padding-left: 100px;
     display: grid;
     grid-template-columns: repeat(3, 40px); 

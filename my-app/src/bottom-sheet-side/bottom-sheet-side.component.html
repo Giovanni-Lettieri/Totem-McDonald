@@ -1,17 +1,17 @@
-<div id="bottomSheet">
+<div id="bottomSheet"   [style.background-color]="getBackgroundColor()">
     <!-- pulsante chiusura -->
-    <button (click)="close()" id="close">
-        <p id="X">X</p>
+    <button (click)="close()" id="close" [style.background-color]="rCBackground()">
+        <p id="X" [style.color]="getTestiColor()">X</p>
     </button>
 
     <!-- pulsante info -->
-    <button id="info">
-        <p id="I">i</p>
+    <button id="info" [style.background-color]="rCBackground()">
+        <p id="I" [style.color]="getTestiColor()">i</p>
     </button>
 
     <!-- titolo categoria -->
     <div id="patatine-cont">
-        <p  id="patatine-txt">{{this.lingSer.getCategory()[4].name}}</p>
+        <p  id="patatine-txt"  [style.color]="getTestiColor()" >{{this.lingSer.getCategory()[4].name}}</p>
     </div>
 
     <!-- prodotti della categoria-->
@@ -22,7 +22,7 @@
                 <img [src]="prod.image" [style.scale]="getScaleFires(prod)">
             </div>
             <div id="contPrezName">
-                <p id="nome"> {{prod.item}}</p>
+                <p id="nome" [style.color]="getTestiColor()"> {{prod.item}}</p>
                 <p id="Prezzo" >{{ prod.price | currency: 'EUR':'symbol':'1.2-2' : curency === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
             </div>
         </div>
@@ -30,21 +30,21 @@
     </div>
     <!-- + - e contatore -->
     <div id="counter-cont">
-        <button id="M-but" class="BottoneCounter"   (click)="minus()">  
-            <p>-</p>
+        <button id="M-but" class="BottoneCounter"   (click)="minus()"   [style.background-color]="rCBackground()">  
+            <p  [style.color]="getTestiColor()">-</p>
         </button>
         <span id="C-cont">
-            <p  [@bounce]="bounceIncrementazione === false ? 'start' : 'end'">{{quantita}}</p>
+            <p  [@bounce]="bounceIncrementazione === false ? 'start' : 'end'" [style.color]="getTestiColor()">{{quantita}}</p>
         </span>
         <button id="P-but" class="BottoneCounter"   (click)="plus()">
-            <p>+</p>
+            <p  [style.color]="getTestiColor()">+</p>
         </button>
     </div>
 
     <!-- salse -->
-    <div id="Sez-Salse">
+    <div id="Sez-Salse" [style.background-color]="rCBackground()">
         <div id="titolo-salse">
-            <span>{{chose}}</span><span>{{ this.lingSer.getCategory()[9].name }}</span>
+            <span [style.color]="getTestiColor()">{{chose}}</span><span [style.color]="getTestiColor()">{{ this.lingSer.getCategory()[9].name }}</span>
         </div>
         <div id="Binari">
             <div id="Scor-Salse">
@@ -52,7 +52,7 @@
                 <button id="Salsa" (click)="setSalsa(s)" [style.background-color]="getColorSalsa(s)" [style.border]="getBorderSalsa(s)" >
                     <img [src]="s.image">
                     <div [style.display]="getMarginTopTxtSalsa(s)">
-                        <p> {{s.item}}</p>
+                        <p [style.color]="getTestiColor()" > {{s.item}}</p>
                     </div>
                 </button>
                 }
@@ -61,7 +61,7 @@
     </div>    
     <!-- tasto done -->
 
-    <div id="Fatto">
+    <div id="Fatto" [style.background-color]="getBackgroundColor()">
         <button (click)="fatto()">
             <p>{{done}}</p>
         </button>
