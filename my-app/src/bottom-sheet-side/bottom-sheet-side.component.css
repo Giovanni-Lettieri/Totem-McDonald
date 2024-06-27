@@ -22,6 +22,12 @@ p{  /* tutti i testi */
 
 
 /* pulsatne chiusura */
+#cont-close{
+    width: 100%;
+    text-align: center;
+    top: 0;
+    position: absolute;
+}
 #X{
     font-size: 50px;
     position: relative;
@@ -32,12 +38,9 @@ p{  /* tutti i testi */
     background-color: #EFECE5;
     color: #94918b; 
     border: none;
-    position: absolute;
-    left: 39%;
-    top:0;
+    position: relative;
     height: 105px;
     width: 229.5px;
-    margin-top: 0px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 30px;

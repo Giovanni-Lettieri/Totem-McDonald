@@ -29,7 +29,32 @@ registerLocaleData(localeEn)
       transition('start => end', [
         animate('150ms ease-in', style({ transform: 'translateY(-30%)' }))
       ])
-    ])
+    ]),
+    
+    trigger('holeState', [
+      state('shown', style({
+        clipPath: 'circle(100% at 50% 25%)',
+        pointerEvents: 'auto'
+      })),
+      state('hiddenCenter', style({
+        clipPath: 'circle(8% at 50% 25%)',
+        pointerEvents: 'auto'
+      })),
+      state('hidden', style({
+        clipPath: 'circle(2% at 84% 13%)',
+        pointerEvents: 'none'
+      })),
+    
+      transition('shown => hiddenCenter', animate('0.2s linear')),
+      transition('hiddenCenter => shown', animate('0.2s linear')),
+      transition('hidden => hiddenCenter', animate('0.2s linear')),
+      transition('hiddenCenter => hidden', animate('0.2s linear')),
+      transition('shown => hidden', animate('0.2s linear')),
+      transition('hidden => shown', [
+        animate('0s linear', style({ clipPath: 'circle(8% at 50% 25%)' })),
+        animate('0.2s linear', style({ clipPath: 'circle(100% at 50% 25%)' }))
+      ])
+    ]),
   ]
 })
 export class BottomSheetSideComponent {
@@ -54,15 +79,13 @@ export class BottomSheetSideComponent {
   done : string = this.lingSer.getTesto().Fatto
   curency : string = this.lingSer.getTesto().Curency
 
-  //apertura e chiusura bottom sheet side
+  //animazioni
   bottomSideAperto: boolean = false
-  vadoAlBill : boolean = true;
   hiddenCenter: boolean = true
   hidden: boolean = false
-
-  //animazioni
   bounceIncrementazione : boolean = false
-
+  popSelezione : boolean  = false 
+  
   //subscription
   subLanguage !: Subscription
   subBottomSide !: Subscription
@@ -77,7 +100,6 @@ export class BottomSheetSideComponent {
     effect(() => {
       this.sauceList = this.sauceList.filter((c) => c.category  === this.lingSer.getCategory()[9].name) //stessa cosa specificatemente per le salse 
     });
-  
   }
 
   ngOnInit(): void {
@@ -98,7 +120,6 @@ export class BottomSheetSideComponent {
     this.subBottomSide = this.btsServ.sideChange.subscribe(() => {
       this.bottomSideAperto = this.btsServ.bottomSideAperto
       this.hiddenCenter = this.btsServ.hiddenCenter
-      this.vadoAlBill = this.btsServ.vaiAlBill
       this.hidden = this.btsServ.hidden
       setTimeout(() => {
       if(this.bottomSideAperto == true){
@@ -127,6 +148,7 @@ export class BottomSheetSideComponent {
     this.fries = p;
     this.quantita = 1
     this.patatineSelezionata = true
+    this.popSelezione = true
   }
   setSalsa(p: Prodotti) {
     this.salsa = p;
@@ -171,10 +193,7 @@ export class BottomSheetSideComponent {
   //pulsanti + e -
   plus(){
     this.quantita++;
-    this.bounceIncrementazione = true;
-    setTimeout(() => {
-      this.bounceIncrementazione = false;
-    }, 150); 
+    this.bounce()
   }
 
   minus(){
@@ -199,29 +218,29 @@ export class BottomSheetSideComponent {
     }
     setTimeout(() => {
       this.patatineSelezionata = false;
+      this.popSelezione = false
     }, 270);
   }
 
   // tasto done
   fatto(){
-      
-      this.pasBill.setProd(this.fries , this.quantita)
-      if(this.salsaSelezionata){    
-        this.pasBill.setProd(this.salsa , 1)
-      }
-
-      this.close()
+    if(this.salsaSelezionata){    
+      this.pasBill.setProd(this.salsa , 1)
+    }
+    this.pasBill.setProd(this.fries , this.quantita)
+    this.hCF()
+    this.close()
   }
 
   // animazioni
-  hCT(){
-    this.btsServ.hiddenCenterTrue()
-  }
   hCF(){
     this.btsServ.hiddenCenterFalse()
   }
-  hT(){
-    this.btsServ.hiddenTrue()
+  bounce(){
+    this.bounceIncrementazione = true;
+    setTimeout(() => {
+      this.bounceIncrementazione = false;
+    }, 150);    
   }
 
   //Palette di colori

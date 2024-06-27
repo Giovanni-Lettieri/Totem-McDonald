@@ -1,21 +1,22 @@
-<div id="bottomSheet"   [style.background-color]="getBackgroundColor()">
+<div id="bottomSheet"  [@holeState]="hiddenCenter ? (bottomSideAperto ? 'shown' : 'hiddenCenter') : (hidden ? 'hidden' : 'shown')"  [style.background-color]="getBackgroundColor()">
     <!-- pulsante chiusura -->
-    <button (click)="close()" id="close" [style.background-color]="rCBackground()">
-        <p id="X" [style.color]="getTestiColor()">X</p>
-    </button>
+    <div id="cont-close" [style.background-color]="getBackgroundColor()">
+       <button (click)="close()" id="close" [style.background-color]="rCBackground()">
+            <p id="X" [style.color]="getTestiColor()">X</p>
+        </button>
+    </div>
 
-    <!-- pulsante info -->
-    <button id="info" [style.background-color]="rCBackground()">
-        <p id="I" [style.color]="getTestiColor()">i</p>
-    </button>
+    <!-- pulsante info -->    <button id="info" [style.background-color]="rCBackground()">
+            <p id="I" [style.color]="getTestiColor()">i</p>
+        </button>
 
     <!-- titolo categoria -->
     <div id="patatine-cont">
         <p  id="patatine-txt"  [style.color]="getTestiColor()" >{{this.lingSer.getCategory()[4].name}}</p>
     </div>
-
+    
     <!-- prodotti della categoria-->
-    <div  id="sezione-patatine">
+    <div  id="sezione-patatine" >
         @for(prod of sideList ; track prod.item){
         <div id="cont-patatine">
             <div id="cont-img-pat" (click)="setPatatine(prod)" [style.background-color]="getColorFries(prod)">
@@ -29,7 +30,7 @@
         }
     </div>
     <!-- + - e contatore -->
-    <div id="counter-cont">
+    <div id="counter-cont" >
         <button id="M-but" class="BottoneCounter"   (click)="minus()"   [style.background-color]="rCBackground()">  
             <p  [style.color]="getTestiColor()">-</p>
         </button>
