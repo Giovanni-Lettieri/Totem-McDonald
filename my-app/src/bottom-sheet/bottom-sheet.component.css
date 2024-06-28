@@ -8,7 +8,7 @@ h2 {
 }
 #immaginePrincipale{ 
     position:fixed;
-    top: 500px;
+    top: 350px;
     width: 60vw; 
     height: 20vh; 
     left: 10.3vh;
@@ -56,8 +56,7 @@ h2 {
 
 }
 #BS {
-    height: 80vh;
-    max-height: 80vh;
+    height: 88vh;
     width: 100vw;
     overflow: hidden;
     left: 0;
@@ -113,7 +112,7 @@ button{
 }
 #counter-cont {
     position: absolute;
-    top: 40vh;
+    top: 41vh;
     left: 32vw;
     padding-left: 100px;
     display: grid;
@@ -131,7 +130,7 @@ button{
     background-color: #FFCA40;
     width: 200px;
     height: 200px;
-    top: 39vh;
+    top: 44vh;
     border-radius: 70px;
     left: 53%;
     position: relative;
@@ -149,7 +148,7 @@ button{
     background-color: #d1cdc3;
     width: 280px;
     height: 200px;
-    top: 39vh;
+    top: 44vh;
     border-radius: 70px;
     left: 20%;
     transform: translateX(-50%);
@@ -172,7 +171,7 @@ button{
 #ad {
     background-color: #EFECE5;
     position: relative;
-    top: 43vh;
+    top: 50vh;
     height: 300px;
     width: 90vw;
     z-index: 100;
