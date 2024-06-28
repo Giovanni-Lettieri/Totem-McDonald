@@ -698,7 +698,7 @@
     {
         "item": "Espresso",
         "price": 0.90,
-        "image": "assets/Prodotti/McCaffè/Espresso.png",
+        "image": "/assets/Prodotti/McCaffè/Espresso.png",
         "category": "McCaffè",
         "sconto": 0,
         "toppings": []
@@ -746,7 +746,7 @@
     {
         "item": "Maionese",
         "price": 0.30,
-        "image": "assets/Prodotti/Salse/Maionese.png",
+        "image": "/assets/Prodotti/Salse/Maionese.png",
         "category": "Salse",
         "sconto": 0,
         "toppings": []

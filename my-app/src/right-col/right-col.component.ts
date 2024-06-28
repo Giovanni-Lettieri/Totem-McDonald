@@ -56,6 +56,8 @@ export class RightColComponent implements OnInit{
   conto : number = this.checkOut_Bill.getConto(); 
   flagProd_Bill : boolean = true
 
+  fattoClick: boolean = false
+
 
   constructor(
     //service
@@ -147,6 +149,10 @@ export class RightColComponent implements OnInit{
 
   //passagio bill al check out
   passagioCheckOut(){
+    this.fattoClick= true
+    setTimeout(() => {
+      this.fattoClick= false
+    }, 100);
     this.checkOut_Bill.setAcquisti(this.billList)
     this.checkOut_Bill.setConto(this.conto); 
     this.checkOut_Bill.aggiorna()
@@ -175,12 +181,11 @@ export class RightColComponent implements OnInit{
   
   //colore tanto done
   getPosibilitaPremuta(){
-    if(this.billList.length > 0){
-      return '#FFCA40'
+    if(this.fattoClick && this.billList.length <= 0){
+      return '#C8161D'
+      
     }
-    return 'rgb(200, 22, 29)'
+    return '#FFCA40'
   }
-
-  
 
 }
