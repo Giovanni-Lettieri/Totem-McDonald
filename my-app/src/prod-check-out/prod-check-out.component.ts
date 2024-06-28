@@ -69,7 +69,8 @@ export class ProdCheckOutComponent {
   cur : string = this.lingSer.getTesto().Curency; 
 
   @Output() rimozione = new EventEmitter<BillProd>();
-
+  @Output() clickEdit = new EventEmitter<BillProd>();
+  
   constructor(
     private servCont: ContoService,
     private lingSer: ChangeLanguagesService,
@@ -144,6 +145,6 @@ export class ProdCheckOutComponent {
   }
 
   edit() {
-    //AGGIUNGI
+    this.clickEdit.emit(this.prodotto())
   }
 }

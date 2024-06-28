@@ -15,5 +15,6 @@
         "check" : "Conto",
         "remove" : "Rimuovi",
         "custom" : "Personaliza",
-        "chose" : "scegli"
+        "chose" : "scegli",
+        "back" : "Indietro"
     }

@@ -53,13 +53,12 @@ img{
     font-size: 100px;
     color: white;
     font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 0px;
 }
 #TE{
     color: rgb(190, 185, 185);
     font-size:40px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
     font-weight:400;
     margin-top: 0px;
 }
@@ -90,14 +89,12 @@ img{
     margin-bottom: 0;
     text-align: center;
     color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight:600;
 }
 #totale{
     color: rgb(224, 215, 215);
     font-size:40px;
     text-align: left;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight:400;
     margin-bottom: 1%;
 }
@@ -112,7 +109,6 @@ img{
 #checkout{
     font-size:35px;
     text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight:650;
     margin-top: 15px;
 }
@@ -127,3 +123,116 @@ img{
     border: none;
     z-index: 500;
 }
+
+
+/* menu editabile */
+section{
+    z-index: 1000;
+    position: fixed; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+}
+.invisible {
+    display: block;
+}
+.visible {
+    display: none;
+}
+menu{
+    z-index: 213213123123;
+    position: fixed;
+    height: 80%;
+    width: 90%;
+    left: 3.5%;
+    background-color: white;
+    border-radius: 80px;
+}
+
+#imgEdit{
+    position: relative;
+    scale:0.6;
+    margin-top: -0%;
+    left: -3.5%;
+}
+
+#close{
+    position: absolute;
+    right: 3vh;
+    top: 3vh;
+
+    width: 4vh;
+    height: 4vh;
+
+    border-radius: 20px;
+    
+    border: none;
+
+    text-align: center;
+    justify-content: center;
+}
+#close > p{ 
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+#nomeEdit{
+    margin-top: -10%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: -0.875
+    /* background-color: #2b7b3b; */
+}
+#nomeEdit > p{
+    font-size: 70px;
+    font-weight: 800;
+}
+
+#boxEdit{
+    background-color:#ffc94000;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    left: -0.875;
+}
+
+
+#prezzoEdit{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+}
+#prezzoEdit  > p{
+    font-size: 110;
+    font-weight: 1100;
+    color: #FFCA40;
+}
+#doneEdit{
+    background-color: #FFCA40;
+    width: 280px;
+    height: 200px;
+    border-radius: 70px;
+    position: absolute;
+    bottom: 80px;
+    right: 80px;
+    border: none;
+    z-index: 500;
+    text-align: center;
+}
+#doneEdit > p{
+    position: relative;
+    font-size:35px;
+    font-weight:650;
+    margin-top: 15px;
+}
+

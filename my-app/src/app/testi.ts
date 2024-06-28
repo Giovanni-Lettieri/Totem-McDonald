@@ -16,4 +16,5 @@ export interface Testi {
     remove: string
     custom : string
     chose :string
+    back : string
 }

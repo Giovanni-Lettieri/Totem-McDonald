@@ -1,57 +1,89 @@
 <div [@holeState]="entrata ? 'shown' : 'hidden'">
-    <header>
-        <!-- bottone back -->
-        <a [routerLink]="" (click)="delayedNavigation($event)">
-            <button id="back" (click)="passagioMainPage()">
-                <p id="back-frecia"> < </p>
-                <p id="back-text">Back</p>
-            </button>
-        </a>
-        <!-- bottone lingua -->
-        <language id="language"></language>
-    </header>
-    
-    <body>
-        <!-- logo -->
-        <div id="cont-logo">    
-            <img src="/assets/M.png">
-        </div>
-        <!-- title -->
-        <div id="testiMOTE">
-            <p id="MO">{{my}}<br>{{order}}</p>
-            <span>
-                @if(flagInOut == 1){
-                    <p id="TE">{{TakeOut}}</p>
-                }@else {
-                    <p id="TE">{{EatIn}}</p>
+    <section [ngClass]="{'visible': entrataEdit, 'invisible': !entrataEdit}"></section>
+        <header>
+            <!-- bottone back -->
+            <a [routerLink]="" (click)="delayedNavigation($event)">
+                <button id="back" (click)="passagioMainPage()">
+                    <p id="back-frecia"> < </p>
+                    <p id="back-text">{{back}}</p>
+                </button>
+            </a>
+            <!-- bottone lingua -->
+            <language id="language"></language>
+        </header>
+        
+        <body>
+            <!-- logo -->
+            <div id="cont-logo">    
+                <img src="/assets/M.png">
+            </div>
+            <!-- title -->
+            <div id="testiMOTE">
+                <p id="MO">{{my}}<br>{{order}}</p>
+                <span>
+                    @if(flagInOut == 1){
+                        <p id="TE">{{TakeOut}}</p>
+                    }@else {
+                        <p id="TE">{{EatIn}}</p>
+                    }
+                </span>
+            </div>
+            <!-- carello -->
+            <div id="CObox">
+                @for (prod of scontrino; track prod.price){
+                    <prod-check-out [prodotto]="prod" (rimozione)="rimuoviProdotto($event)" (clickEdit)="startEdit($event)"></prod-check-out>
                 }
-            </span>
-        </div>
-        <!-- carello -->
-        <div id="CObox">
-            @for (prod of scontrino; track prod.price){
-                <prod-check-out [prodotto]="prod" (rimozione)="rimuoviProdotto($event)"></prod-check-out>
-            }
-        </div>   
-    </body>
+            </div>   
+        </body>
+        
+        <footer>
+            <!-- conto totale -->
+            <div id="prezzo-div">
+                <p id="totale">{{tot}}</p>
+                <p id="importo">{{ conto | currency: 'EUR':'symbol':'1.2-2' : cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+            </div>
+            <!-- pulsante checkout -->
+            <a routerLink="/StartScreen" (click)="resetBill()">
+                <button id="checkoutBut"> 
+                    <p id="checkout">{{check}}</p>
+                </button>
+            </a>
+        </footer>
+
+        <!-- edit -->
+        
+            <menu [@entrataMenu]="entrataEdit === false ? 'start' : 'end'"  [style.background-color]="getBackgroundColor()"> 
+                <!-- imagine prodotto -->
+                    <div id="imgEdit">
+                        <img [src]="suportoMenu.image">
+                    </div>
+
+                <!-- close -->
+                <button (click)="closeEdit()" id="close" [style.background-color]="rCBackground()" >
+                    <p  [style.color]="getTestiColor()">X</p>
+                </button>
+
+
+                <!-- nome prodotto -->
+                <div id="nomeEdit" >
+                    <p [style.color]="getTestiColor()" >{{suportoMenu.item}}</p>
+                </div>
+
+                <!-- elenco ingredienti -->
+                <div id="boxEdit" [style.background-color]="getBackgroundColor()">
+                    
+                </div>
+
+                <!-- parte inferiore -->
+            
+                <div id="prezzoEdit">
+                    <p>{{ calcoloPrezzo(suportoMenu) | currency: 'EUR':'symbol':'1.2-2' : cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+                </div>
+                <button id="doneEdit" (click)="doneEdit()">
+                    <p>{{done}}</p>
+                </button>
+                
+            </menu>
     
-    <footer>
-        <!-- conto totale -->
-        <div id="prezzo-div">
-            <p id="totale">{{tot}}</p>
-            @if(cur == 'EUR'){    
-                <p id="importo">{{conto | currency:'EUR':'symbol':'1.2-2' : 'it-IT' }}</p>
-            }
-            @else {
-                <p id="importo">{{conto | currency:'EUR':'symbol':'1.2-2' : 'en-EN' }}</p>
-            }
-        </div>
-        <!-- pulsante checkout -->
-        <a routerLink="/StartScreen" (click)="resetBill()">
-            <button id="checkoutBut"> 
-                <p id="checkout">{{check}}</p>
-            </button>
-        </a>
-    </footer>
-    <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 </div>

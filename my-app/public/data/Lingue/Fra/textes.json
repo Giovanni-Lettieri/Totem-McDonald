@@ -15,5 +15,6 @@
         "check" : "Compte",
         "remove" : "Retirer",
         "custom" : "Personnaliser",
-        "chose" : "choisir"
+        "chose" : "choisir",
+        "back" : "Retour"
 }

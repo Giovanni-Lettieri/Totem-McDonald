@@ -15,5 +15,6 @@
         "check" : "CheckOut",
         "remove" : "Remove",
         "custom" : "Edit",
-        "chose" : "chose"
+        "chose" : "chose",
+        "back" : "Back"
     }
