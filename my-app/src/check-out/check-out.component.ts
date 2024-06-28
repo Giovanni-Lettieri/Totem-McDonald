@@ -84,7 +84,8 @@ export class CheckOutComponent {
     price: 0,
     image: '',
     category: '',
-    sconto: 0
+    sconto: 0,
+    toppings: []
   }
 
   //animazione 

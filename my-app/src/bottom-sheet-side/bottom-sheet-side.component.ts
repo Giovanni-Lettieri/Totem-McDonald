@@ -214,7 +214,8 @@ export class BottomSheetSideComponent {
       price : 0, 
       image : '',
       category : '', 
-      sconto : 0
+      sconto : 0,
+      toppings : []
     }
     setTimeout(() => {
       this.patatineSelezionata = false;
