@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import {PulsantiExtraService} from '../Service/pulsanti-extra.service';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
+import { LightDarkServiceService } from '../Service/light-dark-service.service';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -77,7 +78,8 @@ export class ProdCheckOutComponent {
     private servCont: ContoService,
     private lingSer: ChangeLanguagesService,
     private extraServ : PulsantiExtraService,
-    private btsServ: BottomSheetOpenCloseService
+    private btsServ: BottomSheetOpenCloseService,
+    private lDServ: LightDarkServiceService
     ){}
 
   @HostListener('touchstart', ['$event'])
@@ -162,4 +164,6 @@ export class ProdCheckOutComponent {
     }
     return '#FFCA40'
   }
+
+
 }

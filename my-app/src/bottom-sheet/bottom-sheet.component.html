@@ -12,11 +12,11 @@
   }
 
   <!-- pulsante chiusura -->
-  <button [style.background-color]="rCBackground()" id="close" (click)="close()" (click)="hCT()" ><p id="X">X</p></button>
+  <button [style.background-color]="getPulsBackground()" id="close" (click)="close()" (click)="hCT()" ><p id="X">X</p></button>
   
   <!-- + e - -->
   <div id="counter-cont">
-    <button [style.background-color]="rCBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus()"><p id="meno">-</p></button>
+    <button [style.background-color]="getPulsBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus()"><p id="meno">-</p></button>
     <span id="C-cont">
       <p [style.color]="getTestiColor()" id="T-cont" [@bounce]="bounceIncrementazione === false ? 'start' : 'end'">{{ quantita }}</p>
     </span>
@@ -29,11 +29,11 @@
   </button>
 
   <button id="button-cust" (click)="OpenBottomSheetCustomize()" [style.background-color]="getCustomizePremuto()">
-    <p id="cust">Customize</p>
+    <p id="cust" [style.color]="getTestiColor()">Customize</p>
   </button>
 
   <!-- publicita -->
-  <div [style.background-color]="rCBackground()" id="ad" *ngIf="prodList.length > 0">
+  <div [style.background-color]="getPulsBackground()" id="ad" *ngIf="prodList.length > 0">
     <div [style.background-color]="getBackgroundColor()" id="Blocco"></div>
     <div>
       <span [style.color]="getTestiColor()" id="CM">{{ comMeal }}</span>

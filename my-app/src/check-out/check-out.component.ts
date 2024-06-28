@@ -225,6 +225,9 @@ export class CheckOutComponent {
   rCBackground(){
     return this.lDServ.background2()
   }
+  VerdeBackground(){
+    return this.lDServ.VerdeBackground()
+  }
 
 
 }

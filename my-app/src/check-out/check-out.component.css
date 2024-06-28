@@ -4,9 +4,6 @@
     z-index: 100; 
 }
 p{ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-body , header , footer{
-    background-color: #2b7b3b;
-}
 /* pulsante lingua */
 #language{
     position: relative;

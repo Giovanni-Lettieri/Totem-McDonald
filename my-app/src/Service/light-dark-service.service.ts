@@ -31,5 +31,10 @@ export class LightDarkServiceService {
   testi(){
     return (this.darkMode)? 'white': 'black'
   }
-
+  testiInv(){
+    return (this.darkMode)? 'black': 'white'
+  }
+  VerdeBackground(){
+    return (this.darkMode)? '#1a4e24': '#2b7b3b'
+  }
 }

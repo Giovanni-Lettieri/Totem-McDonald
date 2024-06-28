@@ -57,6 +57,6 @@ export class LanguageComponent {
   }
 
   getBackgroundColor(){
-    return this.lDServ.background()
+    return this.lDServ.background2()
   }
 }

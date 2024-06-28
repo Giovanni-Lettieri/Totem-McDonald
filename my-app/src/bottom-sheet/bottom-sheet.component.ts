@@ -220,9 +220,9 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   }
   getCustomizePremuto(){
     if(this.custPremuto && this.data().toppings.length<=0){
-      return '#d1cdc3'
+      return (this.lDServ.darkMode)?'#1f1e1e':'#d1cdc3'
     }
-    return '#EFECE5'
+    return (this.lDServ.darkMode)?'#121212':'#EFECE5'
   }
 
   //Palette di colori
@@ -232,7 +232,7 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   getTestiColor(){
     return this.lDServ.testi()
   }
-  rCBackground(){
+  getPulsBackground(){
     return this.lDServ.background2()
   }
   
