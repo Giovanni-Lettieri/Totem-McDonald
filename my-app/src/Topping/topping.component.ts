@@ -47,7 +47,7 @@ export class ToppingComponent {
     //resetta quando si chiude il bottom sheet sotto
     this.subscribeBS = this.btsServ.bTAChange.subscribe(() => {
       if(this.btsServ.bottomSheetAperto) {
-        this.listaQ = this.data().quantity
+        this.listaQ = 1
         this.q = this.listaQ
       }
     });
@@ -65,7 +65,7 @@ export class ToppingComponent {
     });
 
     
-    this.listaQ = this.data().quantity
+    this.listaQ = 1
     this.q = this.listaQ
     
   }
