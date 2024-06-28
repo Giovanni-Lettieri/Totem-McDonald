@@ -4,622 +4,1670 @@
         "price": 7.99,
         "image": "/assets/Prodotti/Menu/BigMac Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Pickles",
+                "price": 0.30,
+                "image": "/assets/Toppings/Pickle.png",
+                "quantity": 1
+            },
+            {
+                "name": "Onions",
+                "price": 0.40,
+                "image": "/assets/Toppings/Onions.png",
+                "quantity": 1
+            },
+            {
+                "name": "Ketchup",
+                "price": 0.20,
+                "image": "/assets/Toppings/Ketchup.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mostarda",
+                "price": 0.20,
+                "image": "/assets/Toppings/Mostarda.png",
+                "quantity": 1
+            },
+            {
+                "name": "Coca-Cola",
+                "price": 1.50,
+                "image": "/assets/Toppings/Coca-Cola.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Cheeseburger Menu",
         "price": 6.70,
-        "image": "/assets/Prodotti/Menu/Double Cheeseburger Menu.png",
+        "image": "/assets/Prodotti/Menu/Double Chicken BBQ  Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Pickles",
+                "price": 0.30,
+                "image": "/assets/Toppings/Pickle.png",
+                "quantity": 1
+            },
+            {
+                "name": "Onions",
+                "price": 0.40,
+                "image": "/assets/Toppings/Onions.png",
+                "quantity": 1
+            },
+            {
+                "name": "Ketchup",
+                "price": 0.20,
+                "image": "/assets/Toppings/Ketchup.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mostarda",
+                "price": 0.20,
+                "image": "/assets/Toppings/Mostarda.png",
+                "quantity": 1
+            },
+            {
+                "name": "Sprite",
+                "price": 1.50,
+                "image": "/assets/Toppings/Sprite.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Double Chicken Menu",
         "price": 8.00,
         "image": "/assets/Prodotti/Menu/Double Chicken BBQ  Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 2
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mayonnaise",
+                "price": 0.30,
+                "image": "/assets/Toppings/Mayonnaise.png",
+                "quantity": 1
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fanta",
+                "price": 1.50,
+                "image": "/assets/Toppings/Fanta.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Fileto Fish Menu",
         "price": 5.90,
         "image": "/assets/Prodotti/Menu/Fileto Fish  Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fish Fillet",
+                "price": 2.70,
+                "image": "/assets/Toppings/Fish Fillet.png",
+                "quantity": 1
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Coca-Cola",
+                "price": 1.50,
+                "image": "/assets/Toppings/Coca-Cola.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Crispy Mc Bacon Menu",
         "price": 9.50,
         "image": "/assets/Prodotti/Menu/Gran Crispy Mc Bacon Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Whole Wheat Bun",
+                "price": 1.20,
+                "image": "/assets/Toppings/Wheath Bun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 2
+            },
+            {
+                "name": "Bacon",
+                "price": 1.50,
+                "image": "/assets/Toppings/Bacon.png",
+                "quantity": 1
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            },
+            {
+                "name": "Apple Juice",
+                "price": 2.00,
+                "image": "/assets/Toppings/Apple Juice.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Mc Chicken Menu",
         "price": 7.70,
         "image": "/assets/Prodotti/Menu/Mc Chicken Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mayonnaise",
+                "price": 0.30,
+                "image": "/assets/Toppings/Mayonnaise.png",
+                "quantity": 1
+            },
+            {
+                "name": "Sprite",
+                "price": 1.50,
+                "image": "/assets/Toppings/Sprite.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Mc Wrap Chicken Menu",
         "price": 8.90,
         "image": "/assets/Prodotti/Menu/Mc Wrap Caesar Pollo  Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Tomato",
+                "price": 0.70,
+                "image": "/assets/Toppings/Tomato.png",
+                "quantity": 1
+            },
+            {
+                "name": "Coca-Cola",
+                "price": 1.50,
+                "image": "/assets/Toppings/Coca-Cola.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Mc Wrap Crispy Menu",
         "price": 8.90,
         "image": "/assets/Prodotti/Menu/Mc Wrap Crispy Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Tomato",
+                "price": 0.70,
+                "image": "/assets/Toppings/Tomato.png",
+                "quantity": 1
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            },
+            {
+                "name": "Coca-Cola",
+                "price": 1.50,
+                "image": "/assets/Toppings/Coca-Cola.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "MyS Avocado Menu",
         "price": 15.99,
         "image": "/assets/Prodotti/Menu/MyS Avocado Chicken Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Gluten Free Bun",
+                "price": 1.50,
+                "image": "/assets/Toppings/Gluten Free Bun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Avocado",
+                "price": 1.00,
+                "image": "/assets/Toppings/Avocado.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Tomato",
+                "price": 0.70,
+                "image": "/assets/Toppings/Tomato.png",
+                "quantity": 1
+            },
+            {
+                "name": "Coca-Cola",
+                "price": 1.50,
+                "image": "/assets/Toppings/Coca-Cola.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "MyS BBQ Menu",
         "price": 14.99,
         "image": "/assets/Prodotti/Menu/MyS BBQ Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Whole Wheat Bun",
+                "price": 1.20,
+                "image": "/assets/Toppings/Wheath Bun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 2
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Bacon",
+                "price": 1.50,
+                "image": "/assets/Toppings/Bacon.png",
+                "quantity": 1
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            },
+            {
+                "name": "Sprite",
+                "price": 1.50,
+                "image": "/assets/Toppings/Sprite.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "MyS Parmigiano Menu",
         "price": 15.99,
         "image": "/assets/Prodotti/Menu/MyS Parmigiano Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Gluten Free Bun",
+                "price": 1.50,
+                "image": "/assets/Toppings/Gluten Free Bun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 2
+            },
+            {
+                "name": "Parmesan Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Parmesan Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Bacon",
+                "price": 1.50,
+                "image": "/assets/Toppings/Bacon.png",
+                "quantity": 1
+            },
+            {
+                "name": "Tomato",
+                "price": 0.70,
+                "image": "/assets/Toppings/Tomato.png",
+                "quantity": 1
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            },
+            {
+                "name": "Coca-Cola",
+                "price": 1.50,
+                "image": "/assets/Toppings/Coca-Cola.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Nuggets Menu",
         "price": 8.90,
         "image": "/assets/Prodotti/Menu/Nuggets Menu.png",
         "category": "Menu",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Chicken Nuggets",
+                "price": 3.50,
+                "image": "/assets/Toppings/Nuggets.png",
+                "quantity": 6
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            },
+            {
+                "name": "Coca-Cola",
+                "price": 1.50,
+                "image": "/assets/Toppings/Coca-Cola.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fries",
+                "price": 2.50,
+                "image": "/assets/Toppings/Fries.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Brownie",
         "price": 3.50,
         "image": "/assets/Prodotti/Dolci/Brownie.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Cheesecake",
         "price": 3.99,
         "image": "/assets/Prodotti/Dolci/Cheesecake.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Cream Croissant",
         "price": 2.5,
         "image": "/assets/Prodotti/Dolci/Croissant Crema.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Nutella Croissant",
         "price": 2.5,
         "image": "/assets/Prodotti/Dolci/Croissant Nutella.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Plain Croissant",
         "price": 2.5,
         "image": "/assets/Prodotti/Dolci/Croissant Vuoto.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Chocolate Donut",
         "price": 2.00,
         "image": "/assets/Prodotti/Dolci/Donut Cioccolato.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Donut Marshmallow",
         "price": 2.00,
         "image": "/assets/Prodotti/Dolci/Donut Marshmallow.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Macaron",
         "price": 1.20,
         "image": "/assets/Prodotti/Dolci/Macaron.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Muffin",
         "price": 3.00,
         "image": "/assets/Prodotti/Dolci/Muffin.png",
         "category": "Sweets",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "American",
         "price": 0.90,
         "image": "/assets/Prodotti/McCaffè/Americano.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Barley coffee",
         "price": 0.90,
         "image": "/assets/Prodotti/McCaffè/Caffe Orzo.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Shaked Coffee",
         "price": 1.30,
         "image": "/assets/Prodotti/McCaffè/Caffe Shakerato.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Cappuccino",
         "price": 1.30,
         "image": "/assets/Prodotti/McCaffè/Cappuccino.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Hot Cioccolata",
         "price": 1.10,
         "image": "/assets/Prodotti/McCaffè/Cioccolata Calda.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Crem Caffe",
         "price": 1.10,
         "image": "/assets/Prodotti/McCaffè/Crema Caffe.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Espresso",
         "price": 0.90,
         "image": "/assets/Prodotti/McCaffè/Espresso.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Marocchino",
         "price": 1.40,
         "image": "/assets/Prodotti/McCaffè/Marocchino.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Hot Tea",
         "price": 0.90,
         "image": "/assets/Prodotti/McCaffè/Te Caldo.png",
         "category": "McCafé",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Sweet and Sour",
         "price": 0.30,
         "image": "/assets/Prodotti/Salse/Agrodolce.png",
         "category": "Sauces",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "BBQ",
         "price": 0.30,
         "image": "/assets/Prodotti/Salse/Barbecue.png",
         "category": "Sauces",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Ketchup",
         "price": 0.30,
         "image": "/assets/Prodotti/Salse/Ketchup.png",
         "category": "Sauces",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "mayonnaise",
         "price": 0.30,
         "image": "/assets/Prodotti/Salse/Maionese.png",
         "category": "Sauces",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "McBacon",
         "price": 0.30,
         "image": "/assets/Prodotti/Salse/McBacon.png",
         "category": "Sauces",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
-        "item": "Mustard",
+        "item": "Mostarda",
         "price": 0.30,
         "image": "/assets/Prodotti/Salse/Senape.png",
         "category": "Sauces",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Cone",
         "price": 1.00,
         "image": "/assets/Prodotti/Gelati/Cono.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "McFlurry Oreo",
         "price": 4.20,
         "image": "/assets/Prodotti/Gelati/McFlurry Oreo.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "McFlurry Pistachio",
         "price": 4.20,
         "image": "/assets/Prodotti/Gelati/McFlurry Pistacchio.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "McFlurry Smarties",
         "price": 4.20,
         "image": "/assets/Prodotti/Gelati/McFlurry Smarties.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "MilkaShaek Banana",
         "price": 3.60,
         "image": "/assets/Prodotti/Gelati/MilkaShaek Banana.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "MilkaShaek Chocolate",
         "price": 3.60,
         "image": "/assets/Prodotti/Gelati/MilkaShaek Cioccolato.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Strawberry MilkaShaek",
         "price": 3.60,
         "image": "/assets/Prodotti/Gelati/MilkaShaek Fragola.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Sundae Baci",
         "price": 3.40,
         "image": "/assets/Prodotti/Gelati/Sundae Baci.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Sundae Coffee",
         "price": 3.40,
         "image": "/assets/Prodotti/Gelati/Sundae Caffe.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Sundae Caramel",
         "price": 3.40,
         "image": "/assets/Prodotti/Gelati/Sundae Caramello.png",
         "category": "Ice Cream",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Water",
         "price": 0.30,
         "image": "/assets/Prodotti/Bevande/Acqua.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Coca Cola 0",
         "price": 1.20,
         "image": "/assets/Prodotti/Bevande/Coca Cola 0.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Coca Cola",
         "price": 1.20,
         "image": "/assets/Prodotti/Bevande/Coca Cola.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Fanta",
         "price": 1.20,
         "image": "/assets/Prodotti/Bevande/Fanta.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Lemon Lipton",
         "price": 0.90,
         "image": "/assets/Prodotti/Bevande/Lipton Limone.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Peach Lipton",
         "price": 0.90,
         "image": "/assets/Prodotti/Bevande/Lipton Pesca.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Sprite",
         "price": 1.20,
         "image": "/assets/Prodotti/Bevande/Sprite.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Apple Juice",
         "price": 0.90,
         "image": "/assets/Prodotti/Bevande/Succo Mela.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Tropicana",
         "price": 1.40,
         "image": "/assets/Prodotti/Bevande/Tropicana.png",
         "category": "Drinks",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Ananas",
         "price": 0.50,
         "image": "/assets/Prodotti/Frutta/Ananas.png",
         "category": "Fruit",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Mini Carrots",
         "price": 0.50,
         "image": "/assets/Prodotti/Frutta/Carotine.png",
         "category": "Fruit",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Apple",
         "price": 0.50,
         "image": "/assets/Prodotti/Frutta/Mela.png",
         "category": "Fruit",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Chicken Wings",
         "price": 1.99,
         "image": "/assets/Prodotti/Sfiziosita/Chicken Wings.png",
         "category": "Delicacies",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Nuggets",
         "price": 2.99,
         "image": "/assets/Prodotti/Sfiziosita/Nuggets.png",
         "category": "Delicacies",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Panzerotti",
         "price": 2.99,
         "image": "/assets/Prodotti/Sfiziosita/Panzerotti.png",
         "category": "Delicacies",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Parmigiano",
         "price": 4.00,
         "image": "/assets/Prodotti/Sfiziosita/Parmigiano.png",
         "category": "Delicacies",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Ketchup",
+                "price": 0.20,
+                "image": "/assets/Toppings/Ketchup.png",
+                "quantity": 0
+            }
+        ]
     },
     {
         "item": "Spicy Nuggets",
         "price": 3.90,
         "image": "/assets/Prodotti/Sfiziosita/Spicy Nuggets.png",
         "category": "Delicacies",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Tasty Basket",
         "price": 7.30,
         "image": "/assets/Prodotti/Sfiziosita/Tasty Basket.png",
         "category": "Delicacies",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Large Fries",
         "price": 3.99,
         "image": "/assets/Prodotti/Patatine/Patatine Grandi.png",
         "category": "Fries",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Medium Fries",
         "price": 2.99,
         "image": "/assets/Prodotti/Patatine/Patatine Medie.png",
         "category": "Fries",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Small Fries",
         "price": 1.99,
         "image": "/assets/Prodotti/Patatine/Patatine Picolle.png",
         "category": "Fries",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Rich Bacon",
         "price": 3.99,
         "image": "/assets/Prodotti/Patatine/Ricche Bacon.png",
         "category": "Fries",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Rich Cheddar",
         "price": 3.99,
         "image": "/assets/Prodotti/Patatine/Ricche Cheddar.png",
         "category": "Fries",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
-        "item": "Rich Kebab",
-        "price": 3.50,
-        "image": "/assets/Prodotti/Patatine/Ricche Kebab.png",
+        "item": "Rich Simple",
+        "price": 3.99,
+        "image": "/assets/Prodotti/Patatine/Ricche Semlici.png",
         "category": "Fries",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Mixed Salad",
         "price": 3.50,
         "image": "/assets/Prodotti/Insalate/Insalata Mista.png",
         "category": "Salads",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Chicken Salad",
         "price": 3.50,
         "image": "/assets/Prodotti/Insalate/Insalata Pollo.png",
         "category": "Salads",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "Green Salad",
         "price": 3.50,
         "image": "/assets/Prodotti/Insalate/Insalata Verde.png",
         "category": "Salads",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": []
     },
     {
         "item": "HM Chicken Burger",
         "price": 7.20,
         "image": "/assets/Prodotti/Happy Meal/HM Chicken Burger.png",
         "category": "Happy Meal",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mayonnaise",
+                "price": 0.30,
+                "image": "/assets/Toppings/Mayonnaise.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "HM Hamburger",
         "price": 7.20,
         "image": "/assets/Prodotti/Happy Meal/HM Hamburger.png",
         "category": "Happy Meal",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Pickles",
+                "price": 0.30,
+                "image": "/assets/Toppings/Pickle.png",
+                "quantity": 1
+            },
+            {
+                "name": "Onions",
+                "price": 0.40,
+                "image": "/assets/Toppings/Onions.png",
+                "quantity": 1
+            },
+            {
+                "name": "Ketchup",
+                "price": 0.20,
+                "image": "/assets/Toppings/Ketchup.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mostarda",
+                "price": 0.20,
+                "image": "/assets/Toppings/Mostarda.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "HM Nuggets",
         "price": 7.20,
         "image": "/assets/Prodotti/Happy Meal/HM Nuggets.png",
         "category": "Happy Meal",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Chicken Nuggets",
+                "price": 2.50,
+                "image": "/assets/Toppings/Nuggets.png",
+                "quantity": 4
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "HM Toast",
         "price": 7.20,
         "image": "/assets/Prodotti/Happy Meal/HM Toast.png",
         "category": "Happy Meal",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Whole Wheat Bun",
+                "price": 1.20,
+                "image": "/assets/Toppings/Wheath Bun.png",
+                "quantity": 2
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Ham",
+                "price": 1.50,
+                "image": "/assets/Toppings/Ham.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Big Mac",
         "price": 5.40,
         "image": "/assets/Prodotti/Panini/Big Mac.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Pickles",
+                "price": 0.30,
+                "image": "/assets/Toppings/Pickle.png",
+                "quantity": 1
+            },
+            {
+                "name": "Onions",
+                "price": 0.40,
+                "image": "/assets/Toppings/Onions.png",
+                "quantity": 1
+            },
+            {
+                "name": "BigMac Sauce",
+                "price": 0.60,
+                "image": "/assets/Toppings/BigMac Sauce.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Cheese Burger",
         "price": 3.70,
         "image": "/assets/Prodotti/Panini/Cheese Burger.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Ketchup",
+                "price": 0.20,
+                "image": "/assets/Toppings/Ketchup.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mostarda",
+                "price": 0.20,
+                "image": "/assets/Toppings/Mostarda.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Crispy Mc Wrap",
         "price": 6.30,
         "image": "/assets/Prodotti/Panini/Crispy Mc Wrap Isolated.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mayonnaise",
+                "price": 0.30,
+                "image": "/assets/Toppings/Mayonnaise.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Double Chicken BBQ",
         "price": 7.20,
         "image": "/assets/Prodotti/Panini/Double Chicken BBQ.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 2
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Fileto Fish",
         "price": 3.40,
         "image": "/assets/Prodotti/Panini/Fileto Fish.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Fish Fillet",
+                "price": 2.70,
+                "image": "/assets/Toppings/Fish Fillet.png",
+                "quantity": 1
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Gluten Free Burger",
         "price": 5.40,
         "image": "/assets/Prodotti/Panini/Gluten Free Burger.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Gluten Free Bun",
+                "price": 1.50,
+                "image": "/assets/Toppings/Gluten Free Bun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Tomato",
+                "price": 0.70,
+                "image": "/assets/Toppings/Tomato.png",
+                "quantity": 1
+            },
+            {
+                "name": "Pickles",
+                "price": 0.30,
+                "image": "/assets/Toppings/Pickle.png",
+                "quantity": 1
+            },
+            {
+                "name": "Ketchup",
+                "price": 0.20,
+                "image": "/assets/Toppings/Ketchup.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Gran Crispy Mc Bacon",
         "price": 6.70,
         "image": "/assets/Prodotti/Panini/Gran Crispy Mc Bacon.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Bacon",
+                "price": 1.50,
+                "image": "/assets/Toppings/Bacon.png",
+                "quantity": 1
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Hamburger",
         "price": 3.20,
         "image": "/assets/Prodotti/Panini/Hamburger.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Pickles",
+                "price": 0.30,
+                "image": "/assets/Toppings/Pickle.png",
+                "quantity": 1
+            },
+            {
+                "name": "Onions",
+                "price": 0.40,
+                "image": "/assets/Toppings/Onions.png",
+                "quantity": 1
+            },
+            {
+                "name": "Ketchup",
+                "price": 0.20,
+                "image": "/assets/Toppings/Ketchup.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mostarda",
+                "price": 0.20,
+                "image": "/assets/Toppings/Mostarda.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Mc Chicken",
         "price": 5.60,
         "image": "/assets/Prodotti/Panini/Mc Chicken.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Sesame Bun",
+                "price": 1.00,
+                "image": "/assets/Toppings/SesameBun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Chicken Patty",
+                "price": 2.50,
+                "image": "/assets/Toppings/Chicken Patty.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Mayonnaise",
+                "price": 0.30,
+                "image": "/assets/Toppings/Mayonnaise.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "MyS BBQ",
         "price": 11.50,
         "image": "/assets/Prodotti/Panini/MyS BBQ.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Whole Wheat Bun",
+                "price": 1.20,
+                "image": "/assets/Toppings/Wheath Bun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 2
+            },
+            {
+                "name": "Bacon",
+                "price": 1.50,
+                "image": "/assets/Toppings/Bacon.png",
+                "quantity": 1
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Barbecue Sauce",
+                "price": 0.50,
+                "image": "/assets/Toppings/BBQ.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "MyS Pecorino",
         "price": 11.50,
         "image": "/assets/Prodotti/Panini/MyS Pecorino Salsayuzu.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Whole Wheat Bun",
+                "price": 1.20,
+                "image": "/assets/Toppings/Wheath Bun.png",
+                "quantity": 1
+            },
+            {
+                "name": "Beef Patty",
+                "price": 2.00,
+                "image": "/assets/Toppings/Beef Patty.png",
+                "quantity": 2
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Lettuce",
+                "price": 0.50,
+                "image": "/assets/Toppings/Lettuce.png",
+                "quantity": 1
+            },
+            {
+                "name": "Tomato",
+                "price": 0.70,
+                "image": "/assets/Toppings/Tomato.png",
+                "quantity": 1
+            },
+            {
+                "name": "Onions",
+                "price": 0.40,
+                "image": "/assets/Toppings/Onions.png",
+                "quantity": 1
+            },
+            {
+                "name": "Pecorino Sauce",
+                "price": 0.70,
+                "image": "/assets/Toppings/Pecorino Sauce.png",
+                "quantity": 1
+            }
+        ]
     },
     {
         "item": "Toast",
         "price": 1.00,
         "image": "/assets/Prodotti/Panini/Toast.png",
         "category": "Sandwiches",
-        "sconto": 0
+        "sconto": 0,
+        "toppings": [
+            {
+                "name": "Whole Wheat Bun",
+                "price": 1.20,
+                "image": "/assets/Toppings/Wheath Bun.png",
+                "quantity": 2
+            },
+            {
+                "name": "Cheese",
+                "price": 1.00,
+                "image": "/assets/Toppings/Cheese.png",
+                "quantity": 1
+            },
+            {
+                "name": "Ham",
+                "price": 1.50,
+                "image": "/assets/Toppings/Ham.png",
+                "quantity": 1
+            }
+        ]
     }
 ]

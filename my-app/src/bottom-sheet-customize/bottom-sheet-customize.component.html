@@ -1,0 +1,24 @@
+<div [@AperturaBottomSheetCustomize]="(bottomSheetCustomizeAperto)? 'invisibile' : 'visibile'" id="BottomSheetCustomize" [style.background-color]="getBackgroundColor()">
+    <!-- pulsante di chiusura -->
+    <button [style.background-color]="rCBackground()" id="close" (click)="close()"><p id="back"> < </p></button>
+    <!-- immagine, titolo e prezzo -->
+
+    <img id="immaginePrincipale" [src]="data().image">
+    <h2 [style.color]="getTestiColor()">{{ data().item }}</h2>
+    <p id="prezzo">{{ prezzo | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+
+     <!-- section topping -->
+
+     <div id="toppingContainer" >
+        <section id="sectionTopping" *ngFor="let c of data().toppings let i = index">
+          <app-topping id="topComp" [data]="data().toppings[i]" [c]="c.name"></app-topping>
+        </section>
+     </div> 
+
+     <!-- pulsante apply -->
+    
+     <button id="button-apply" (click)="apply()">
+      <p id="apply">Apply</p>
+    </button>
+
+</div>
