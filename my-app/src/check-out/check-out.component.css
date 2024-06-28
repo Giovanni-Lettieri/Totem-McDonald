@@ -190,7 +190,7 @@ menu{
     position: absolute;
     width: 100%;
     text-align: center;
-    left: -0.875
+    left: -0.5
     /* background-color: #2b7b3b; */
 }
 #nomeEdit > p{
@@ -199,12 +199,25 @@ menu{
 }
 
 #boxEdit{
-    background-color:#ffc94000;
+    background-color: #FFCA40;
+    /* background-color:#ffc94000; */
     position: absolute;
-    width: 100%;
+    width: 98%;
     height: 40%;
-    left: -0.875;
+    left: -0;
+    overflow-y: auto;
+    overflow-x: hidden;;
 }
+#boxEdit::-webkit-scrollbar {
+    display: none;
+}
+#toping{
+    position: relative;
+    left: 20px;
+    display: block;
+    height: 125px;
+}
+
 
 
 #prezzoEdit{

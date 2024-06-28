@@ -18,6 +18,7 @@ import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { ModalitaConsumoService } from '../Service/modalita-consumo.service';
 import { LightDarkServiceService } from '../Service/light-dark-service.service';
+import { ToppingComponent } from "../Topping/topping.component";
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -29,33 +30,32 @@ registerLocaleData(localeEn)
     standalone: true,
     templateUrl: './check-out.component.html',
     styleUrl: './check-out.component.css',
-    imports: [RouterLink, RouterOutlet, MainPageComponent, LanguageComponent, ProdCheckOutComponent,CurrencyPipe , CommonModule],
     animations: [
-      trigger('holeState', [
-        state('shown', style({
-          clipPath: 'circle(100% at 50% 50%)',
-          pointerEvents: 'auto'
-        })),
-        state('hidden', style({
-          clipPath: 'circle(5% at 50% 50%)',
-          pointerEvents: 'none'
-        })),
-        transition('shown => hidden', animate('0.2s linear')),
-        transition('hidden => shown', animate('0.2s linear'))
-      ]),
-
-      trigger('entrataMenu', [
-        state('start', style({ transform: 'translateY(-120%)' })),
-        state('end', style({ transform: 'translateY(0%)'})),
-        transition('start => end', [
-          animate('700ms ease-in',),
+        trigger('holeState', [
+            state('shown', style({
+                clipPath: 'circle(100% at 50% 50%)',
+                pointerEvents: 'auto'
+            })),
+            state('hidden', style({
+                clipPath: 'circle(5% at 50% 50%)',
+                pointerEvents: 'none'
+            })),
+            transition('shown => hidden', animate('0.2s linear')),
+            transition('hidden => shown', animate('0.2s linear'))
         ]),
-        transition('end => start', [
-          animate('700ms ease-in',)
-        ])
-      ]),
-    ]
-  })
+        trigger('entrataMenu', [
+            state('start', style({ transform: 'translateY(-120%)' })),
+            state('end', style({ transform: 'translateY(0%)' })),
+            transition('start => end', [
+                animate('700ms ease-in'),
+            ]),
+            transition('end => start', [
+                animate('700ms ease-in')
+            ])
+        ]),
+    ],
+    imports: [RouterLink, RouterOutlet, MainPageComponent, LanguageComponent, ProdCheckOutComponent, CurrencyPipe, CommonModule, ToppingComponent]
+})
 export class CheckOutComponent {
   //scritta eat in take out
   flagInOut : number = this.servButton.getBottone();
@@ -199,10 +199,6 @@ export class CheckOutComponent {
     this.scontrino[this.indexMenu] = {...this.suportoMenu}
     this.closeEdit()
     this.servCont.agiornaContoFinal()
-  }
-
-  calcoloPrezzo(b : BillProd){
-    return 99 //place older
   }
 
   //Palette di colori

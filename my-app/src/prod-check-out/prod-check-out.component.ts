@@ -33,10 +33,10 @@ registerLocaleData(localeEn)
       state('start', style({ transform: 'scale(0)' })),
       state('end', style({ transform: 'scale(1)'})),
       transition('end => start', [
-        animate('300ms ease-in', style({ transform: 'scale(0)' }))
+        animate('200ms ease-in', style({ transform: 'scale(0)' }))
       ]),
       transition('start => end', [
-        animate('300ms ease-out', style({ transform: 'scale(1)' }))
+        animate('200ms ease-out', style({ transform: 'scale(1)' }))
       ])
     ]),
 
