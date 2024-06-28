@@ -38,6 +38,7 @@ export class BottomSheetCustomizeComponent implements OnInit{
 
   subscribeCustomize!: Subscription //rileva i cambi del service e li assegna a bottomSheetCustomizeAperto
   subscribePrezzo!: Subscription //rileva le aggiunte e le aggiunge al prezzo
+  subscribeBS!: Subscription 
   prezzo!: number;
 
   constructor(
@@ -54,7 +55,7 @@ export class BottomSheetCustomizeComponent implements OnInit{
       this.bottomSheetCustomizeAperto = this.btsServ.bottomSheetCustomizeAperto
       if(this.bottomSheetCustomizeAperto){
         this.topList = [...this.lingSer.getProduct()[this.lingSer.getProduct().findIndex(x => x.item === this.data().item)].toppings]
-        this.topServ.setLista([...this.data().toppings])
+        this.topServ.setLista([...this.topList])
       }
       this.prezzo = this.data().price //Faccio una copia del prezzo
     });
