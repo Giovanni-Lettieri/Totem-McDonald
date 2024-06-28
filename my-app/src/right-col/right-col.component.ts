@@ -16,6 +16,7 @@ import { InfoBillService } from "../Service/info-bill.service";
 import { ContoService } from "../Service/conto.service";
 import { PassagioBillService } from "../Service/passagio-bill.service";
 import { ModalitaConsumoService } from "../Service/modalita-consumo.service";
+import { Topping } from "../bottom-sheet-customize/topping";
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
 
@@ -116,9 +117,9 @@ export class RightColComponent implements OnInit{
 
     //passagio prodotti al bill
     this.subProd_Bill = this.prod_bill.ProdChange.subscribe(() => {
-      const billProd = this.prod_bill.getBillProd();
+      const billProd = {...this.prod_bill.getBillProd()};
       this.billList.forEach((b , index)=> {
-        if(b == billProd  ){
+        if(b.image === billProd.image  && this.equalAray(b.toppings , billProd.toppings)){
           b.quantita += billProd.quantita
           if(index != 0){
             this.billList.splice(index, 1);
@@ -146,6 +147,27 @@ export class RightColComponent implements OnInit{
   GoToTop() {
     this.scroll.nativeElement.scrollTop = 0;
   }
+  //paragone 2 array
+  
+  equalAray(a: Topping[] , b : Topping[]): boolean{
+    if(a.length == 0 && b.length == 0){
+      console.log("UGUALI : vuoti")
+      return true
+    }
+    if(a.length != b.length){
+      console.log("DIVERSI : diversa lungheza")
+      return false; 
+    }
+    for(let i = 0; i < a.length ; i++){
+      if(a[i].name != b[i].name || a[i].quantity != b[i].quantity){
+        console.log("DIVERSI : diversi topping")
+        return false
+      }
+    }
+    console.log("UGUALI : fine")
+    return true
+  }
+
 
   //passagio bill al check out
   passagioCheckOut(){
