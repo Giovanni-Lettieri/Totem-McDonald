@@ -184,7 +184,8 @@ export class RightColComponent implements OnInit{
     if(this.fattoClick && this.billList.length <= 0){
       return '#ebb52f'
     }
-    return '#FFCA40'
+    return (this.lDServ.darkMode)? '#ffbd18': '#FFCA40'
   }
+  
 
 }

@@ -44,5 +44,8 @@ export class AppComponent {
     getTestiColor(){
         return this.lDServ.testi()
     }
+    getCerchioColor(){
+        return this.lDServ.GialloBackground()
+    }
 
 }

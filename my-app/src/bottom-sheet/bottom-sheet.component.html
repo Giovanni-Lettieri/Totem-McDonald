@@ -24,7 +24,7 @@
   </div> 
 
   <!-- tasto done -->
-  <button id="button-fatto" (click)="setProd(data(), quantita)" (click)="hCF()" (click)="hT()" (click)="vacciAlBill()" >
+  <button id="button-fatto" (click)="setProd(data(), quantita)" (click)="hCF()" (click)="hT()" (click)="vacciAlBill()" [style.background-color]="getGialloColor()">
     <p id="fatto">{{ fatto }}</p>
   </button>
 

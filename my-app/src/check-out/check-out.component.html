@@ -45,7 +45,7 @@
                 </div>
                 <!-- pulsante checkout -->
                 <a routerLink="/StartScreen" (click)="resetBill()">
-                    <button id="checkoutBut"> 
+                    <button id="checkoutBut" [style.background-color]="getGialloColor()"> 
                         <p id="checkout">{{check}}</p>
                     </button>
                 </a>
