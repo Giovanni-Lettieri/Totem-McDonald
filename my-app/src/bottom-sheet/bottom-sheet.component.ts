@@ -94,6 +94,7 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
 
   prezzoCopia!:number //Faccio una copia del prezzo in modo da resettarlo insieme ai topping
 
+  custPremuto: boolean = false //Variabile che controlla quando viene premuto customize 
 
   vacciAlBill(){
     this.vadoAlBill = false
@@ -208,8 +209,20 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
 
   //Customize bottom sheet
   OpenBottomSheetCustomize(){
-    this.prezzoCopia = this.data().price
-    this.btsServ.OpenBottomSheetCustomize()
+    this.custPremuto= true
+    setTimeout(() => {
+      this.custPremuto= false
+    }, 100);
+    if(this.data().toppings.length>0){
+      this.prezzoCopia = this.data().price
+      this.btsServ.OpenBottomSheetCustomize()
+    } 
+  }
+  getCustomizePremuto(){
+    if(this.custPremuto && this.data().toppings.length<=0){
+      return '#d1cdc3'
+    }
+    return '#EFECE5'
   }
 
   //Palette di colori
