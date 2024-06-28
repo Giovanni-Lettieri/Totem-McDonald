@@ -38,6 +38,9 @@ export class PassagioBillService {
       sconto : this.x.sconto,
       toppings: this.x.toppings
     };
+    this.y.toppings.forEach(e => {
+      console.log(e)
+    });
       return this.y;
   }
 }

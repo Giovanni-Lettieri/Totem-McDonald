@@ -46,9 +46,10 @@ export class ToppingComponent {
 
     //resetta quando si chiude il bottom sheet sotto
     this.subscribeBS = this.btsServ.bTAChange.subscribe(() => {
-      this.listaQ = this.data().quantity
-      this.data().quantity = this.listaQ
-      this.q = this.listaQ
+      if(this.btsServ.bottomSheetAperto) {
+        this.listaQ = this.data().quantity
+        this.q = this.listaQ
+      }
     });
     //Resetta ogni volta che non si preme apply
     this.subscribeCustomize = this.btsServ.BottomSheetCustomize.subscribe(() => {
@@ -60,12 +61,11 @@ export class ToppingComponent {
     });
     //Controllo se l'apply viene premuto
     this.subscribeApply = this.topServ.applyEE.subscribe(() => {
-        this.topServ.setQuantita(this.q, this.data().name)
+      this.topServ.setQuantita(this.q, this.data().name)
     });
 
-
+    
     this.listaQ = this.data().quantity
-    this.data().quantity = this.listaQ
     this.q = this.listaQ
     
   }
