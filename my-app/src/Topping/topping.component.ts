@@ -35,11 +35,13 @@ export class ToppingComponent {
   ngOnInit(): void {
     //resetta quando si chiude il bottom sheet sotto
     this.subscribeBS = this.btsServ.bTAChange.subscribe(() => {
+        this.listaQ = this.data().quantity
         this.data().quantity = this.listaQ
         this.q = this.listaQ
     });
     //Resetta ogni volta che non si preme apply
     this.subscribeCustomize = this.btsServ.BottomSheetCustomize.subscribe(() => {
+      console.log(this.listaQ)
       if(!this.btsServ.bottomSheetCustomizeAperto){
         this.q = this.data().quantity 
       }else{
