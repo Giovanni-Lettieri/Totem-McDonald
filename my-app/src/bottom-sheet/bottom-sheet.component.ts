@@ -33,9 +33,9 @@ registerLocaleData(localeEn);
 
     trigger('andataAlBIll', [
       state('start', style({ transform: 'translateX(0%) translateY(0%) scale(1)' })),
-      state('end', style({ transform: 'translateX(60%) translateY(-20%) scale(0.2)'})),
+      state('end', style({ transform: 'translateX(58%) translateY(8.5%) scale(0.2)'})),
       transition('start => end', [
-        animate('200ms ease-out', style({ transform: 'translateX(60%) translateY(-20%) scale(0.2)' }))
+        animate('200ms ease-out', style({ transform: 'translateX(58%) translateY(8.5%) scale(0.2)' }))
       ]),
     ]),
 
@@ -49,7 +49,7 @@ registerLocaleData(localeEn);
         pointerEvents: 'auto'
       })),
       state('hidden', style({
-        clipPath: 'circle(2% at 84% 13%)',
+        clipPath: 'circle(2% at 84% 20%)',
         pointerEvents: 'none'
       })),
     
@@ -60,7 +60,7 @@ registerLocaleData(localeEn);
       transition('shown => hidden', animate('0.2s linear')),
       transition('hidden => shown', [
         animate('0s linear', style({ clipPath: 'circle(8% at 50% 25%)' })),
-        animate('0.2s linear', style({ clipPath: 'circle(100% at 50% 25%)' }))
+        animate('0.2s linear', style({ clipPath: 'circle(100% at 50% 20%)' }))
       ])
     ]),
     trigger('bounce', [
@@ -235,5 +235,7 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   getPulsBackground(){
     return this.lDServ.background2()
   }
-  
+  getGialloColor(){
+    return this.lDServ.GialloBackground()
+}
 }

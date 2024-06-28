@@ -37,4 +37,7 @@ export class LightDarkServiceService {
   VerdeBackground(){
     return (this.darkMode)? '#1a4e24': '#2b7b3b'
   }
+  GialloBackground(){
+    return (this.darkMode)? '#ffbd18': '#FFCA40'
+  }
 }

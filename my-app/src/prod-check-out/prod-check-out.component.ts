@@ -162,8 +162,7 @@ export class ProdCheckOutComponent {
     if(this.custPremuto && this.prodotto().toppings.length<=0){
       return '#ebb52f'
     }
-    return '#FFCA40'
+    return (this.lDServ.darkMode)? '#ffbd18': '#FFCA40'
+
   }
-
-
 }

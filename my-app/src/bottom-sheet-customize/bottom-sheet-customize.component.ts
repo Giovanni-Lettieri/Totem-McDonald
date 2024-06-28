@@ -87,4 +87,7 @@ export class BottomSheetCustomizeComponent implements OnInit{
   rCBackground(){
     return this.lDServ.background2()
   }
+  getGialloColor(){
+    return this.lDServ.GialloBackground()
+}
 }

@@ -228,6 +228,7 @@ export class CheckOutComponent {
   VerdeBackground(){
     return this.lDServ.VerdeBackground()
   }
-
-
+  getGialloColor(){
+    return this.lDServ.GialloBackground()
+  }
 }
