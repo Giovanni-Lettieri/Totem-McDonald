@@ -36,7 +36,7 @@ export class PassagioBillService {
       price: this.x.price,
       quantita: this.q,
       sconto : this.x.sconto,
-      toppings: this.x.toppings
+      toppings: this.topServ.getLista()
     };
     this.y.toppings.forEach(e => {
       console.log(e)
