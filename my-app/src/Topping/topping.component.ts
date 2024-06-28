@@ -6,13 +6,23 @@ import { LightDarkServiceService } from '../Service/light-dark-service.service';
 import { ToppingService } from '../Service/topping.service';
 import { Subscription } from 'rxjs';
 import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-topping',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './topping.component.html',
-  styleUrl: './topping.component.css'
+  styleUrl: './topping.component.css',
+  animations: [
+    trigger('bounce', [
+      state('start', style({ transform: 'translateY(0%)' })),
+      state('end', style({ transform: 'translateY(0%)'})),
+      transition('start => end', [
+        animate('150ms ease-in', style({ transform: 'translateY(-30%)' }))
+      ])
+    ]),
+  ]
 })
 export class ToppingComponent {
   Cur: string = this.lingSer.getTesto().Curency;  //Pipe Currency
@@ -21,7 +31,8 @@ export class ToppingComponent {
   subscribeBS!: Subscription //controlla l'apertura del bottom sheet base
   subscribeCustomize!: Subscription //controlla l'apertura del bottom sheet customize
   subscribeApply!: Subscription //controlla l'apertura del bottom sheet customize
-  q!: number
+  q!: number //quantità del topping
+  bounceIncrementazione : boolean = false; 
   listaQ!: number //Salva la quantità iniaziale in caso un panino avesse un topping con quantità 2
 
   constructor(private lingSer: ChangeLanguagesService,
@@ -41,7 +52,6 @@ export class ToppingComponent {
     });
     //Resetta ogni volta che non si preme apply
     this.subscribeCustomize = this.btsServ.BottomSheetCustomize.subscribe(() => {
-      console.log(this.listaQ)
       if(!this.btsServ.bottomSheetCustomizeAperto){
         this.q = this.data().quantity 
       }else{
@@ -59,6 +69,10 @@ export class ToppingComponent {
 
   plus(c: string){
     this.q++
+    this.bounceIncrementazione = true;
+    setTimeout(() => {
+      this.bounceIncrementazione = false;
+    }, 150);
     if(this.q>this.listaQ){
       this.topServ.AggiuntaPrezzo(this.data().price)
     }
