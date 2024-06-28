@@ -39,7 +39,6 @@ export class ToppingComponent {
     private topServ: ToppingService,
     private btsServ: BottomSheetOpenCloseService
   ){
-    
   }
 
 
@@ -63,7 +62,12 @@ export class ToppingComponent {
     this.subscribeApply = this.topServ.applyEE.subscribe(() => {
         this.topServ.setQuantita(this.q, this.data().name)
     });
-    this.q = this.data().quantity 
+
+
+    this.listaQ = this.data().quantity
+    this.data().quantity = this.listaQ
+    this.q = this.listaQ
+    
   }
 
   // funzioni pulsanti + e -

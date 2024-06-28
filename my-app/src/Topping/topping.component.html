@@ -1,11 +1,11 @@
 <img [src]="getTopperImage(data().name)">
-<p id="nomeTop">{{data().name}}</p>
-<p id="prezzoTop">{{getTopperPrice(data().name) | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+<p id="nomeTop" [style.color]="getTestiColor()">{{data().name}}</p>
+<p id="prezzoTop" [style.color]="getTestiColor()">{{getTopperPrice(data().name) | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
 
 <div id="counter-cont">
 <button [style.background-color]="rCBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus(data().name)"><p id="meno">-</p></button>
 <span id="C-cont">
-    <p id="T-cont" [@bounce]="bounceIncrementazione === false ? 'start' : 'end'" >{{ getQuantity() }}</p>
+    <p id="T-cont" [style.color]="getTestiColor()" [@bounce]="bounceIncrementazione === false ? 'start' : 'end'" >{{ getQuantity() }}</p>
 </span>
 <button id="P-but" (click)="plus(data().name)"><p id="piu">+</p></button>
 </div> 

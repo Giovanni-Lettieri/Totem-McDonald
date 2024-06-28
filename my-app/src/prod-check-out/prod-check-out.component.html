@@ -24,7 +24,7 @@
         
     <!-- bottone extra -->
     <span [@popExtra]="animation_popExtra_Flag ? 'start' : 'end'">
-        <button (click)="edit()"  class="buttonExtra" id="butCustom" >
+            <button (click)="edit()"  class="buttonExtra" id="butCustom" [style.background-color]="getCustomizePremuto()">
                 <p>{{castomText}}</p>
             </button>
             <button (click)="remove()" class="buttonExtra" id="butRemove">
