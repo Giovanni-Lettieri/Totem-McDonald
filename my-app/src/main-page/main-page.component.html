@@ -1,7 +1,8 @@
 <div [ngClass]="{'visible': isDivVisible, 'invisible': !isDivVisible}"></div>
-<!-- patatine e sfiziosita -->
+
 <app-bottom-sheet-side [sideSelected]="getP()" [ngClass]="{'visible': bottomSideAperto, 'invisible': !bottomSideAperto}"></app-bottom-sheet-side>
-<!-- tutto il resto -->
 <app-bottom-sheet-content id="bottom-sheet" [data]="getP()" [ngClass]="{'visible': bottomSheetAperto, 'invisible': !bottomSheetAperto}"></app-bottom-sheet-content>
+<app-bottom-sheet-customize [data]="getP()" [ngClass]="(bottomSheetCustomizeAperto)? 'visibile' : 'invisibile'"></app-bottom-sheet-customize>
+
 <right-col></right-col>
 <left-col></left-col>

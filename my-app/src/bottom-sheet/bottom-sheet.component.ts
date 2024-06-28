@@ -12,6 +12,7 @@ import { LightDarkServiceService } from '../Service/light-dark-service.service';
 import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
+import { ToppingService } from '../Service/topping.service';
 
 registerLocaleData(localeIt);
 registerLocaleData(localeEn);
@@ -34,9 +35,10 @@ registerLocaleData(localeEn);
       state('start', style({ transform: 'translateX(0%) translateY(0%) scale(1)' })),
       state('end', style({ transform: 'translateX(60%) translateY(-20%) scale(0.2)'})),
       transition('start => end', [
-        animate('250ms ease-out', style({ transform: 'translateX(60%) translateY(-20%) scale(0.2)' }))
+        animate('200ms ease-out', style({ transform: 'translateX(60%) translateY(-20%) scale(0.2)' }))
       ]),
     ]),
+
     trigger('holeState', [
       state('shown', style({
         clipPath: 'circle(100% at 50% 25%)',
@@ -90,6 +92,9 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   bounceIncrementazione : boolean = false; 
   subscriptionBottomSheet!: Subscription
 
+  prezzoCopia!:number //Faccio una copia del prezzo in modo da resettarlo insieme ai topping
+
+
   vacciAlBill(){
     this.vadoAlBill = false
   }
@@ -99,7 +104,8 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
     private prodottiService: ProdottiService,
     private overlay: OverlayService,
     private lDServ: LightDarkServiceService,
-    private btsServ: BottomSheetOpenCloseService
+    private btsServ: BottomSheetOpenCloseService,
+    private topServ: ToppingService
   ) {
     this.prodList = prodottiService.getCM();
   }
@@ -117,6 +123,9 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
 
   //Chiusura bottom sheet
   close(): void { 
+    setTimeout(() => {
+      if(this.prezzoCopia>0)this.data().price = this.prezzoCopia
+    },200);
     this.btsServ.bottomSheetClosed()
     this.overlay.switch();
   }
@@ -132,9 +141,10 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
   }
 
   setProd(p: Prodotti, q: number) {
+    this.topServ.setLista([...this.data().toppings])
     this.service.setProd(p, q);
     setTimeout(() => {
-      this.quantita = 1;
+      this.quantita = 1; 
     },200);
     this.close();
   }
@@ -194,6 +204,12 @@ export class BottomSheetComponent implements OnInit, OnDestroy {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+
+  //Customize bottom sheet
+  OpenBottomSheetCustomize(){
+    this.prezzoCopia = this.data().price
+    this.btsServ.OpenBottomSheetCustomize()
   }
 
   //Palette di colori

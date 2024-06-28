@@ -131,7 +131,6 @@ export class ChangeLanguagesService {
 
   //retrun del nome tradotto di un prodotto specifico
   changeProd(p : string) : string{ 
-    this.getProduct()
     for(let i = 0 ; i <= this.prodList.length ; i++) {
       if(p == this.prodList[i].image){
         return this.prodList[i].item

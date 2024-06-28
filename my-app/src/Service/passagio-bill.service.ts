@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Prodotti } from '../prodotti/prodotti';
 import { BillProd } from '../Bill/bill-prod';
+import { ToppingService } from './topping.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,9 @@ export class PassagioBillService {
   // q!: number; 
   // EventEmitter per notificare i cambiamenti
   ProdChange: EventEmitter<void> = new EventEmitter<void>();
+ 
 
-  constructor() {}
+  constructor(private topServ: ToppingService,) {}
 
   setProd(p: Prodotti , q:number) {
     this.x = p;
@@ -27,14 +29,15 @@ export class PassagioBillService {
   }
 
   getBillProd(): BillProd {
-      this.y = {
-        category: this.x.category,
-        image: this.x.image,
-        item: this.x.item,
-        price: this.x.price,
-        quantita: this.q,
-        sconto : this.x.sconto
-      };
+    this.y = {
+      category: this.x.category,
+      image: this.x.image,
+      item: this.x.item,
+      price: this.x.price,
+      quantita: this.q,
+      sconto : this.x.sconto,
+      toppings: this.x.toppings
+    };
       return this.y;
   }
 }

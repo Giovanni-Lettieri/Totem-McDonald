@@ -12,7 +12,7 @@ h2 {
     width: 60vw; 
     height: 20vh; 
     left: 10.3vh;
-    z-index: 1000000001;
+    z-index: 500;
 }
 #CMimage{
     position:relative;
@@ -133,13 +133,31 @@ button{
     height: 200px;
     top: 39vh;
     border-radius: 70px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 53%;
     position: relative;
     border: none;
     z-index: 500;
 }
 #fatto{
+    font-size:35px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:650;
+    margin-top: 15px;
+}
+#button-cust {
+    background-color: #EFECE5;
+    width: 280px;
+    height: 200px;
+    top: 39vh;
+    border-radius: 70px;
+    left: 20%;
+    transform: translateX(-50%);
+    position: relative;
+    border: none;
+    z-index: 500;
+}
+#cust{
     font-size:35px;
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

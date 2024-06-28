@@ -30,6 +30,9 @@
     <p id="fatto">{{ fatto }}</p>
   </button>
 
+  <button id="button-cust" (click)="OpenBottomSheetCustomize()">
+    <p id="cust">Customize</p>
+  </button>
 
   <!-- publicita -->
   <div [style.background-color]="rCBackground()" id="ad" *ngIf="prodList.length > 0">

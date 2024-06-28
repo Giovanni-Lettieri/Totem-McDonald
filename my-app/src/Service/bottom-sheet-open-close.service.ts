@@ -18,7 +18,8 @@ export class BottomSheetOpenCloseService {
     price: 0,
     image: "",
     category: "",
-    sconto: 0
+    sconto: 0,    
+    toppings: []
   }
   constructor() { }
 
@@ -62,6 +63,18 @@ export class BottomSheetOpenCloseService {
     this.sideChange.emit()
   }
 
+  //Bottom sheet customize
+  bottomSheetCustomizeAperto: boolean = false
+  BottomSheetCustomize: EventEmitter<void> = new EventEmitter<void>();
+
+  OpenBottomSheetCustomize(){
+    this.bottomSheetCustomizeAperto = true
+    this.BottomSheetCustomize.emit()
+  }
+  CloseBottomSheetCustomize(){
+    this.bottomSheetCustomizeAperto = false
+    this.BottomSheetCustomize.emit()
+  }
 
   //generiche 
   getC(){

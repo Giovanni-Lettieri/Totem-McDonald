@@ -8,6 +8,7 @@ import { OverlayService } from '../Service/overlay.service';
 import { BottomSheetComponent } from "../bottom-sheet/bottom-sheet.component";
 import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
 import { BottomSheetSideComponent } from "../bottom-sheet-side/bottom-sheet-side.component";
+import { BottomSheetCustomizeComponent } from "../bottom-sheet-customize/bottom-sheet-customize.component";
 
 
 @Component({
@@ -21,19 +22,25 @@ import { BottomSheetSideComponent } from "../bottom-sheet-side/bottom-sheet-side
         CategoryComponent,
         CommonModule,
         BottomSheetComponent,
-        BottomSheetSideComponent
+        BottomSheetSideComponent, 
+        BottomSheetCustomizeComponent
     ]
 })
 export class MainPageComponent{
     isDivVisible : Boolean = false;
     bottomSheetAperto: boolean = false
     bottomSideAperto : boolean = false
+    bottomSheetCustomizeAperto!: boolean;
 
     subscription !: Subscription;
     subscriptionBottomSheet !: Subscription;
     subBottomSide !: Subscription
+    subscriptionBottomSheetCustomize !: Subscription;
 
-    constructor(private service: OverlayService, private btsServ: BottomSheetOpenCloseService){}
+    constructor(
+        private service: OverlayService, 
+        private btsServ: BottomSheetOpenCloseService
+    ){}
 
     ngOnInit(): void {  
         
@@ -63,7 +70,20 @@ export class MainPageComponent{
                 this.bottomSideAperto = this.btsServ.bottomSideAperto
             }
         });
+        
+        // Chiusura bottom sheet customize
+
+        this.subscriptionBottomSheetCustomize = this.btsServ.BottomSheetCustomize.subscribe(() => {
+            if(this.btsServ.bottomSheetCustomizeAperto == false){
+                setTimeout(() => {
+                    this.bottomSheetCustomizeAperto = this.btsServ.bottomSheetAperto
+                }, 230);
+            }else{
+                this.bottomSheetCustomizeAperto = this.btsServ.bottomSheetAperto
+            }
+        });
     }    
+    
     getP(){
         return this.btsServ.getC()
     }
