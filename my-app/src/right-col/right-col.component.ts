@@ -119,7 +119,7 @@ export class RightColComponent implements OnInit{
     this.subProd_Bill = this.prod_bill.ProdChange.subscribe(() => {
       const billProd = {...this.prod_bill.getBillProd()};
       this.billList.forEach((b , index)=> {
-        if(b.image === billProd.image  && this.equalAray(b.toppings , billProd.toppings)){
+        if(b.image == billProd.image  && this.equalAray(b.toppings , billProd.toppings)){
           b.quantita += billProd.quantita
           if(index != 0){
             this.billList.splice(index, 1);
@@ -159,7 +159,7 @@ export class RightColComponent implements OnInit{
       return false; 
     }
     for(let i = 0; i < a.length ; i++){
-      if(a[i].name != b[i].name || a[i].quantity != b[i].quantity){
+      if(!(a[i].name == b[i].name && a[i].quantity == b[i].quantity)){
         console.log("DIVERSI : diversi topping")
         return false
       }
