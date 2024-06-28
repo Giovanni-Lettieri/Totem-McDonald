@@ -19,6 +19,8 @@ import localeEn from '@angular/common/locales/en';
 import { ModalitaConsumoService } from '../Service/modalita-consumo.service';
 import { LightDarkServiceService } from '../Service/light-dark-service.service';
 import { ToppingComponent } from "../Topping/topping.component";
+import { ToppingService } from '../Service/topping.service';
+import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -98,7 +100,9 @@ export class CheckOutComponent {
     private infoBill : InfoBillService,
     private servCont: ContoService, 
     private servButton : ModalitaConsumoService,   //modalita di consumo(scritta eat in take out)
-    private cOServ: CheckOutServiceService,         
+    private cOServ: CheckOutServiceService,    
+    private topServ: ToppingService,     
+    private btsServ: BottomSheetOpenCloseService,
     
     // Rotuting
     private router: Router
@@ -115,7 +119,7 @@ export class CheckOutComponent {
   subBill !: Subscription;
   subAnimamzioneRouting !: Subscription;
   subConto !: Subscription; 
-
+  subPrezzo!: Subscription
   ngOnInit(): void { 
     //Cambio lingua 
     this.subLanguage = this.lingSer.cambioLingua.subscribe(() => { 
@@ -146,6 +150,13 @@ export class CheckOutComponent {
     this.subAnimamzioneRouting = this.cOServ.entrataChange.subscribe(() => { 
       this.entrata = this.cOServ.entrata
     });
+    //aggiornamento prezzo menu edit
+    this.subPrezzo = this.topServ.prezzoChange.subscribe(() => {
+      this.btsServ.bTAChange.emit()
+      if((this.suportoMenu.price + this.topServ.getPrezzoAggRid())>=this.suportoMenu.price){
+        this.suportoMenu.price += this.topServ.getPrezzoAggRid();   
+      }
+  });
   }
 
   //tasto back
@@ -181,8 +192,6 @@ export class CheckOutComponent {
     });
     return this.appogioCalcolo
   }
-
-  
 
   //funzioni edit
   startEdit(b : BillProd){

@@ -9,6 +9,7 @@ import { ChangeLanguagesService } from '../Service/change-languages.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import {PulsantiExtraService} from '../Service/pulsanti-extra.service';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.service';
 
 registerLocaleData(localeIt)
 registerLocaleData(localeEn)
@@ -74,8 +75,9 @@ export class ProdCheckOutComponent {
   constructor(
     private servCont: ContoService,
     private lingSer: ChangeLanguagesService,
-    private extraServ : PulsantiExtraService
-  ){}
+    private extraServ : PulsantiExtraService,
+    private btsServ: BottomSheetOpenCloseService
+    ){}
 
   @HostListener('touchstart', ['$event'])
   onTouchStart(event: TouchEvent): void {
@@ -145,6 +147,7 @@ export class ProdCheckOutComponent {
   }
 
   edit() {
+    this.btsServ.bTAChange.emit()
     this.clickEdit.emit(this.prodotto())
   }
 }
