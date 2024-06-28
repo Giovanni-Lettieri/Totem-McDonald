@@ -28,7 +28,7 @@
     <p id="fatto">{{ fatto }}</p>
   </button>
 
-  <button id="button-cust" (click)="OpenBottomSheetCustomize()">
+  <button id="button-cust" (click)="OpenBottomSheetCustomize()" [style.background-color]="getCustomizePremuto()">
     <p id="cust">Customize</p>
   </button>
 

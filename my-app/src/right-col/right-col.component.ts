@@ -183,7 +183,6 @@ export class RightColComponent implements OnInit{
   getPosibilitaPremuta(){
     if(this.fattoClick && this.billList.length <= 0){
       return '#C8161D'
-      
     }
     return '#FFCA40'
   }
