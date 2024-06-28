@@ -26,7 +26,6 @@ export class ToppingService{
   }
   setQuantita(q: number, c:string){
     if(this.listaTopping.findIndex(x => x.name === c)>=0){
-      console.log(this.listaTopping.findIndex(x => x.name === c))
       this.listaTopping[this.listaTopping.findIndex(x => x.name === c)].quantity = q
     }
   }

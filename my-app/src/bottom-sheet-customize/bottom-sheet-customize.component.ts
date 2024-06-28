@@ -60,7 +60,9 @@ export class BottomSheetCustomizeComponent implements OnInit{
     });
 
     this.subscribePrezzo = this.topServ.prezzoChange.subscribe(() => {
-        this.prezzo += this.topServ.getPrezzoAggRid();   
+        if((this.prezzo + this.topServ.getPrezzoAggRid())>=this.data().price){
+          this.prezzo += this.topServ.getPrezzoAggRid();   
+        }
     });
   }
 

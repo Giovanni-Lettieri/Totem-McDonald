@@ -59,7 +59,9 @@ export class ToppingComponent {
 
   plus(c: string){
     this.q++
-    this.topServ.AggiuntaPrezzo(this.data().price)
+    if(this.q>this.listaQ){
+      this.topServ.AggiuntaPrezzo(this.data().price)
+    }
   }
 
   minus(c: string) {
