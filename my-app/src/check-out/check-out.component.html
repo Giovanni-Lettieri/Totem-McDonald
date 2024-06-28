@@ -71,13 +71,15 @@
 
                 <!-- elenco ingredienti -->
                 <div id="boxEdit" [style.background-color]="getBackgroundColor()">
-                    
+                    @for(top of suportoMenu.toppings ; track suportoMenu.toppings){
+                        <app-topping [data]="top" id="toping"></app-topping>         
+                    }
                 </div>
-
+               
                 <!-- parte inferiore -->
             
                 <div id="prezzoEdit">
-                    <p>{{ calcoloPrezzo(suportoMenu) | currency: 'EUR':'symbol':'1.2-2' : cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+                    <p>{{ suportoMenu.price | currency: 'EUR':'symbol':'1.2-2' : cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
                 </div>
                 <button id="doneEdit" (click)="doneEdit()">
                     <p>{{done}}</p>

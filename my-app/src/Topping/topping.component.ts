@@ -17,7 +17,6 @@ import { BottomSheetOpenCloseService } from '../Service/bottom-sheet-open-close.
 export class ToppingComponent {
   Cur: string = this.lingSer.getTesto().Curency;  //Pipe Currency
   data = input.required<Topping>() //Lista che raccogliil topping attuale
-  c = input.required<string>()
   subscribeBS!: Subscription //controlla l'apertura del bottom sheet base
   subscribeCustomize!: Subscription //controlla l'apertura del bottom sheet customize
   subscribeApply!: Subscription //controlla l'apertura del bottom sheet customize

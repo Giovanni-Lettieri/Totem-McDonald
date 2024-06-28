@@ -1,11 +1,11 @@
-<img [src]="getTopperImage(c())">
-<p id="nomeTop">{{c()}}</p>
-<p id="prezzoTop">{{getTopperPrice(c()) | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
+<img [src]="getTopperImage(data().name)">
+<p id="nomeTop">{{data().name}}</p>
+<p id="prezzoTop">{{getTopperPrice(data().name) | currency: 'EUR':'symbol':'1.2-2' : Cur === 'EUR' ? 'it-IT' : 'en-EN' }}</p>
 
 <div id="counter-cont">
-<button [style.background-color]="rCBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus(c())"><p id="meno">-</p></button>
+<button [style.background-color]="rCBackground()" [style.color]="getTestiColor()" id="M-but" (click)="minus(data().name)"><p id="meno">-</p></button>
 <span id="C-cont">
     <p id="T-cont">{{ getQuantity() }}</p>
 </span>
-<button id="P-but" (click)="plus(c())"><p id="piu">+</p></button>
+<button id="P-but" (click)="plus(data().name)"><p id="piu">+</p></button>
 </div> 

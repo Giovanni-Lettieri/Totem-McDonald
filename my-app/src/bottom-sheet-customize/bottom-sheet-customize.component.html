@@ -11,7 +11,7 @@
 
      <div id="toppingContainer" >
         <section id="sectionTopping" *ngFor="let c of data().toppings let i = index">
-          <app-topping id="topComp" [data]="data().toppings[i]" [c]="c.name"></app-topping>
+          <app-topping id="topComp" [data]="data().toppings[i]"></app-topping>
         </section>
      </div> 
 
