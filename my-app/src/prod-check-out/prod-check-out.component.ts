@@ -71,6 +71,7 @@ export class ProdCheckOutComponent {
 
   @Output() rimozione = new EventEmitter<BillProd>();
   @Output() clickEdit = new EventEmitter<BillProd>();
+  custPremuto: boolean = false;
   
   constructor(
     private servCont: ContoService,
@@ -147,7 +148,18 @@ export class ProdCheckOutComponent {
   }
 
   edit() {
-    this.btsServ.bTAChange.emit()
-    this.clickEdit.emit(this.prodotto())
+    if(this.prodotto().toppings.length>0){
+      this.clickEdit.emit(this.prodotto())
+    }
+    this.custPremuto= true
+    setTimeout(() => {
+      this.custPremuto= false
+    }, 100);
+  }
+  getCustomizePremuto(){
+    if(this.custPremuto && this.prodotto().toppings.length<=0){
+      return '#ebb52f'
+    }
+    return '#FFCA40'
   }
 }

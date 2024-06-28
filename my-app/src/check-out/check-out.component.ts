@@ -89,6 +89,7 @@ export class CheckOutComponent {
     sconto: 0,
     toppings: []
   }
+  prezzoAppoggio!: number
 
   //animazione 
   entrata: boolean = false
@@ -120,7 +121,8 @@ export class CheckOutComponent {
   subAnimamzioneRouting !: Subscription;
   subConto !: Subscription; 
   subPrezzo!: Subscription
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    this.prezzoAppoggio = this.suportoMenu.price  
     //Cambio lingua 
     this.subLanguage = this.lingSer.cambioLingua.subscribe(() => { 
       this.my =  this.lingSer.getTesto().Mio
@@ -152,11 +154,13 @@ export class CheckOutComponent {
     });
     //aggiornamento prezzo menu edit
     this.subPrezzo = this.topServ.prezzoChange.subscribe(() => {
-      this.btsServ.bTAChange.emit()
-      if((this.suportoMenu.price + this.topServ.getPrezzoAggRid())>=this.suportoMenu.price){
+      console.log(this.suportoMenu.price + this.topServ.getPrezzoAggRid())
+      console.log(this.prezzoAppoggio)
+      if((this.suportoMenu.price + this.topServ.getPrezzoAggRid())>=this.prezzoAppoggio){
         this.suportoMenu.price += this.topServ.getPrezzoAggRid();   
       }
-  });
+    });
+    
   }
 
   //tasto back
@@ -198,6 +202,7 @@ export class CheckOutComponent {
     this.entrataEdit = false
     this.indexMenu = this.scontrino.findIndex(obj => obj.item == b.item);
     this.suportoMenu = {...this.scontrino[this.indexMenu]}
+    this.prezzoAppoggio = this.suportoMenu.price  
   }
 
   closeEdit(){

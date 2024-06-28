@@ -182,7 +182,7 @@ export class RightColComponent implements OnInit{
   //colore tanto done
   getPosibilitaPremuta(){
     if(this.fattoClick && this.billList.length <= 0){
-      return '#C8161D'
+      return '#ebb52f'
     }
     return '#FFCA40'
   }
